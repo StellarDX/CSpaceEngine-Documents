@@ -1421,9 +1421,10 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = Styles/doxygen-awesome.css \
-                         Styles/doxygen-awesome-sidebar-only.css \
-                         Styles/doxygen-awesome-sidebar-only-darkmode-toggle.css
+HTML_EXTRA_STYLESHEET  = Styles/DOxyAwesome/doxygen-awesome.css \
+                         Styles/DOxyAwesome/doxygen-awesome-sidebar-only.css \
+                         Styles/DOxyAwesome/doxygen-awesome-sidebar-only-darkmode-toggle.css \
+                         Styles/CustomStyleSheets.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1433,11 +1434,12 @@ HTML_EXTRA_STYLESHEET  = Styles/doxygen-awesome.css \
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = Styles/doxygen-awesome-darkmode-toggle.js \
-                         Styles/doxygen-awesome-fragment-copy-button.js \
-                         Styles/doxygen-awesome-interactive-toc.js \
-                         Styles/doxygen-awesome-paragraph-link.js \
-                         Styles/doxygen-awesome-tabs.js
+HTML_EXTRA_FILES       = Styles/DOxyAwesome/doxygen-awesome-darkmode-toggle.js \
+                         Styles/DOxyAwesome/doxygen-awesome-fragment-copy-button.js \
+                         Styles/DOxyAwesome/doxygen-awesome-interactive-toc.js \
+                         Styles/DOxyAwesome/doxygen-awesome-paragraph-link.js \
+                         Styles/DOxyAwesome/doxygen-awesome-tabs.js \
+                         Styles/DOxyAwesome/doxygen-custom/toggle-alternative-theme.js
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.
@@ -1450,7 +1452,7 @@ HTML_EXTRA_FILES       = Styles/doxygen-awesome-darkmode-toggle.js \
 # The default value is: AUTO_LIGHT.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_COLORSTYLE        = TOGGLE
+HTML_COLORSTYLE        = LIGHT
 
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
