@@ -1,0 +1,935 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: 天文历法</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d2/d74/group___stellarium_funcs.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">天文历法<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d8/dff/group___date_time.html">日期和时间</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>一些Stellarium移植来的高级功能  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga4dd7bc3d0f0efd27630564eab73f4809" id="r_ga4dd7bc3d0f0efd27630564eab73f4809"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d9e/classcse_1_1_c_s_e_date_time.html">CSEDateTime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4dd7bc3d0f0efd27630564eab73f4809">cse::JDToDateTime</a> (const double &amp;JD)</td></tr>
+<tr class="memdesc:ga4dd7bc3d0f0efd27630564eab73f4809"><td class="mdescLeft">&#160;</td><td class="mdescRight">将儒略日(JD)转换为CSEDateTime对象  <br /></td></tr>
+<tr class="separator:ga4dd7bc3d0f0efd27630564eab73f4809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88d6af2907a37d24de9c1737f26ac78c" id="r_ga88d6af2907a37d24de9c1737f26ac78c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga88d6af2907a37d24de9c1737f26ac78c">cse::GetDateFromJulianDay</a> (const double jd, int *yy, int *mm, int *dd)</td></tr>
+<tr class="memdesc:ga88d6af2907a37d24de9c1737f26ac78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">从儒略日提取年月日  <br /></td></tr>
+<tr class="separator:ga88d6af2907a37d24de9c1737f26ac78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9a00088608ab4f68a128382f96bc901" id="r_gae9a00088608ab4f68a128382f96bc901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae9a00088608ab4f68a128382f96bc901">cse::GetTimeFromJulianDay</a> (const double julianDay, int *hour, int *minute, int *second, int *millis, bool *wrapDay=nullptr)</td></tr>
+<tr class="memdesc:gae9a00088608ab4f68a128382f96bc901"><td class="mdescLeft">&#160;</td><td class="mdescRight">从儒略日提取时分秒  <br /></td></tr>
+<tr class="separator:gae9a00088608ab4f68a128382f96bc901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga991486726707cb3e5fd8ef3336b903bc" id="r_ga991486726707cb3e5fd8ef3336b903bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga991486726707cb3e5fd8ef3336b903bc">cse::GetDateTimeFromJulianDay</a> (const double julianDay, int *year, int *month, int *day, int *hour, int *minute, int *second, int *millis)</td></tr>
+<tr class="memdesc:ga991486726707cb3e5fd8ef3336b903bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">从儒略日完整提取日期时间  <br /></td></tr>
+<tr class="separator:ga991486726707cb3e5fd8ef3336b903bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5820dcb4948f3826b92f2e8cb0d7d14" id="r_gad5820dcb4948f3826b92f2e8cb0d7d14"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad5820dcb4948f3826b92f2e8cb0d7d14">cse::GetHoursFromJulianDay</a> (const double julianDay)</td></tr>
+<tr class="memdesc:gad5820dcb4948f3826b92f2e8cb0d7d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">从儒略日计算小时数（十进制格式）  <br /></td></tr>
+<tr class="separator:gad5820dcb4948f3826b92f2e8cb0d7d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7675a7c1edc26ff00f2f92bdfd96cd2" id="r_gae7675a7c1edc26ff00f2f92bdfd96cd2"><td class="memItemLeft" align="right" valign="top">ustring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae7675a7c1edc26ff00f2f92bdfd96cd2">cse::JulianDayToISO8601String</a> (const double jd, bool addMS=true)</td></tr>
+<tr class="memdesc:gae7675a7c1edc26ff00f2f92bdfd96cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">将儒略日格式化为ISO8601日期字符串  <br /></td></tr>
+<tr class="separator:gae7675a7c1edc26ff00f2f92bdfd96cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga409a3433e9d3251c755989196c3ee802" id="r_ga409a3433e9d3251c755989196c3ee802"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga409a3433e9d3251c755989196c3ee802">cse::GetDayOfWeek</a> (double JD)</td></tr>
+<tr class="memdesc:ga409a3433e9d3251c755989196c3ee802"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算日期对应的星期几  <br /></td></tr>
+<tr class="separator:ga409a3433e9d3251c755989196c3ee802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee96595efc33e3b44178cf7602a97862" id="r_gaee96595efc33e3b44178cf7602a97862"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaee96595efc33e3b44178cf7602a97862">cse::GetDayOfWeek</a> (int year, int month, int day)</td></tr>
+<tr class="memdesc:gaee96595efc33e3b44178cf7602a97862"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算日期对应的星期几  <br /></td></tr>
+<tr class="separator:gaee96595efc33e3b44178cf7602a97862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae344562c939f23c5f7eb432a8a0abb16" id="r_gae344562c939f23c5f7eb432a8a0abb16"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae344562c939f23c5f7eb432a8a0abb16">cse::GetJDFromSystem</a> ()</td></tr>
+<tr class="memdesc:gae344562c939f23c5f7eb432a8a0abb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前系统时间对应的儒略日  <br /></td></tr>
+<tr class="separator:gae344562c939f23c5f7eb432a8a0abb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14e49f2ce9fc86e418587509d3f71b80" id="r_ga14e49f2ce9fc86e418587509d3f71b80"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga14e49f2ce9fc86e418587509d3f71b80">cse::GetJDFromBesEpoch</a> (const double Epoch)</td></tr>
+<tr class="memdesc:ga14e49f2ce9fc86e418587509d3f71b80"><td class="mdescLeft">&#160;</td><td class="mdescRight">从贝塞尔历元计算儒略日  <br /></td></tr>
+<tr class="separator:ga14e49f2ce9fc86e418587509d3f71b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26913139687763743399e0123af3b642" id="r_ga26913139687763743399e0123af3b642"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26913139687763743399e0123af3b642">cse::TimeToJDFract</a> (const _TIME CSETime &amp;Time)</td></tr>
+<tr class="memdesc:ga26913139687763743399e0123af3b642"><td class="mdescLeft">&#160;</td><td class="mdescRight">将时间转换为儒略日小数部分  <br /></td></tr>
+<tr class="separator:ga26913139687763743399e0123af3b642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39e0c63d40bbc81991d102639e81c24f" id="r_ga39e0c63d40bbc81991d102639e81c24f"><td class="memItemLeft" align="right" valign="top">_TIME CSETime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39e0c63d40bbc81991d102639e81c24f">cse::JDFractToTime</a> (const double jd)</td></tr>
+<tr class="memdesc:ga39e0c63d40bbc81991d102639e81c24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将儒略日小数部分转换为时间对象  <br /></td></tr>
+<tr class="separator:ga39e0c63d40bbc81991d102639e81c24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae83ba626c8d130afff1b46eae7143e3e" id="r_gae83ba626c8d130afff1b46eae7143e3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae83ba626c8d130afff1b46eae7143e3e">cse::GetJDFromDate</a> (double *newjd, const int y, const int m, const int d, const int h, const int <a class="el" href="../../de/dc3/group___algorithms.html#ga4ebab1bd21280bffdee009bc7432fcb4">min</a>, const double s)</td></tr>
+<tr class="memdesc:gae83ba626c8d130afff1b46eae7143e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">从日历日期计算儒略日  <br /></td></tr>
+<tr class="separator:gae83ba626c8d130afff1b46eae7143e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21ea0296889f3ec8b94d24a8e12484cb" id="r_ga21ea0296889f3ec8b94d24a8e12484cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga21ea0296889f3ec8b94d24a8e12484cb">cse::NumOfDaysInMonthInYear</a> (const int month, const int year)</td></tr>
+<tr class="memdesc:ga21ea0296889f3ec8b94d24a8e12484cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定年份月份的天数  <br /></td></tr>
+<tr class="separator:ga21ea0296889f3ec8b94d24a8e12484cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb3efeed7a1b76853ca7270572181f41" id="r_gaeb3efeed7a1b76853ca7270572181f41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeb3efeed7a1b76853ca7270572181f41">cse::IsLeapYear</a> (const int year)</td></tr>
+<tr class="memdesc:gaeb3efeed7a1b76853ca7270572181f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是否为闰年  <br /></td></tr>
+<tr class="separator:gaeb3efeed7a1b76853ca7270572181f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga715f27fb4cedf36a2cd05b4e2572b90d" id="r_ga715f27fb4cedf36a2cd05b4e2572b90d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga715f27fb4cedf36a2cd05b4e2572b90d">cse::DayInYear</a> (const int year, const int month, const int day)</td></tr>
+<tr class="memdesc:ga715f27fb4cedf36a2cd05b4e2572b90d"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算日期在年内的天数  <br /></td></tr>
+<tr class="separator:ga715f27fb4cedf36a2cd05b4e2572b90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d3d034395e134b5e087986d0c7c9bf6" id="r_ga2d3d034395e134b5e087986d0c7c9bf6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2d3d034395e134b5e087986d0c7c9bf6">cse::YearFraction</a> (const int year, const int month, const double day)</td></tr>
+<tr class="memdesc:ga2d3d034395e134b5e087986d0c7c9bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算日期对应的年份小数表示  <br /></td></tr>
+<tr class="separator:ga2d3d034395e134b5e087986d0c7c9bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab857ffdbfc687f6c8ee023153ea53c40" id="r_gab857ffdbfc687f6c8ee023153ea53c40"><td class="memItemLeft" align="right" valign="top">ivec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab857ffdbfc687f6c8ee023153ea53c40">cse::DateFromDayYear</a> (const int day, const int year)</td></tr>
+<tr class="memdesc:gab857ffdbfc687f6c8ee023153ea53c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">从年内天数和年份反推日期  <br /></td></tr>
+<tr class="separator:gab857ffdbfc687f6c8ee023153ea53c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade647fade88f518a3118d4774c3be42d" id="r_gade647fade88f518a3118d4774c3be42d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade647fade88f518a3118d4774c3be42d">cse::GetJulianDayFromISO8601String</a> (const std::string &amp;iso8601Date, double *jd)</td></tr>
+<tr class="memdesc:gade647fade88f518a3118d4774c3be42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从ISO8601字符串解析儒略日  <br /></td></tr>
+<tr class="separator:gade647fade88f518a3118d4774c3be42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacbad22f8bcca795fa1cb8b30e51709b1" id="r_gacbad22f8bcca795fa1cb8b30e51709b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacbad22f8bcca795fa1cb8b30e51709b1">cse::GetDateTimeFromISO8601String</a> (const std::string &amp;iso8601Date, int *y, int *m, int *d, int *h, int *<a class="el" href="../../de/dc3/group___algorithms.html#ga4ebab1bd21280bffdee009bc7432fcb4">min</a>, double *s, int *offsec)</td></tr>
+<tr class="memdesc:gacbad22f8bcca795fa1cb8b30e51709b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析ISO8601日期字符串  <br /></td></tr>
+<tr class="separator:gacbad22f8bcca795fa1cb8b30e51709b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>一些Stellarium移植来的高级功能 </p>
+<dl class="section user"><dt>参考文献</dt><dd>[1] Chereau F, Wolf A, Zotti G, 等. Stellarium[CP/OL]. (2025-06). <a href="https://github.com/Stellarium/stellarium">https://github.com/Stellarium/stellarium</a>.</dd></dl>
+<dl class="section see"><dt>参见</dt><dd>原始代码位置：Stellarium/stellarium/src/core/StelUtils.cpp </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>Copyright (C) 2002 Fabien Chereau, Licenced under GPL-2.0 </dd></dl>
+<h2 class="groupheader">函数说明</h2>
+<a id="gab857ffdbfc687f6c8ee023153ea53c40" name="gab857ffdbfc687f6c8ee023153ea53c40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab857ffdbfc687f6c8ee023153ea53c40">&#9670;&#160;</a></span>DateFromDayYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ivec3 cse::DateFromDayYear </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从年内天数和年份反推日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">day</td><td>年内天数 </td></tr>
+    <tr><td class="paramname">year</td><td>年 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>包含年月日的整型向量 </dd></dl>
+
+</div>
+</div>
+<a id="ga715f27fb4cedf36a2cd05b4e2572b90d" name="ga715f27fb4cedf36a2cd05b4e2572b90d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga715f27fb4cedf36a2cd05b4e2572b90d">&#9670;&#160;</a></span>DayInYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::DayInYear </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算日期在年内的天数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>年 </td></tr>
+    <tr><td class="paramname">month</td><td>月 </td></tr>
+    <tr><td class="paramname">day</td><td>日 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>年内天数（1月1日为1） </dd></dl>
+<dl class="section see"><dt>参见</dt><dd>Meeus, Astronomical <a class="el" href="../../de/dc3/group___algorithms.html" title="一些GL函数">常用算法</a> 2nd ed., 1998, ch.7, p.65 </dd></dl>
+
+</div>
+</div>
+<a id="ga88d6af2907a37d24de9c1737f26ac78c" name="ga88d6af2907a37d24de9c1737f26ac78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88d6af2907a37d24de9c1737f26ac78c">&#9670;&#160;</a></span>GetDateFromJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::GetDateFromJulianDay </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>jd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>yy</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>mm</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>dd</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从儒略日提取年月日 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">jd</td><td>儒略日数值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yy</td><td>年（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">mm</td><td>月（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dd</td><td>日（输出参数） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gacbad22f8bcca795fa1cb8b30e51709b1" name="gacbad22f8bcca795fa1cb8b30e51709b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacbad22f8bcca795fa1cb8b30e51709b1">&#9670;&#160;</a></span>GetDateTimeFromISO8601String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::GetDateTimeFromISO8601String </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>iso8601Date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>offsec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>解析ISO8601日期字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">iso8601Date</td><td>ISO8601格式日期字符串 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>年（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>月（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">d</td><td>日（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>时（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>分（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s</td><td>秒（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">offsec</td><td>时区偏移秒数（输出参数） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>操作状态码 </dd></dl>
+
+</div>
+</div>
+<a id="ga991486726707cb3e5fd8ef3336b903bc" name="ga991486726707cb3e5fd8ef3336b903bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga991486726707cb3e5fd8ef3336b903bc">&#9670;&#160;</a></span>GetDateTimeFromJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::GetDateTimeFromJulianDay </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>julianDay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>day</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>minute</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>millis</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从儒略日完整提取日期时间 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">julianDay</td><td>儒略日数值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">year</td><td>年（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">month</td><td>月（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">day</td><td>日（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">hour</td><td>时（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minute</td><td>分（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">second</td><td>秒（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">millis</td><td>毫秒（输出参数） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga409a3433e9d3251c755989196c3ee802" name="ga409a3433e9d3251c755989196c3ee802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga409a3433e9d3251c755989196c3ee802">&#9670;&#160;</a></span>GetDayOfWeek() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::GetDayOfWeek </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>JD</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算日期对应的星期几 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">JD</td><td>儒略日数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>星期几（0=周日, 1=周一, ...） </dd></dl>
+
+</div>
+</div>
+<a id="gaee96595efc33e3b44178cf7602a97862" name="gaee96595efc33e3b44178cf7602a97862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee96595efc33e3b44178cf7602a97862">&#9670;&#160;</a></span>GetDayOfWeek() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::GetDayOfWeek </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算日期对应的星期几 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>年 </td></tr>
+    <tr><td class="paramname">month</td><td>月 </td></tr>
+    <tr><td class="paramname">day</td><td>日 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>星期几（0=周日, 1=周一, ...） </dd></dl>
+
+</div>
+</div>
+<a id="gad5820dcb4948f3826b92f2e8cb0d7d14" name="gad5820dcb4948f3826b92f2e8cb0d7d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5820dcb4948f3826b92f2e8cb0d7d14">&#9670;&#160;</a></span>GetHoursFromJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cse::GetHoursFromJulianDay </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>julianDay</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从儒略日计算小时数（十进制格式） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">julianDay</td><td>儒略日数值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>小时数（含小数部分） </dd></dl>
+
+</div>
+</div>
+<a id="ga14e49f2ce9fc86e418587509d3f71b80" name="ga14e49f2ce9fc86e418587509d3f71b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14e49f2ce9fc86e418587509d3f71b80">&#9670;&#160;</a></span>GetJDFromBesEpoch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cse::GetJDFromBesEpoch </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>Epoch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从贝塞尔历元计算儒略日 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="../../d7/dc9/namespacecse_1_1_epoch.html">Epoch</a></td><td>贝塞尔历元（年份表示） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>对应的儒略日数值 </dd></dl>
+
+</div>
+</div>
+<a id="gae83ba626c8d130afff1b46eae7143e3e" name="gae83ba626c8d130afff1b46eae7143e3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae83ba626c8d130afff1b46eae7143e3e">&#9670;&#160;</a></span>GetJDFromDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::GetJDFromDate </td>
+          <td>(</td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>newjd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>d</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>h</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从日历日期计算儒略日 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">newjd</td><td>计算结果儒略日（输出参数） </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">y</td><td>年 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">m</td><td>月（1-12） </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">d</td><td>日 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">h</td><td>时 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">min</td><td>分 </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">s</td><td>秒 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>操作是否成功 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>1582年10月15日前使用儒略历 </dd></dl>
+
+</div>
+</div>
+<a id="gae344562c939f23c5f7eb432a8a0abb16" name="gae344562c939f23c5f7eb432a8a0abb16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae344562c939f23c5f7eb432a8a0abb16">&#9670;&#160;</a></span>GetJDFromSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cse::GetJDFromSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前系统时间对应的儒略日 </p>
+<dl class="section return"><dt>返回</dt><dd>当前儒略日数值 </dd></dl>
+
+</div>
+</div>
+<a id="gade647fade88f518a3118d4774c3be42d" name="gade647fade88f518a3118d4774c3be42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade647fade88f518a3118d4774c3be42d">&#9670;&#160;</a></span>GetJulianDayFromISO8601String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::GetJulianDayFromISO8601String </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>iso8601Date</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *</td>          <td class="paramname"><span class="paramname"><em>jd</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从ISO8601字符串解析儒略日 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">iso8601Date</td><td>ISO8601格式日期字符串 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">jd</td><td>计算结果儒略日（输出参数） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>操作状态码 </dd></dl>
+
+</div>
+</div>
+<a id="gae9a00088608ab4f68a128382f96bc901" name="gae9a00088608ab4f68a128382f96bc901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9a00088608ab4f68a128382f96bc901">&#9670;&#160;</a></span>GetTimeFromJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::GetTimeFromJulianDay </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>julianDay</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>hour</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>minute</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>second</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>millis</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>wrapDay</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从儒略日提取时分秒 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">julianDay</td><td>儒略日数值 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">hour</td><td>时（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minute</td><td>分（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">second</td><td>秒（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">millis</td><td>毫秒（输出参数） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">wrapDay</td><td>是否跨日标志（可选输出） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaeb3efeed7a1b76853ca7270572181f41" name="gaeb3efeed7a1b76853ca7270572181f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb3efeed7a1b76853ca7270572181f41">&#9670;&#160;</a></span>IsLeapYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::IsLeapYear </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>year</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>判断是否为闰年 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>待判断年份 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否为闰年 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>自动处理1582年儒略历到格里历的转换 </dd></dl>
+
+</div>
+</div>
+<a id="ga39e0c63d40bbc81991d102639e81c24f" name="ga39e0c63d40bbc81991d102639e81c24f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39e0c63d40bbc81991d102639e81c24f">&#9670;&#160;</a></span>JDFractToTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_TIME CSETime cse::JDFractToTime </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>jd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将儒略日小数部分转换为时间对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jd</td><td>儒略日小数部分 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>对应的时间对象 </dd></dl>
+
+</div>
+</div>
+<a id="ga4dd7bc3d0f0efd27630564eab73f4809" name="ga4dd7bc3d0f0efd27630564eab73f4809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4dd7bc3d0f0efd27630564eab73f4809">&#9670;&#160;</a></span>JDToDateTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d9e/classcse_1_1_c_s_e_date_time.html">CSEDateTime</a> cse::JDToDateTime </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;</td>          <td class="paramname"><span class="paramname"><em>JD</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将儒略日(JD)转换为CSEDateTime对象 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">JD</td><td>儒略日数值（含小数部分） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>对应的CSEDateTime对象 </dd></dl>
+<h3><a class="anchor" id="一些碎碎念"></a>
+一些碎碎念</h3>
+<p>丹霞：ISO 8601和一些天文历法定义公元前1年为0年，公元前2年为-1年，但是实际历法中不存在所谓0年，公元前1年后直接是公元1年。这种差异可能会给计算机编程带来问题，例如Qt中的QDateTime就没有0年。 而CSEDateTime在设计时沿用了ISO 8601标准，也就是支持0年的表示方式，我认为现在必须考虑一下这个问题了。 </p><dl class="section see"><dt>参见</dt><dd><a href="https://en.wikipedia.org/wiki/Year_zero">https://en.wikipedia.org/wiki/Year_zero</a> </dd></dl>
+
+</div>
+</div>
+<a id="gae7675a7c1edc26ff00f2f92bdfd96cd2" name="gae7675a7c1edc26ff00f2f92bdfd96cd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7675a7c1edc26ff00f2f92bdfd96cd2">&#9670;&#160;</a></span>JulianDayToISO8601String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ustring cse::JulianDayToISO8601String </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>jd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>addMS</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将儒略日格式化为ISO8601日期字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jd</td><td>儒略日数值 </td></tr>
+    <tr><td class="paramname">addMS</td><td>是否包含毫秒（默认包含） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>ISO8601格式的UTC日期字符串 </dd></dl>
+
+</div>
+</div>
+<a id="ga21ea0296889f3ec8b94d24a8e12484cb" name="ga21ea0296889f3ec8b94d24a8e12484cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21ea0296889f3ec8b94d24a8e12484cb">&#9670;&#160;</a></span>NumOfDaysInMonthInYear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::NumOfDaysInMonthInYear </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定年份月份的天数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td>月（1-12） </td></tr>
+    <tr><td class="paramname">year</td><td>年 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>该月天数 </dd></dl>
+
+</div>
+</div>
+<a id="ga26913139687763743399e0123af3b642" name="ga26913139687763743399e0123af3b642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26913139687763743399e0123af3b642">&#9670;&#160;</a></span>TimeToJDFract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cse::TimeToJDFract </td>
+          <td>(</td>
+          <td class="paramtype">const _TIME CSETime &amp;</td>          <td class="paramname"><span class="paramname"><em>Time</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将时间转换为儒略日小数部分 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Time</td><td>时间对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>儒略日小数部分（注：儒略日从12:00开始） </dd></dl>
+
+</div>
+</div>
+<a id="ga2d3d034395e134b5e087986d0c7c9bf6" name="ga2d3d034395e134b5e087986d0c7c9bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d3d034395e134b5e087986d0c7c9bf6">&#9670;&#160;</a></span>YearFraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cse::YearFraction </td>
+          <td>(</td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算日期对应的年份小数表示 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>年 </td></tr>
+    <tr><td class="paramname">month</td><td>月 </td></tr>
+    <tr><td class="paramname">day</td><td>日（可含小数部分） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>年份小数表示（如YYYY.ddd） </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>负年份处理：年份值会减小（如-501年对应-500.5） </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: cse::Epoch::CSEDate类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d7/d29/classcse_1_1_epoch_1_1_c_s_e_date-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">cse::Epoch::CSEDate类 参考<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d8/dff/group___date_time.html">日期和时间</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>日期处理类  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/da8/_date_time_8h_source.html">DateTime.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a3a0900ba74b3ef56dccf5cbefbb696e2" id="r_a3a0900ba74b3ef56dccf5cbefbb696e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a0900ba74b3ef56dccf5cbefbb696e2">CSEDate</a> ()</td></tr>
+<tr class="memdesc:a3a0900ba74b3ef56dccf5cbefbb696e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数  <br /></td></tr>
+<tr class="separator:a3a0900ba74b3ef56dccf5cbefbb696e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ccb51a89f6f56b7d2c2060650ac0fe" id="r_ad7ccb51a89f6f56b7d2c2060650ac0fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7ccb51a89f6f56b7d2c2060650ac0fe">CSEDate</a> (int y, int m, int d)</td></tr>
+<tr class="memdesc:ad7ccb51a89f6f56b7d2c2060650ac0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数（带参数）  <br /></td></tr>
+<tr class="separator:ad7ccb51a89f6f56b7d2c2060650ac0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00c09077b4406fb05deb18e8d3c56d5" id="r_ac00c09077b4406fb05deb18e8d3c56d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00c09077b4406fb05deb18e8d3c56d5">IsNull</a> () const</td></tr>
+<tr class="memdesc:ac00c09077b4406fb05deb18e8d3c56d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查日期是否为空值  <br /></td></tr>
+<tr class="separator:ac00c09077b4406fb05deb18e8d3c56d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36e12d0b189f85c98b1dfe273837160d" id="r_a36e12d0b189f85c98b1dfe273837160d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36e12d0b189f85c98b1dfe273837160d">IsValid</a> () const</td></tr>
+<tr class="memdesc:a36e12d0b189f85c98b1dfe273837160d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查日期是否有效  <br /></td></tr>
+<tr class="separator:a36e12d0b189f85c98b1dfe273837160d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6277ae1fe03c92b4bae0138884aef5" id="r_a5a6277ae1fe03c92b4bae0138884aef5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a6277ae1fe03c92b4bae0138884aef5">year</a> () const</td></tr>
+<tr class="memdesc:a5a6277ae1fe03c92b4bae0138884aef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取年份  <br /></td></tr>
+<tr class="separator:a5a6277ae1fe03c92b4bae0138884aef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cae593ea03f9ce3fcc8de0221f2b22" id="r_ab5cae593ea03f9ce3fcc8de0221f2b22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5cae593ea03f9ce3fcc8de0221f2b22">month</a> () const</td></tr>
+<tr class="memdesc:ab5cae593ea03f9ce3fcc8de0221f2b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取月份  <br /></td></tr>
+<tr class="separator:ab5cae593ea03f9ce3fcc8de0221f2b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f513c31d54b0ff8e92e75aefc97d2ad" id="r_a9f513c31d54b0ff8e92e75aefc97d2ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f513c31d54b0ff8e92e75aefc97d2ad">day</a> () const</td></tr>
+<tr class="memdesc:a9f513c31d54b0ff8e92e75aefc97d2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取日期  <br /></td></tr>
+<tr class="separator:a9f513c31d54b0ff8e92e75aefc97d2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c0e27b7bd49bdb84d7a8a4f457bbfb" id="r_ae9c0e27b7bd49bdb84d7a8a4f457bbfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9c0e27b7bd49bdb84d7a8a4f457bbfb">AddDays</a> (int ndays) const</td></tr>
+<tr class="memdesc:ae9c0e27b7bd49bdb84d7a8a4f457bbfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算指定天数后的新日期  <br /></td></tr>
+<tr class="separator:ae9c0e27b7bd49bdb84d7a8a4f457bbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f15f4e31777baf0f2aca4e8cf0c221e" id="r_a1f15f4e31777baf0f2aca4e8cf0c221e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f15f4e31777baf0f2aca4e8cf0c221e">AddMonths</a> (int nmonths) const</td></tr>
+<tr class="memdesc:a1f15f4e31777baf0f2aca4e8cf0c221e"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算指定月数后的新日期  <br /></td></tr>
+<tr class="separator:a1f15f4e31777baf0f2aca4e8cf0c221e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d3406dccd4a85ad1b7ea6306c29883" id="r_ac3d3406dccd4a85ad1b7ea6306c29883"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3d3406dccd4a85ad1b7ea6306c29883">AddYears</a> (int nyears) const</td></tr>
+<tr class="memdesc:ac3d3406dccd4a85ad1b7ea6306c29883"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算指定年数后的新日期  <br /></td></tr>
+<tr class="separator:ac3d3406dccd4a85ad1b7ea6306c29883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831da9f37cab8e6574324c9f07da73c8" id="r_a831da9f37cab8e6574324c9f07da73c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a831da9f37cab8e6574324c9f07da73c8">GetDate</a> (int *<a class="el" href="#a5a6277ae1fe03c92b4bae0138884aef5">year</a>, int *<a class="el" href="#ab5cae593ea03f9ce3fcc8de0221f2b22">month</a>, int *<a class="el" href="#a9f513c31d54b0ff8e92e75aefc97d2ad">day</a>) const</td></tr>
+<tr class="memdesc:a831da9f37cab8e6574324c9f07da73c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取日期分量  <br /></td></tr>
+<tr class="separator:a831da9f37cab8e6574324c9f07da73c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289af3dbb4a7a45b17ea2810b10a9fa4" id="r_a289af3dbb4a7a45b17ea2810b10a9fa4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a289af3dbb4a7a45b17ea2810b10a9fa4">SetDate</a> (int <a class="el" href="#a5a6277ae1fe03c92b4bae0138884aef5">year</a>, int <a class="el" href="#ab5cae593ea03f9ce3fcc8de0221f2b22">month</a>, int <a class="el" href="#a9f513c31d54b0ff8e92e75aefc97d2ad">day</a>)</td></tr>
+<tr class="memdesc:a289af3dbb4a7a45b17ea2810b10a9fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置日期  <br /></td></tr>
+<tr class="separator:a289af3dbb4a7a45b17ea2810b10a9fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca7b980005422a08d63bdc3a2921790" id="r_a6ca7b980005422a08d63bdc3a2921790"><td class="memItemLeft" align="right" valign="top">ustring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ca7b980005422a08d63bdc3a2921790">ToString</a> (cstring _Fmt=&quot;{}.{:02}.{:02}&quot;) const</td></tr>
+<tr class="memdesc:a6ca7b980005422a08d63bdc3a2921790"><td class="mdescLeft">&#160;</td><td class="mdescRight">日期转字符串  <br /></td></tr>
+<tr class="separator:a6ca7b980005422a08d63bdc3a2921790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5a129179c71e469fbdcb2721020fe10" id="r_ae5a129179c71e469fbdcb2721020fe10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5a129179c71e469fbdcb2721020fe10">DayOfWeek</a> () const</td></tr>
+<tr class="memdesc:ae5a129179c71e469fbdcb2721020fe10"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取星期几  <br /></td></tr>
+<tr class="separator:ae5a129179c71e469fbdcb2721020fe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0111a12a02c5101c3b393871cf4d4d56" id="r_a0111a12a02c5101c3b393871cf4d4d56"><td class="memItemLeft" align="right" valign="top">int64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0111a12a02c5101c3b393871cf4d4d56">ToJulianDay</a> () const</td></tr>
+<tr class="memdesc:a0111a12a02c5101c3b393871cf4d4d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">转换为儒略日（已废弃）  <br /></td></tr>
+<tr class="separator:a0111a12a02c5101c3b393871cf4d4d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3673de2b71641a97db89a2cafe3c643" id="r_ac3673de2b71641a97db89a2cafe3c643"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3673de2b71641a97db89a2cafe3c643">IsLeap</a> ()</td></tr>
+<tr class="memdesc:ac3673de2b71641a97db89a2cafe3c643"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查当前年份是否为闰年  <br /></td></tr>
+<tr class="separator:ac3673de2b71641a97db89a2cafe3c643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:a7a5a6eceb5d452857a284bf056395e57" id="r_a7a5a6eceb5d452857a284bf056395e57"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a5a6eceb5d452857a284bf056395e57">CurrentDate</a> ()</td></tr>
+<tr class="memdesc:a7a5a6eceb5d452857a284bf056395e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前系统日期  <br /></td></tr>
+<tr class="separator:a7a5a6eceb5d452857a284bf056395e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ce4ce69a8b994b624386fa48b5fb58" id="r_a21ce4ce69a8b994b624386fa48b5fb58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21ce4ce69a8b994b624386fa48b5fb58">FromJulianDay</a> (const double JD)</td></tr>
+<tr class="memdesc:a21ce4ce69a8b994b624386fa48b5fb58"><td class="mdescLeft">&#160;</td><td class="mdescRight">从儒略日转换到日期  <br /></td></tr>
+<tr class="separator:a21ce4ce69a8b994b624386fa48b5fb58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af51548fe072e292af023a711700aced1" id="r_af51548fe072e292af023a711700aced1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af51548fe072e292af023a711700aced1">IsLeap</a> (int <a class="el" href="#a5a6277ae1fe03c92b4bae0138884aef5">year</a>)</td></tr>
+<tr class="memdesc:af51548fe072e292af023a711700aced1"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态闰年检查  <br /></td></tr>
+<tr class="separator:af51548fe072e292af023a711700aced1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac6fd2d0b3852306a676512ab4e574a" id="r_a8ac6fd2d0b3852306a676512ab4e574a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ac6fd2d0b3852306a676512ab4e574a">IsValid</a> (int <a class="el" href="#a5a6277ae1fe03c92b4bae0138884aef5">year</a>, int <a class="el" href="#ab5cae593ea03f9ce3fcc8de0221f2b22">month</a>, int <a class="el" href="#a9f513c31d54b0ff8e92e75aefc97d2ad">day</a>)</td></tr>
+<tr class="memdesc:a8ac6fd2d0b3852306a676512ab4e574a"><td class="mdescLeft">&#160;</td><td class="mdescRight">日期有效性检查  <br /></td></tr>
+<tr class="separator:a8ac6fd2d0b3852306a676512ab4e574a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:afac969bdc781c086f751be7d19f2052d" id="r_afac969bdc781c086f751be7d19f2052d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afac969bdc781c086f751be7d19f2052d">years</a> = -1</td></tr>
+<tr class="memdesc:afac969bdc781c086f751be7d19f2052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">年份，允许所有有效值  <br /></td></tr>
+<tr class="separator:afac969bdc781c086f751be7d19f2052d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfc1ce0a51fdd3b6c722cbbd994bdaa" id="r_a1bfc1ce0a51fdd3b6c722cbbd994bdaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bfc1ce0a51fdd3b6c722cbbd994bdaa">months</a> = -1</td></tr>
+<tr class="memdesc:a1bfc1ce0a51fdd3b6c722cbbd994bdaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">月份，有效范围：1(一月)~12(十二月)  <br /></td></tr>
+<tr class="separator:a1bfc1ce0a51fdd3b6c722cbbd994bdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8baa0daf54d265751563f0fdf5c63b" id="r_abf8baa0daf54d265751563f0fdf5c63b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf8baa0daf54d265751563f0fdf5c63b">days</a> = -1</td></tr>
+<tr class="memdesc:abf8baa0daf54d265751563f0fdf5c63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">日期，有效范围取决于月份(1~28/29/30/31)  <br /></td></tr>
+<tr class="separator:abf8baa0daf54d265751563f0fdf5c63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>日期处理类 </p>
+<dl class="section note"><dt>注解</dt><dd>提供日期存储、验证和转换功能 </dd></dl>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a3a0900ba74b3ef56dccf5cbefbb696e2" name="a3a0900ba74b3ef56dccf5cbefbb696e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0900ba74b3ef56dccf5cbefbb696e2">&#9670;&#160;</a></span>CSEDate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cse::Epoch::CSEDate::CSEDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认构造函数 </p>
+
+</div>
+</div>
+<a id="ad7ccb51a89f6f56b7d2c2060650ac0fe" name="ad7ccb51a89f6f56b7d2c2060650ac0fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ccb51a89f6f56b7d2c2060650ac0fe">&#9670;&#160;</a></span>CSEDate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cse::Epoch::CSEDate::CSEDate </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>d</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造函数（带参数） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>年份 </td></tr>
+    <tr><td class="paramname">m</td><td>月份 </td></tr>
+    <tr><td class="paramname">d</td><td>日期 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae9c0e27b7bd49bdb84d7a8a4f457bbfb" name="ae9c0e27b7bd49bdb84d7a8a4f457bbfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c0e27b7bd49bdb84d7a8a4f457bbfb">&#9670;&#160;</a></span>AddDays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a> cse::Epoch::CSEDate::AddDays </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ndays</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算指定天数后的新日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ndays</td><td>增加的天数（负数为减少） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>计算后的新日期对象 </dd></dl>
+
+</div>
+</div>
+<a id="a1f15f4e31777baf0f2aca4e8cf0c221e" name="a1f15f4e31777baf0f2aca4e8cf0c221e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f15f4e31777baf0f2aca4e8cf0c221e">&#9670;&#160;</a></span>AddMonths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a> cse::Epoch::CSEDate::AddMonths </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nmonths</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算指定月数后的新日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nmonths</td><td>增加的月数（负数为减少） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>计算后的新日期对象 </dd></dl>
+
+</div>
+</div>
+<a id="ac3d3406dccd4a85ad1b7ea6306c29883" name="ac3d3406dccd4a85ad1b7ea6306c29883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d3406dccd4a85ad1b7ea6306c29883">&#9670;&#160;</a></span>AddYears()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a> cse::Epoch::CSEDate::AddYears </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nyears</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算指定年数后的新日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nyears</td><td>增加的年数（负数为减少） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>计算后的新日期对象 </dd></dl>
+
+</div>
+</div>
+<a id="a7a5a6eceb5d452857a284bf056395e57" name="a7a5a6eceb5d452857a284bf056395e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a5a6eceb5d452857a284bf056395e57">&#9670;&#160;</a></span>CurrentDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a> cse::Epoch::CSEDate::CurrentDate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前系统日期 </p>
+<dl class="section return"><dt>返回</dt><dd>当前日期对象 </dd></dl>
+
+</div>
+</div>
+<a id="a9f513c31d54b0ff8e92e75aefc97d2ad" name="a9f513c31d54b0ff8e92e75aefc97d2ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f513c31d54b0ff8e92e75aefc97d2ad">&#9670;&#160;</a></span>day()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::day </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取日期 </p>
+
+</div>
+</div>
+<a id="ae5a129179c71e469fbdcb2721020fe10" name="ae5a129179c71e469fbdcb2721020fe10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a129179c71e469fbdcb2721020fe10">&#9670;&#160;</a></span>DayOfWeek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::DayOfWeek </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取星期几 </p>
+<dl class="section return"><dt>返回</dt><dd>星期数：0-星期日,1-星期一,...,6-星期六 </dd></dl>
+
+</div>
+</div>
+<a id="a21ce4ce69a8b994b624386fa48b5fb58" name="a21ce4ce69a8b994b624386fa48b5fb58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ce4ce69a8b994b624386fa48b5fb58">&#9670;&#160;</a></span>FromJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a> cse::Epoch::CSEDate::FromJulianDay </td>
+          <td>(</td>
+          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>JD</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从儒略日转换到日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">JD</td><td>儒略日 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>转换后的日期对象 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>此函数来自Stellarium </dd></dl>
+
+</div>
+</div>
+<a id="a831da9f37cab8e6574324c9f07da73c8" name="a831da9f37cab8e6574324c9f07da73c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831da9f37cab8e6574324c9f07da73c8">&#9670;&#160;</a></span>GetDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::Epoch::CSEDate::GetDate </td>
+          <td>(</td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>提取日期分量 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">year</td><td>年份输出指针（可空） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">month</td><td>月份输出指针（可空） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">day</td><td>日期输出指针（可空） </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac3673de2b71641a97db89a2cafe3c643" name="ac3673de2b71641a97db89a2cafe3c643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3673de2b71641a97db89a2cafe3c643">&#9670;&#160;</a></span>IsLeap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::Epoch::CSEDate::IsLeap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查当前年份是否为闰年 </p>
+<dl class="section return"><dt>返回</dt><dd>true-闰年, false-平年 </dd></dl>
+
+</div>
+</div>
+<a id="af51548fe072e292af023a711700aced1" name="af51548fe072e292af023a711700aced1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af51548fe072e292af023a711700aced1">&#9670;&#160;</a></span>IsLeap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool cse::Epoch::CSEDate::IsLeap </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>year</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>静态闰年检查 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>待检查年份 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true-闰年, false-平年 </dd></dl>
+
+</div>
+</div>
+<a id="ac00c09077b4406fb05deb18e8d3c56d5" name="ac00c09077b4406fb05deb18e8d3c56d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00c09077b4406fb05deb18e8d3c56d5">&#9670;&#160;</a></span>IsNull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::Epoch::CSEDate::IsNull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查日期是否为空值 </p>
+<dl class="section return"><dt>返回</dt><dd>true-为空, false-非空 </dd></dl>
+
+</div>
+</div>
+<a id="a36e12d0b189f85c98b1dfe273837160d" name="a36e12d0b189f85c98b1dfe273837160d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36e12d0b189f85c98b1dfe273837160d">&#9670;&#160;</a></span>IsValid() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::Epoch::CSEDate::IsValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查日期是否有效 </p>
+<dl class="section return"><dt>返回</dt><dd>true-有效, false-无效 </dd></dl>
+
+</div>
+</div>
+<a id="a8ac6fd2d0b3852306a676512ab4e574a" name="a8ac6fd2d0b3852306a676512ab4e574a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac6fd2d0b3852306a676512ab4e574a">&#9670;&#160;</a></span>IsValid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool cse::Epoch::CSEDate::IsValid </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日期有效性检查 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>年份 </td></tr>
+    <tr><td class="paramname">month</td><td>月份 </td></tr>
+    <tr><td class="paramname">day</td><td>日期 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true-有效, false-无效 </dd></dl>
+
+</div>
+</div>
+<a id="ab5cae593ea03f9ce3fcc8de0221f2b22" name="ab5cae593ea03f9ce3fcc8de0221f2b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cae593ea03f9ce3fcc8de0221f2b22">&#9670;&#160;</a></span>month()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::month </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取月份 </p>
+
+</div>
+</div>
+<a id="a289af3dbb4a7a45b17ea2810b10a9fa4" name="a289af3dbb4a7a45b17ea2810b10a9fa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289af3dbb4a7a45b17ea2810b10a9fa4">&#9670;&#160;</a></span>SetDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::Epoch::CSEDate::SetDate </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>year</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>month</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>day</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置日期 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>年份 </td></tr>
+    <tr><td class="paramname">month</td><td>月份 </td></tr>
+    <tr><td class="paramname">day</td><td>日期 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>true-设置成功, false-设置失败 </dd></dl>
+
+</div>
+</div>
+<a id="a0111a12a02c5101c3b393871cf4d4d56" name="a0111a12a02c5101c3b393871cf4d4d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0111a12a02c5101c3b393871cf4d4d56">&#9670;&#160;</a></span>ToJulianDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 cse::Epoch::CSEDate::ToJulianDay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>转换为儒略日（已废弃） </p>
+<dl class="deprecated"><dt><b><a class="el" href="../../da/d58/deprecated.html#_deprecated000001">弃用</a></b></dt><dd>建议使用 GetJDFromDate 替代 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>1582-10-15前使用儒略历 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>儒略日计数 </dd></dl>
+
+</div>
+</div>
+<a id="a6ca7b980005422a08d63bdc3a2921790" name="a6ca7b980005422a08d63bdc3a2921790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca7b980005422a08d63bdc3a2921790">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ustring cse::Epoch::CSEDate::ToString </td>
+          <td>(</td>
+          <td class="paramtype">cstring</td>          <td class="paramname"><span class="paramname"><em>_Fmt</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;{}.{:02}.{:02}&quot;</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>日期转字符串 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_Fmt</td><td>格式字符串（默认"{}.{:02}.{:02}"） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>格式化后的日期字符串 </dd></dl>
+
+</div>
+</div>
+<a id="a5a6277ae1fe03c92b4bae0138884aef5" name="a5a6277ae1fe03c92b4bae0138884aef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6277ae1fe03c92b4bae0138884aef5">&#9670;&#160;</a></span>year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::year </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取年份 </p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="abf8baa0daf54d265751563f0fdf5c63b" name="abf8baa0daf54d265751563f0fdf5c63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8baa0daf54d265751563f0fdf5c63b">&#9670;&#160;</a></span>days</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::days = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>日期，有效范围取决于月份(1~28/29/30/31) </p>
+
+</div>
+</div>
+<a id="a1bfc1ce0a51fdd3b6c722cbbd994bdaa" name="a1bfc1ce0a51fdd3b6c722cbbd994bdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bfc1ce0a51fdd3b6c722cbbd994bdaa">&#9670;&#160;</a></span>months</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::months = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>月份，有效范围：1(一月)~12(十二月) </p>
+
+</div>
+</div>
+<a id="afac969bdc781c086f751be7d19f2052d" name="afac969bdc781c086f751be7d19f2052d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac969bdc781c086f751be7d19f2052d">&#9670;&#160;</a></span>years</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cse::Epoch::CSEDate::years = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>年份，允许所有有效值 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/d5d/namespacecse.html">cse</a></li><li class="navelem"><a class="el" href="../../d7/dc9/namespacecse_1_1_epoch.html">Epoch</a></li><li class="navelem"><a class="el" href="../../d7/d6d/classcse_1_1_epoch_1_1_c_s_e_date.html">CSEDate</a></li>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

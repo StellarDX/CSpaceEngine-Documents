@@ -1,0 +1,3 @@
+[submodule "Styles/DOxyAwesome"]
+	path = Styles/DOxyAwesome
+	url = https://github.com/StellarDX/doxygen-awesome-css-StellarDX-Fork.git

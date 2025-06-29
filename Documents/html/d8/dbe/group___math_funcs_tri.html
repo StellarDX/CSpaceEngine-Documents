@@ -1,0 +1,1784 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: 三角函数</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d8/dbe/group___math_funcs_tri.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">三角函数<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d4/d7d/group___math_funcs.html">数学函数</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>三角函数包含sin，cos，tan，ctg，sec，csc六个函数及其反函数，同时包含基于角度和弧度的。  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">角度单位转换  <a href="../../db/d28/struct_angle.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga9d45b19b174d7d393e8cc560ebc46044" id="r_ga9d45b19b174d7d393e8cc560ebc46044"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9d45b19b174d7d393e8cc560ebc46044">sin</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:ga9d45b19b174d7d393e8cc560ebc46044"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算正弦函数  <br /></td></tr>
+<tr class="separator:ga9d45b19b174d7d393e8cc560ebc46044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed7f1e82645c1e7b71c16aad888b2b64" id="r_gaed7f1e82645c1e7b71c16aad888b2b64"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed7f1e82645c1e7b71c16aad888b2b64">sinc</a> (complex64 _X)</td></tr>
+<tr class="separator:gaed7f1e82645c1e7b71c16aad888b2b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6f138947984228fa8792a48086d27d" id="r_gabc6f138947984228fa8792a48086d27d"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:gabc6f138947984228fa8792a48086d27d"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gabc6f138947984228fa8792a48086d27d">sin</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:gabc6f138947984228fa8792a48086d27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的正弦值  <br /></td></tr>
+<tr class="separator:gabc6f138947984228fa8792a48086d27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e4f6d17312cadd8da74fea9e30b8748" id="r_ga1e4f6d17312cadd8da74fea9e30b8748"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1e4f6d17312cadd8da74fea9e30b8748">cos</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:ga1e4f6d17312cadd8da74fea9e30b8748"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算余弦函数  <br /></td></tr>
+<tr class="separator:ga1e4f6d17312cadd8da74fea9e30b8748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97a8084e18a9450370715349fb9167d6" id="r_ga97a8084e18a9450370715349fb9167d6"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga97a8084e18a9450370715349fb9167d6">cosc</a> (complex64 _X)</td></tr>
+<tr class="separator:ga97a8084e18a9450370715349fb9167d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec837c628261b896b5ce38f9f86c98e1" id="r_gaec837c628261b896b5ce38f9f86c98e1"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:gaec837c628261b896b5ce38f9f86c98e1"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaec837c628261b896b5ce38f9f86c98e1">cos</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:gaec837c628261b896b5ce38f9f86c98e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的余弦值  <br /></td></tr>
+<tr class="separator:gaec837c628261b896b5ce38f9f86c98e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc997a25f8f3ce12d8a2378f70b0133e" id="r_gadc997a25f8f3ce12d8a2378f70b0133e"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadc997a25f8f3ce12d8a2378f70b0133e">tan</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:gadc997a25f8f3ce12d8a2378f70b0133e"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算正切函数  <br /></td></tr>
+<tr class="separator:gadc997a25f8f3ce12d8a2378f70b0133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a196ed55d74078accf2887904abe043" id="r_ga5a196ed55d74078accf2887904abe043"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5a196ed55d74078accf2887904abe043">tanc</a> (complex64 _X)</td></tr>
+<tr class="separator:ga5a196ed55d74078accf2887904abe043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65caf908b6512af5cb615f93e4fe2cc8" id="r_ga65caf908b6512af5cb615f93e4fe2cc8"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga65caf908b6512af5cb615f93e4fe2cc8"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga65caf908b6512af5cb615f93e4fe2cc8">tan</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga65caf908b6512af5cb615f93e4fe2cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的正切值  <br /></td></tr>
+<tr class="separator:ga65caf908b6512af5cb615f93e4fe2cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4c806706c52c0122f32afb12adebd28" id="r_gaa4c806706c52c0122f32afb12adebd28"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa4c806706c52c0122f32afb12adebd28">ctg</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:gaa4c806706c52c0122f32afb12adebd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算余切函数  <br /></td></tr>
+<tr class="separator:gaa4c806706c52c0122f32afb12adebd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacea1c0ea3d8f377508603e8df7f301fc" id="r_gacea1c0ea3d8f377508603e8df7f301fc"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacea1c0ea3d8f377508603e8df7f301fc">ctgc</a> (complex64 _X)</td></tr>
+<tr class="separator:gacea1c0ea3d8f377508603e8df7f301fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8920eae6f1361993feaf02655644435e" id="r_ga8920eae6f1361993feaf02655644435e"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga8920eae6f1361993feaf02655644435e"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga8920eae6f1361993feaf02655644435e">ctg</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga8920eae6f1361993feaf02655644435e"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的余切值  <br /></td></tr>
+<tr class="separator:ga8920eae6f1361993feaf02655644435e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac026cc4578114ee1c2f8faeac5521dac" id="r_gac026cc4578114ee1c2f8faeac5521dac"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac026cc4578114ee1c2f8faeac5521dac">sec</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:gac026cc4578114ee1c2f8faeac5521dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算正割函数  <br /></td></tr>
+<tr class="separator:gac026cc4578114ee1c2f8faeac5521dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga507e422bbdb825f44217aee1571a8532" id="r_ga507e422bbdb825f44217aee1571a8532"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga507e422bbdb825f44217aee1571a8532">secc</a> (complex64 _X)</td></tr>
+<tr class="separator:ga507e422bbdb825f44217aee1571a8532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c0ed248c701e8d4850de9d9c62f3f9f" id="r_ga4c0ed248c701e8d4850de9d9c62f3f9f"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga4c0ed248c701e8d4850de9d9c62f3f9f"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4c0ed248c701e8d4850de9d9c62f3f9f">sec</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga4c0ed248c701e8d4850de9d9c62f3f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的正割值  <br /></td></tr>
+<tr class="separator:ga4c0ed248c701e8d4850de9d9c62f3f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4c5a652ef5b026d56f0eaa1ef2026a8" id="r_gad4c5a652ef5b026d56f0eaa1ef2026a8"><td class="memItemLeft" align="right" valign="top">float64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad4c5a652ef5b026d56f0eaa1ef2026a8">csc</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:gad4c5a652ef5b026d56f0eaa1ef2026a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算余割函数  <br /></td></tr>
+<tr class="separator:gad4c5a652ef5b026d56f0eaa1ef2026a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeab60718523c9d88a96ab307c5463bb7" id="r_gaeab60718523c9d88a96ab307c5463bb7"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeab60718523c9d88a96ab307c5463bb7">cscc</a> (complex64 _X)</td></tr>
+<tr class="separator:gaeab60718523c9d88a96ab307c5463bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e1db7c456bd9f869d4050b0e1b121e0" id="r_ga7e1db7c456bd9f869d4050b0e1b121e0"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga7e1db7c456bd9f869d4050b0e1b121e0"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga7e1db7c456bd9f869d4050b0e1b121e0">csc</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga7e1db7c456bd9f869d4050b0e1b121e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的余割值  <br /></td></tr>
+<tr class="separator:ga7e1db7c456bd9f869d4050b0e1b121e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3451721e4f109c636797bf6952eb543e" id="r_ga3451721e4f109c636797bf6952eb543e"><td class="memItemLeft" align="right" valign="top">int64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3451721e4f109c636797bf6952eb543e">Quadrant</a> (<a class="el" href="../../db/d28/struct_angle.html">Angle</a> _X)</td></tr>
+<tr class="memdesc:ga3451721e4f109c636797bf6952eb543e"><td class="mdescLeft">&#160;</td><td class="mdescRight">确定角度所在象限  <br /></td></tr>
+<tr class="separator:ga3451721e4f109c636797bf6952eb543e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf723e93ea324d28786456bfb386462f0" id="r_gaf723e93ea324d28786456bfb386462f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf723e93ea324d28786456bfb386462f0">Arctan2</a> (float64 _Y, float64 _X)</td></tr>
+<tr class="memdesc:gaf723e93ea324d28786456bfb386462f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算坐标点的反正切值  <br /></td></tr>
+<tr class="separator:gaf723e93ea324d28786456bfb386462f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadaae27d48fed7c80c5e93267dae0e9bd" id="r_gadaae27d48fed7c80c5e93267dae0e9bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadaae27d48fed7c80c5e93267dae0e9bd">arcsin</a> (float64 _X)</td></tr>
+<tr class="memdesc:gadaae27d48fed7c80c5e93267dae0e9bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反正弦函数  <br /></td></tr>
+<tr class="separator:gadaae27d48fed7c80c5e93267dae0e9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea4503a9217b8c4d2f527d547a4342f4" id="r_gaea4503a9217b8c4d2f527d547a4342f4"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea4503a9217b8c4d2f527d547a4342f4">arcsinc</a> (complex64 _X, int _SqrtIdx=0, int64 K_OFFSET=0)</td></tr>
+<tr class="memdesc:gaea4503a9217b8c4d2f527d547a4342f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算复数的反正弦  <br /></td></tr>
+<tr class="separator:gaea4503a9217b8c4d2f527d547a4342f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b1544acd93e071f28a83b7bcec7fb9e" id="r_ga2b1544acd93e071f28a83b7bcec7fb9e"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga2b1544acd93e071f28a83b7bcec7fb9e"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2b1544acd93e071f28a83b7bcec7fb9e">arcsin</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga2b1544acd93e071f28a83b7bcec7fb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的反正弦  <br /></td></tr>
+<tr class="separator:ga2b1544acd93e071f28a83b7bcec7fb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab6e536c8968c2089b60f7c0d598cac3" id="r_gaab6e536c8968c2089b60f7c0d598cac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab6e536c8968c2089b60f7c0d598cac3">arccos</a> (float64 _X)</td></tr>
+<tr class="memdesc:gaab6e536c8968c2089b60f7c0d598cac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反余弦函数  <br /></td></tr>
+<tr class="separator:gaab6e536c8968c2089b60f7c0d598cac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8816c04bef23a05150e6f995b9b69940" id="r_ga8816c04bef23a05150e6f995b9b69940"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8816c04bef23a05150e6f995b9b69940">arccosc</a> (complex64 _X, int _SqrtIdx=0, int64 K_OFFSET=0)</td></tr>
+<tr class="memdesc:ga8816c04bef23a05150e6f995b9b69940"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算复数的反余弦  <br /></td></tr>
+<tr class="separator:ga8816c04bef23a05150e6f995b9b69940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4eebc835f966a68c66aba6a310faba16" id="r_ga4eebc835f966a68c66aba6a310faba16"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga4eebc835f966a68c66aba6a310faba16"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4eebc835f966a68c66aba6a310faba16">arccos</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga4eebc835f966a68c66aba6a310faba16"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的反余弦  <br /></td></tr>
+<tr class="separator:ga4eebc835f966a68c66aba6a310faba16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39cbd0c3528a85c57330ef26e1f7a9ac" id="r_ga39cbd0c3528a85c57330ef26e1f7a9ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39cbd0c3528a85c57330ef26e1f7a9ac">arctan</a> (float64 _X)</td></tr>
+<tr class="memdesc:ga39cbd0c3528a85c57330ef26e1f7a9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反正切函数  <br /></td></tr>
+<tr class="separator:ga39cbd0c3528a85c57330ef26e1f7a9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae54db0cce6e9b212a899d1b984a79d62" id="r_gae54db0cce6e9b212a899d1b984a79d62"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae54db0cce6e9b212a899d1b984a79d62">arctanc</a> (complex64 _X, int64 K_OFFSET=0)</td></tr>
+<tr class="memdesc:gae54db0cce6e9b212a899d1b984a79d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算复数的反正切  <br /></td></tr>
+<tr class="separator:gae54db0cce6e9b212a899d1b984a79d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bf2a1407f0183f141b8955cf249b908" id="r_ga6bf2a1407f0183f141b8955cf249b908"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga6bf2a1407f0183f141b8955cf249b908"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga6bf2a1407f0183f141b8955cf249b908">arctan</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="memdesc:ga6bf2a1407f0183f141b8955cf249b908"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量各元素的反正切  <br /></td></tr>
+<tr class="separator:ga6bf2a1407f0183f141b8955cf249b908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14a06ed7e10488c3165768da2455aba1" id="r_ga14a06ed7e10488c3165768da2455aba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga14a06ed7e10488c3165768da2455aba1">arcctg</a> (float64 _X)</td></tr>
+<tr class="memdesc:ga14a06ed7e10488c3165768da2455aba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反余切函数  <br /></td></tr>
+<tr class="separator:ga14a06ed7e10488c3165768da2455aba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadec5d60153dfb29e0ba5effd1f39fe9c" id="r_gadec5d60153dfb29e0ba5effd1f39fe9c"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadec5d60153dfb29e0ba5effd1f39fe9c">arcctgc</a> (complex64 _X, int64 K_OFFSET=0)</td></tr>
+<tr class="separator:gadec5d60153dfb29e0ba5effd1f39fe9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72ef0ba492c5979e9cf42ebfeaa5c8d9" id="r_ga72ef0ba492c5979e9cf42ebfeaa5c8d9"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga72ef0ba492c5979e9cf42ebfeaa5c8d9"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga72ef0ba492c5979e9cf42ebfeaa5c8d9">arcctg</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="separator:ga72ef0ba492c5979e9cf42ebfeaa5c8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08edeb07c8dfaed548b2152b12490026" id="r_ga08edeb07c8dfaed548b2152b12490026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga08edeb07c8dfaed548b2152b12490026">arcsec</a> (float64 _X)</td></tr>
+<tr class="memdesc:ga08edeb07c8dfaed548b2152b12490026"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反正割函数  <br /></td></tr>
+<tr class="separator:ga08edeb07c8dfaed548b2152b12490026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga021cd9e4cd3bf9dc5aec3ffa033415f9" id="r_ga021cd9e4cd3bf9dc5aec3ffa033415f9"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga021cd9e4cd3bf9dc5aec3ffa033415f9">arcsecc</a> (complex64 _X, int _SqrtIdx=0, int64 K_OFFSET=0)</td></tr>
+<tr class="separator:ga021cd9e4cd3bf9dc5aec3ffa033415f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdc015900cae8d2fee880636195d2123" id="r_gacdc015900cae8d2fee880636195d2123"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:gacdc015900cae8d2fee880636195d2123"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gacdc015900cae8d2fee880636195d2123">arcsec</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="separator:gacdc015900cae8d2fee880636195d2123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga258c7c6b98bbfbf8ac117867cb45ee03" id="r_ga258c7c6b98bbfbf8ac117867cb45ee03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga258c7c6b98bbfbf8ac117867cb45ee03">arccsc</a> (float64 _X)</td></tr>
+<tr class="memdesc:ga258c7c6b98bbfbf8ac117867cb45ee03"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算反正割函数  <br /></td></tr>
+<tr class="separator:ga258c7c6b98bbfbf8ac117867cb45ee03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ba83d78a77d8f8f719035a0460470bf" id="r_ga6ba83d78a77d8f8f719035a0460470bf"><td class="memItemLeft" align="right" valign="top">complex64 __cdecl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ba83d78a77d8f8f719035a0460470bf">arccscc</a> (complex64 _X, int _SqrtIdx=0, int64 K_OFFSET=0)</td></tr>
+<tr class="separator:ga6ba83d78a77d8f8f719035a0460470bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91d062400641967775544926852f09d9" id="r_ga91d062400641967775544926852f09d9"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ga91d062400641967775544926852f09d9"><td class="memTemplItemLeft" align="right" valign="top">fvec&lt; N &gt; __cdecl&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga91d062400641967775544926852f09d9">arccsc</a> (fvec&lt; N &gt; _X)</td></tr>
+<tr class="separator:ga91d062400641967775544926852f09d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>三角函数包含sin，cos，tan，ctg，sec，csc六个函数及其反函数，同时包含基于角度和弧度的。 </p>
+<p><b>以下内容为AI智能解析，仅供参考</b></p>
+<p>角度三角函数来自OpenCV，核心原理是 <b>查表法结合泰勒级数展开</b> ，下面逐层解析其实现机制：</p>
+<h3><a class="anchor" id="autotoc_md1-基础数学原理"></a>
+1. <b>基础数学原理</b></h3>
+<ul>
+<li><b>角度归一化</b> ：输入角度先被归一化到<code>[0°, 360°)</code>区间： <div class="fragment"><div class="line"><span class="keywordflow">if</span> (_X &gt; 360)</div>
+<div class="line">{</div>
+<div class="line">    float64 fDec = _X - (uint64)_X; <span class="comment">// 分离整数和小数部分</span></div>
+<div class="line">    _X = (uint64)_X % 360 + fDec;   <span class="comment">// 取模后保留小数</span></div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>符号处理</b> ：正弦函数处理负角度时记录符号，余弦函数直接取绝对值（因余弦为偶函数）。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2-核心数据结构预计算正弦表"></a>
+2. <b>核心数据结构：预计算正弦表</b></h3>
+<div class="fragment"><div class="line"><span class="keyword">const</span> float64 __CV_SinCos_Tab[64] = { ... };</div>
+</div><!-- fragment --><ul>
+<li>存储了**64个等分点**的正弦值，覆盖<code>[0°, 360°)</code>区间（步长5.625°）。</li>
+<li>索引<code>n</code>对应角度：<code>θ = (360/64) * n</code>。</li>
+<li>余弦通过索引变换获取：<code>cos(θ) = sin(90° - θ)</code> → <code>IndexC = (16 - IndexS) &amp; 63</code>。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md3-插值计算泰勒级数展开"></a>
+3. <b>插值计算（泰勒级数展开）</b></h3>
+<h4><a class="anchor" id="关键变量"></a>
+关键变量：</h4>
+<ul>
+<li><code>k1 = 64 / 360.0</code>：角度→表索引的转换因子。</li>
+<li><code>k2 = 2π / 64</code>：表步长对应的弧度值（因三角函数需弧度计算）。</li>
+<li><b>分离整数与小数</b> ： <div class="fragment"><div class="line">float64 t = _X * k1;     <span class="comment">// 转换为表位置</span></div>
+<div class="line">int64 it = std::llround(t); <span class="comment">// 四舍五入取整</span></div>
+<div class="line">t -= it;                  <span class="comment">// 小数部分 t ∈ [-0.5, 0.5]</span></div>
+</div><!-- fragment --></li>
+</ul>
+<h4><a class="anchor" id="泰勒级数系数"></a>
+泰勒级数系数：</h4>
+<ul>
+<li><b>正弦增量</b> <code>sinb</code> 的系数（基于 <code>sin(x) ≈ x - x³/3! + x⁵/5! - ...</code>）： <div class="fragment"><div class="line">As0 = +2.755e-6 * k2^9, As1 = -1.984e-4 * k2^7, </div>
+<div class="line">As2 = +0.00833 * k2^5,   As3 = -0.1667 * k2^3, </div>
+<div class="line">As4 = +1.0 * k2</div>
+</div><!-- fragment --></li>
+<li><b>余弦增量</b> <code>cosb</code> 的系数（基于 <code>cos(x) ≈ 1 - x²/2! + x⁴/4! - ...</code>）： <div class="fragment"><div class="line">Ac0 = +2.480e-5 * k2^8, Ac1 = -0.001388 * k2^6, </div>
+<div class="line">Ac2 = +0.04167 * k2^4,   Ac3 = -0.5 * k2^2, </div>
+<div class="line">Ac4 = +1.0</div>
+</div><!-- fragment --></li>
+</ul>
+<h4><a class="anchor" id="增量计算"></a>
+增量计算：</h4>
+<div class="fragment"><div class="line"><span class="comment">// 正弦增量：sinb = ((((As0*t² + As1)*t² + As2)*t² + As3)*t² + As4)*t</span></div>
+<div class="line"><span class="comment">// 余弦增量：cosb = (((Ac0*t² + Ac1)*t² + Ac2)*t² + Ac3)*t² + Ac4</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md4-和角公式合并结果"></a>
+4. <b>和角公式合并结果</b></h3>
+<ul>
+<li><b>正弦</b> ：<code>sin(a + b) = sin(a)cos(b) + cos(a)sin(b)</code> <br  />
+ <div class="fragment"><div class="line">result = sina * cosb + cosa * sinb;</div>
+</div><!-- fragment --></li>
+<li><b>余弦</b> ：<code>cos(a + b) = cos(a)cos(b) - sin(a)sin(b)</code> <br  />
+ <div class="fragment"><div class="line">result = cosa * cosb - sina * sinb;</div>
+</div><!-- fragment --></li>
+<li><b>正切</b> ：直接复用 <code>tan(θ) = sin(θ)/cos(θ)</code>。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5-设计优势与考量"></a>
+5. <b>设计优势与考量</b></h3>
+<ol type="1">
+<li><b>精度与速度平衡</b> ：<ul>
+<li>查表法快速获取主体值（<code>a</code>部分）。</li>
+<li>泰勒展开精细计算偏移量（<code>b</code>部分），5阶展开满足<code>double</code>精度需求。</li>
+</ul>
+</li>
+<li><b>周期性优化</b> ：<ul>
+<li>利用<code>64=2^6</code>特性，用位运算<code>&amp; 63</code>替代取模提升效率。</li>
+</ul>
+</li>
+<li><b>内存效率</b> ：<ul>
+<li>仅存储正弦表，余弦通过索引变换复用。</li>
+</ul>
+</li>
+<li><b>范围处理</b> ：<ul>
+<li>大角度取模、负角度符号处理，覆盖全输入范围。</li>
+</ul>
+</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md6-潜在改进点"></a>
+6. <b>潜在改进点</b></h3>
+<ul>
+<li><b>正切函数的稳健性</b> ：未处理<code>cos(θ)=0</code>的边界情况（如θ=90°）。</li>
+<li><b>常量复用</b> ：<code>k2</code>及相关系数在<code>sin/cos</code>中重复定义，可全局共享。</li>
+<li><b>SIMD优化</b> ：适合并行计算场景（如同时计算多个角度）。</li>
+</ul>
+<h3><a class="anchor" id="总结-5"></a>
+总结</h3>
+<p>该实现通过 <b>预计算正弦表+泰勒级数插值</b> ，高效融合了查表的快速性与级数的精确性，是经典数值计算在工程实践中的典型应用。</p>
+<hr  />
+<p><b>以下内容为AI智能解析，仅供参考</b></p>
+<p>弧度正弦（<code>sin</code>）和余弦（<code>cos</code>）函数采用IBM的方案。以下是其核心原理的解析：</p>
+<h3><a class="anchor" id="autotoc_md1-范围缩小range-reduction"></a>
+1. <b>范围缩小（Range Reduction）</b></h3>
+<ul>
+<li><b>目标</b> ：将任意大的输入角度缩小到 \([- \pi/4, \pi/4]\) 区间，便于多项式近似。</li>
+<li><b>方法</b> ：<ul>
+<li><b>中等范围</b> （|x| &lt; 105,414,350）： <br  />
+ 使用公式 \( x = n \cdot \pi/2 + r \)，其中 \( n \) 是整数， \( r \in [-\pi/4, \pi/4] \)。 <br  />
+ 通过预计算的 \(\pi/2\) 高精度近似值（<code>mp1</code>, <code>mp2</code>）实现快速缩减。</li>
+<li><b>大范围</b> （|x| ≥ 105,414,350）： <br  />
+ 使用扩展精度算法和 \(2/\pi\) 的查找表（<code>toverp</code>）计算 \( n \) 和余数 \( r \)，确保高精度。</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2-核心计算kernel-functions"></a>
+2. <b>核心计算（Kernel Functions）</b></h3>
+<ul>
+<li><b>小角度处理</b> （|x| &lt; 0.126）： <br  />
+ 直接使用泰勒级数近似：   <p class="formulaDsp">
+\[
+       \sin(x) \approx x + x^3 \cdot s_1 + x^5 \cdot s_2 + \cdots
+       \]
+</p>
+</li>
+<li><b>一般角度处理</b> ：<ul>
+<li><b>查表结合多项式</b> ： <br  />
+ 通过查找表（<code>__IBM_sincostab</code>）获取基础点的 \(\sin\) 和 \(\cos\) 值及其高阶修正项（<code>sn</code>, <code>ssn</code>, <code>cs</code>, <code>ccs</code>）。</li>
+<li><b>泰勒修正</b> ： <br  />
+ 对偏移量 \( a \) 进行低阶泰勒展开（如 \(\sin(a) \approx a + a^3 \cdot \text{sn3} + \cdots\)）。</li>
+<li><b>合并结果</b> ： <br  />
+ 使用三角恒等式组合查表值和多式结果，例如：   <p class="formulaDsp">
+\[
+       \sin(x + a) = \sin(x)\cos(a) + \cos(x)\sin(a)
+       \]
+</p>
+ 通过查表值和多项式计算 \(\sin(a)\)、 \(\cos(a)\)，再合并。</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md3-查表优化table-lookup"></a>
+3. <b>查表优化（Table Lookup）</b></h3>
+<ul>
+<li><b>表结构</b> ：<code>__IBM_sincostab</code> 包含 440 个条目，每个条目存储：<ul>
+<li>\(\sin\) 值（<code>sn</code>）</li>
+<li>\(\sin\) 的高阶修正（<code>ssn</code>）</li>
+<li>\(\cos\) 值（<code>cs</code>）</li>
+<li>\(\cos\) 的高阶修正（<code>ccs</code>）</li>
+</ul>
+</li>
+<li><b>索引计算</b> ：通过输入值的高位直接计算索引，快速定位表项。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md4-特殊处理"></a>
+4. <b>特殊处理</b></h3>
+<ul>
+<li><b>极小输入</b> （|x| &lt; 2^(-27)）： <br  />
+ \(\sin(x) \approx x\)， \(\cos(x) \approx 1\)。</li>
+<li><b>大输入</b> （|x| &gt; 2^1024)： <br  />
+ 返回 <code>NaN</code>。</li>
+<li><b>象限处理</b> ： <br  />
+ 根据范围缩小后的 \(n \mod 4\) 决定结果符号和使用 \(\sin\) 或 \(\cos\)。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5-精度保障"></a>
+5. <b>精度保障</b></h3>
+<ul>
+<li><b>双精度扩展</b> ：计算中使用双精度数对（如 \(a + aa\)）表示中间值，减少舍入误差。</li>
+<li><b>修正项</b> ：所有多项式展开和查表结果均包含高阶修正项（如 <code>ssn</code>, <code>ccs</code>），确保 ULP（Unit in Last Place）误差 &lt; 0.55。</li>
+<li><b>融合运算</b> ：关键步骤（如 \(x - (u - \text{big})\)）使用融合乘加（FMA）风格计算，避免中间舍入。</li>
+</ul>
+<h3><a class="anchor" id="关键函数"></a>
+关键函数</h3>
+<ul>
+<li><code>__IBM_branred()</code>：大范围缩小。</li>
+<li><code>__IBM_reduce_sincos()</code>：中范围缩小。</li>
+<li><code>__IBM_Kernal_sin()</code>/<code>__IBM_Kernal_cos()</code>：核心计算。</li>
+<li><code>__IBM_SIN64F()</code>/<code>__IBM_COS64F()</code>：外部接口，处理所有情况。</li>
+</ul>
+<h3><a class="anchor" id="总结-6"></a>
+总结</h3>
+<p>此实现通过 <b>范围缩小</b> 、 <b>查表结合多项式近似</b> 和 <b>扩展精度计算</b> ，在保证高效率的同时实现了高精度（&lt; 0.55 ULP）。其设计充分利用了双精度浮点特性，尤其适合科学计算等对精度要求严格的场景。</p>
+<hr  />
+<p><b>以下内容为AI智能解析，仅供参考</b></p>
+<p>弧度正切（<code>tan</code>）函数采用IBM的方案。其核心原理基于 <b>分段近似</b> 和 <b>范围缩减</b> 技术，结合多项式展开和查表法来平衡精度与性能。以下是其工作原理的详细解析：</p>
+<h3><a class="anchor" id="autotoc_md1-输入处理与特殊值"></a>
+<b>1. 输入处理与特殊值</b></h3>
+<ul>
+<li><b>特殊值处理</b> ：</li>
+<li>若输入为 <code>±INF</code> 或 <code>NaN</code>，返回 <code>x - x</code>（得到 <code>NaN</code>）。</li>
+<li>使用 <code>w = fabs(x)</code> 获取输入的绝对值。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2-分段处理策略"></a>
+<b>2. 分段处理策略</b></h3>
+<p>根据 <code>w</code> 的大小分为多个区间，采用不同的计算方法：</p>
+<h4><a class="anchor" id="i-极小区间w--1259e-8"></a>
+<b>(I) 极小区间：<code>w ≤ 1.259e-8</code></b></h4>
+<ul>
+<li><b>原理</b> ：当 <code>x</code> 极小时，<code>tan(x) ≈ x</code>（泰勒展开一阶近似）。</li>
+<li><b>实现</b> ：直接返回 <code>x</code>。</li>
+</ul>
+<h4><a class="anchor" id="ii-小区间1259e-8--w--00608"></a>
+<b>(II) 小区间：<code>1.259e-8 &lt; w ≤ 0.0608</code></b></h4>
+<ul>
+<li><b>原理</b> ：使用 <b>5 次多项式</b> 逼近 <code>tan(x)</code>。</li>
+<li><b>多项式形式</b> ： <div class="fragment"><div class="line">t2 = x^3 * (d3 + x^2 * (d5 + x^2 * (d7 + x^2 * (d9 + x^2 * d11))))</div>
+<div class="line">result = x + t2</div>
+</div><!-- fragment --></li>
+<li><b>系数</b> ：<code>d3</code>, <code>d5</code>, <code>d7</code>, <code>d9</code>, <code>d11</code> 是预先计算的泰勒级数系数。</li>
+</ul>
+<h4><a class="anchor" id="iii-中等区间00608--w--0787"></a>
+<b>(III) 中等区间：<code>0.0608 &lt; w ≤ 0.787</code></b></h4>
+<ul>
+<li><b>原理</b> ： <b>查表法 + 多项式修正</b> 。</li>
+<li><b>步骤</b> ：</li>
+</ul>
+<ol type="1">
+<li><b>查表</b> ：根据 <code>w</code> 计算索引 <code>i</code>，从表 <code>__IBM_TANF64_XFGTBL</code> 中获取：<ul>
+<li><code>xi</code>：基准点</li>
+<li><code>fi</code>：<code>tan(xi)</code> 的近似值</li>
+<li><code>gi</code>：辅助值（通常为 <code>1/fi</code>）</li>
+</ul>
+</li>
+<li><b>计算偏移</b> ：<code>z = w - xi</code>。</li>
+<li><b>多项式修正</b> ：<code>pz = z + z^3 * (e0 + e1 * z^2)</code>（修正 <code>tan(z)</code>）。</li>
+<li><b>组合结果</b> ： <div class="fragment"><div class="line">t2 = pz * (fi + gi) / (gi - pz);</div>
+<div class="line">result = fi + t2;  <span class="comment">// 符号与输入一致</span></div>
+</div><!-- fragment --></li>
+</ol>
+<h4><a class="anchor" id="iv-大区间0787--w--25"></a>
+<b>(IV) 大区间：<code>0.787 &lt; w ≤ 25</code></b></h4>
+<ul>
+<li><b>核心</b> ： <b>范围缩减到 <code>[-π/4, π/4]</code></b> 。</li>
+<li><b>步骤</b> ：</li>
+</ul>
+<ol type="1">
+<li><b>缩减</b> ：计算 <code>t = x * (2/π) + toint</code>，提取整数部分 <code>xn = t - toint</code>。</li>
+<li><b>剩余部分</b> ： <div class="fragment"><div class="line">t1 = x - xn * mp1;  <span class="comment">// mp1 = π/2 的高位</span></div>
+<div class="line">da = xn * mp2;      <span class="comment">// mp2 = π/2 的中位</span></div>
+<div class="line">a = t1 - da;</div>
+<div class="line">da = (t1 - a) - da; <span class="comment">// 误差补偿</span></div>
+</div><!-- fragment --></li>
+<li><b>奇偶判断</b> ：根据 <code>xn</code> 的奇偶性 (<code>n = xn &amp; 1</code>) 决定输出 <code>tan</code> 或 <code>-cot</code>。</li>
+<li><b>子区间处理</b> ：<ul>
+<li>若 <code>|a| ≤ 0.0608</code>：使用 <b>(II)</b> 的多项式。</li>
+<li>否则：使用 <b>(III)</b> 的查表法。</li>
+</ul>
+</li>
+</ol>
+<h4><a class="anchor" id="v-更大区间25--w--1e8"></a>
+<b>(V) 更大区间：<code>25 &lt; w ≤ 1e8</code></b></h4>
+<ul>
+<li>类似 <b>(IV)</b> ，但使用更高精度的 π 值（<code>mp1</code>, <code>mp2</code>, <code>pp3</code>, <code>pp4</code>）。</li>
+<li>同样进行范围缩减和子区间处理。</li>
+</ul>
+<h4><a class="anchor" id="vi-极大区间1e8--w--21024"></a>
+<b>(VI) 极大区间：<code>1e8 &lt; w &lt; 2^1024</code></b></h4>
+<ul>
+<li><b>范围缩减</b> ：调用 <code>__IBM_branred(x, &amp;a, &amp;da)</code> 将 <code>x</code> 缩减到 <code>[-π/4, π/4]</code>，并返回奇偶标志 <code>n</code>。</li>
+<li><b>子区间处理</b> ：同 <b>(IV)</b> 。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md3-关键技术细节"></a>
+<b>3. 关键技术细节</b></h3>
+<h4><a class="anchor" id="范围缩减-range-reduction"></a>
+<b>范围缩减 (Range Reduction)</b></h4>
+<ul>
+<li><b>目的</b> ：将大输入缩减到小范围 <code>[-π/4, π/4]</code>，利用正切函数的周期性（周期 π）。</li>
+<li><b>方法</b> ： <div class="fragment"><div class="line">t = x * (2/π) + toint;  <span class="comment">// toint = 2^52 + 2^51</span></div>
+<div class="line">xn = (int)(t - toint);   <span class="comment">// 整数倍部分</span></div>
+<div class="line">remainder = x - xn * (π/2); <span class="comment">// 剩余部分</span></div>
+</div><!-- fragment --></li>
+<li><b>高精度 π</b> ：使用多个常量（<code>mp1</code>, <code>mp2</code>, <code>mp3</code>, <code>pp3</code>, <code>pp4</code>）表示 π/2 的不同部分，避免精度损失。</li>
+</ul>
+<h4><a class="anchor" id="误差补偿"></a>
+<b>误差补偿</b></h4>
+<ul>
+<li><b>双精度算法</b> ：使用 <code>EADD</code>, <code>MUL12</code>, <code>DIV2</code> 等函数进行高精度加减乘除，保留误差项补偿舍入误差。</li>
+<li><b>示例</b> （<code>EADD</code>）： <div class="fragment"><div class="line"><span class="keywordtype">void</span> EADD(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> *c, <span class="keywordtype">double</span> *cc) {</div>
+<div class="line">    *c = a + b;</div>
+<div class="line">    *cc = (|a| &gt; |b|) ? ((a - *c) + b) : ((b - *c) + a);</div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+</ul>
+<h4><a class="anchor" id="符号处理"></a>
+<b>符号处理</b></h4>
+<ul>
+<li>始终记录输入符号 <code>sy = (x &lt; 0) ? -1 : 1</code>，并在结果中恢复。</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md4-精度保证"></a>
+<b>4. 精度保证</b></h3>
+<ul>
+<li><b>最大误差</b> ：注释表明各区间最大 ULP (Unit in Last Place) 误差在 <code>0.506~0.62</code> 之间，符合高精度要求。</li>
+<li><b>表驱动优化</b> ：预计算的 <code>__IBM_TANF64_XFGTBL</code> 表包含 186 项，覆盖关键区间，减少实时计算量。</li>
+</ul>
+<h3><a class="anchor" id="总结-7"></a>
+<b>总结</b></h3>
+<p>IBM 的 <code>tan</code> 实现通过分层策略结合：</p><ol type="1">
+<li><b>泰勒展开</b> ：极小区间的高效近似。</li>
+<li><b>查表法 + 多项式修正</b> ：中等区间的精度平衡。</li>
+<li><b>高精度范围缩减</b> ：大输入的关键处理。</li>
+<li><b>误差补偿算法</b> ：保证计算稳定性。</li>
+</ol>
+<p>这种设计在广泛的输入范围内实现了高精度（&lt; 1 ULP）和高效率，是数学库函数的经典实现范例。</p>
+<hr  />
+<p>角度反三角函数仅实现反正切函数，反正弦和反余弦使用三角恒等式转化。</p>
+<p><b>以下内容为AI智能解析，仅供参考</b></p>
+<h4><a class="anchor" id="autotoc_md1-arctan-函数__ieee754_atan128f_c64f"></a>
+1. <b><code>arctan</code> 函数（<code>__IEEE754_ATAN128F_C64F</code>）</b></h4>
+<ul>
+<li><b>原理</b> ：</li>
+<li>基于 <b>查表法</b> 和 <b>有理分式逼近</b> ，结合反正切的数学性质。</li>
+<li>核心公式 ： <br  />
+ \(\arctan(x) = \arctan(u) + \arctan\left(\frac{x - u}{1 + xu}\right)\)，其中 \(u\) 是预计算的值。</li>
+<li>通过查表（<code>__Arctan128F_table_rad</code> 或 <code>__Arctan128F_table_deg</code>）获取 \(\arctan(u)\)，剩余部分用有理分式计算。</li>
+<li><b>步骤</b> ：</li>
+</ul>
+<ol type="1">
+<li><b>处理特殊值</b> ：<ul>
+<li>若 \(x\) 是 <code>NaN</code>，返回 <code>NaN</code>。</li>
+<li>若 \(x\) 是 \(\pm\infty\)，返回 \(\pm \pi/2\)（或 \(\pm 90^\circ\)）。</li>
+<li>若 \(|x| \leq 2^{-55}\)，直接返回 \(x\)（避免浮点下溢）。</li>
+</ul>
+</li>
+<li><b>符号处理</b> ： <br  />
+ 若 \(x &lt; 0\)，先计算 \(|x|\)，最后结果取负。</li>
+<li><b>范围缩减</b> ：<ul>
+<li>若 \(|x| \geq 10.25\)： <br  />
+ 用 \(\arctan(x) = \pi/2 - \arctan(1/x)\) 转换，查表得 \(\pi/2\)。</li>
+<li>否则 ： <br  />
+ 计算索引 \(k = \lfloor 8x + 0.25 \rfloor\)，查表得 \(\arctan(u)\)（ \(u = k/8\)）。 <br  />
+ 计算 \(t = (x - u)/(1 + xu)\)（小量）。</li>
+</ul>
+</li>
+<li><b>有理分式逼近</b> ： <br  />
+ 对 \(t\) 计算： <br  />
+   <p class="formulaDsp">
+\[
+       \arctan(t) \approx t \cdot \frac{p_0 + p_1 t^2 + p_2 t^4 + p_3 t^6 + p_4 t^8}{q_0 + q_1 t^2 + q_2 t^4 + q_3 t^6 + q_4 t^8}
+       \]
+</p>
+</li>
+<li><b>合并结果</b> ： <br  />
+ \(\arctan(x) = \arctan(u) + \arctan(t)\)，调整符号。</li>
+</ol>
+<ul>
+<li><b>精度</b> ： <br  />
+ 使用 84 项的查找表和高阶有理分式，确保 IEEE 双精度下的高精度（相对误差 \(\sim 10^{-34}\))。</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2-arcsin-函数"></a>
+2. <b><code>arcsin</code> 函数</b></h4>
+<ul>
+<li><b>原理</b> ： <br  />
+ 利用三角恒等式 \(\arcsin(x) = \arctan\left(\frac{x}{\sqrt{1 - x^2}}\right)\)。</li>
+<li><b>实现</b> （非弧度模式）： <div class="fragment"><div class="line"><a class="code hl_struct" href="../../db/d28/struct_angle.html">Angle</a> <a class="code hl_function" href="#gaab6e536c8968c2089b60f7c0d598cac3">arccos</a>(float64 _X)</div>
+<div class="line">{ </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga39cbd0c3528a85c57330ef26e1f7a9ac">arctan</a>(_X / <a class="code hl_function" href="../../df/d00/group___math_funcs_pow.html#ga620a9b7af7ede23efc704b31d3302a98">sqrt</a>(1. - _X * _X)); </div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___math_funcs_pow_html_ga620a9b7af7ede23efc704b31d3302a98"><div class="ttname"><a href="../../df/d00/group___math_funcs_pow.html#ga620a9b7af7ede23efc704b31d3302a98">sqrt</a></div><div class="ttdeci">float64 __cdecl sqrt(float64 _X)</div><div class="ttdoc">计算平方根（√x）</div></div>
+<div class="ttc" id="agroup___math_funcs_tri_html_ga39cbd0c3528a85c57330ef26e1f7a9ac"><div class="ttname"><a href="#ga39cbd0c3528a85c57330ef26e1f7a9ac">arctan</a></div><div class="ttdeci">Angle __cdecl arctan(float64 _X)</div><div class="ttdoc">计算反正切函数</div></div>
+<div class="ttc" id="agroup___math_funcs_tri_html_gaab6e536c8968c2089b60f7c0d598cac3"><div class="ttname"><a href="#gaab6e536c8968c2089b60f7c0d598cac3">arccos</a></div><div class="ttdeci">Angle __cdecl arccos(float64 _X)</div><div class="ttdoc">计算反余弦函数</div></div>
+<div class="ttc" id="astruct_angle_html"><div class="ttname"><a href="../../db/d28/struct_angle.html">Angle</a></div><div class="ttdoc">角度单位转换</div><div class="ttdef"><b>定义</b> MathFuncs.h:1371</div></div>
+</div><!-- fragment --></li>
+<li><b>步骤</b> ：</li>
+</ul>
+<ol type="1">
+<li>计算 \(\sqrt{1 - x^2}\)。</li>
+<li>计算比值 \(x / \sqrt{1 - x^2}\)。</li>
+<li>调用 <code>arctan</code> 求结果。</li>
+</ol>
+<ul>
+<li><b>边界处理</b> ：</li>
+<li>若 \(x = \pm 1\)，分母为 0，返回 \(\pm \pi/2\)（通过 <code>arctan(±∞)</code> 处理）。</li>
+<li>若 \(|x| &gt; 1\)，返回 <code>NaN</code>（隐含在 <code>sqrt</code> 中）。</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md3-arccos-函数"></a>
+3. <b><code>arccos</code> 函数</b></h4>
+<ul>
+<li><b>原理</b> ： <br  />
+ 利用恒等式 \(\arccos(x) = \arctan\left(\frac{\sqrt{1 - x^2}}{x}\right) + [x &lt; 0 \ ? \ 180^\circ : 0]\)。</li>
+<li><b>实现</b> （非弧度模式）： <div class="fragment"><div class="line"><a class="code hl_struct" href="../../db/d28/struct_angle.html">Angle</a> <a class="code hl_function" href="#gaab6e536c8968c2089b60f7c0d598cac3">arccos</a>(float64 _X)</div>
+<div class="line">{ </div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga39cbd0c3528a85c57330ef26e1f7a9ac">arctan</a>(<a class="code hl_function" href="../../df/d00/group___math_funcs_pow.html#ga620a9b7af7ede23efc704b31d3302a98">sqrt</a>(1. - _X * _X) / _X) + (_X &lt; 0 ? 180 : 0); </div>
+<div class="line">}</div>
+</div><!-- fragment --></li>
+<li><b>步骤</b> ：</li>
+</ul>
+<ol type="1">
+<li>计算 \(\sqrt{1 - x^2}\)。</li>
+<li>计算比值 \(\sqrt{1 - x^2} / x\)。</li>
+<li>调用 <code>arctan</code> 并修正象限（ \(x &lt; 0\) 时加 \(180^\circ\)）。</li>
+</ol>
+<ul>
+<li><b>边界处理</b> ：</li>
+<li>若 \(x = 0\)，返回 \(90^\circ\)（通过 <code>arctan(∞)</code>）。</li>
+<li>若 \(x = 1\) 或 \(x = -1\)，返回 \(0^\circ\) 或 \(180^\circ\)。</li>
+</ul>
+<h3><a class="anchor" id="关键优化与设计"></a>
+关键优化与设计</h3>
+<ol type="1">
+<li><b>查表法加速</b> ： <br  />
+ 预计算 84 个关键点（ \(0\) 到 \(10.25\) 步长 \(0.125\)) 的 \(\arctan\) 值，避免重复计算。</li>
+<li><b>范围缩减</b> ： <br  />
+ 将大输入转换为小输入（ \(x \to 1/x\)），保证 \(t\) 是小量，提高有理分式精度。</li>
+<li><b>多项式逼近</b> ： <br  />
+ 对 \(t\) 使用 8 次有理分式（分子 4 次、分母 4 次），在 \(|t| \ll 1\) 时误差极小。</li>
+<li><b>分支处理</b> ： <br  />
+ 特殊值（如 \(\infty\)、<code>NaN</code>）和符号单独处理，保证鲁棒性。</li>
+</ol>
+<h3><a class="anchor" id="复杂度与精度"></a>
+复杂度与精度</h3>
+<ul>
+<li><b>时间复杂度</b> ： \(O(1)\)（查表+固定次数的多项式计算）。</li>
+<li><b>精度</b> ： <br  />
+</li>
+<li><code>arctan</code> 在 \([-19, 19]\) 范围内相对误差 \(\sim 10^{-34}\)（IEEE 双精度）。</li>
+<li><code>arcsin</code>/<code>arccos</code> 依赖 <code>sqrt</code> 和 <code>arctan</code>，精度与之相当。</li>
+</ul>
+<h3><a class="anchor" id="总结-8"></a>
+总结</h3>
+<ul>
+<li><code>arctan</code>：查表+有理分式逼近，高效高精度。</li>
+<li><code>arcsin</code>/<code>arccos</code>：通过三角恒等式转化为 <code>arctan</code>，结合符号处理和边界条件。</li>
+<li>设计兼顾数学严谨性（恒等式）、数值稳定性（范围缩减）和性能（查表+逼近）。</li>
+</ul>
+<hr  />
+<p>弧度反三角函数实现反正弦和反余弦，反正切与角度共用一个实现（表不一样）。</p>
+<p><b>以下内容为AI智能解析，仅供参考</b></p>
+<p>弧度反正弦（arcsin）和反余弦（arccos）函数采用IBM的数学库实现。以下是其核心原理分析：</p>
+<h3><a class="anchor" id="autotoc_md1-核心数据结构"></a>
+1. 核心数据结构</h3>
+<ul>
+<li><b>预计算表（__IBM_asncs_table）</b> ：</li>
+<li>包含2568个双精度浮点数（5136个32位整数）</li>
+<li>存储不同区间上的：<ul>
+<li>参考点坐标</li>
+<li>多项式展开系数</li>
+<li>偏移修正值</li>
+</ul>
+</li>
+<li>按不同精度需求分段存储（11-15个系数/段）</li>
+<li><b>辅助常数</b> ：</li>
+<li><code>hp0 = π/2</code> (高位部分)</li>
+<li><code>hp1 = π/2</code> (低位部分，补偿浮点精度)</li>
+<li>泰勒级数系数 <code>f1-f6</code></li>
+<li>平方根倒数近似系数 <code>rt0-rt3</code></li>
+<li>2的幂次表 <code>powtwo[27]</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2-分段处理策略-1"></a>
+2. 分段处理策略</h3>
+<p>函数根据输入值的大小分7个区间处理：</p>
+<h4><a class="anchor" id="autotoc_md1-极小值x--2-26"></a>
+(1) 极小值（|x| &lt; 2^-26）</h4>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (k &lt; 0x3e500000)</div>
+<div class="line">    <span class="keywordflow">return</span> x;  <span class="comment">// sin(x)≈x</span></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2-小值2-26--x--0125"></a>
+(2) 小值（2^-26 ≤ |x| &lt; 0.125）</h4>
+<div class="fragment"><div class="line">x2 = x*x;</div>
+<div class="line">t = ((((f6*x2 + f5)*x2 + ... )*x2*x;</div>
+<div class="line"><span class="keywordflow">return</span> x + t;  <span class="comment">// 泰勒展开：x + x³/6 + 3x⁵/40 + ...</span></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md3-中值0125--x--096875"></a>
+(3) 中值（0.125 ≤ |x| &lt; 0.96875）</h4>
+<p>使用5个细分区间，通过查表+多项式修正： </p><div class="fragment"><div class="line">n = calculate_index(k);  <span class="comment">// 计算表索引</span></div>
+<div class="line">xx = x - table[n];      <span class="comment">// 相对参考点偏移</span></div>
+<div class="line">res = table[n+8] + table[n+1]*xx + xx²*(table[n+2] + xx*(table[n+3] + ...));</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md4-大值096875--x--1"></a>
+(4) 大值（0.96875 ≤ |x| &lt; 1）</h4>
+<p>特殊处理避免精度损失： </p><div class="fragment"><div class="line">z = (1 - |x|)/2;               <span class="comment">// 变换输入</span></div>
+<div class="line">t = inroot_table[..]*powtwo[..]; <span class="comment">// 平方根倒数近似</span></div>
+<div class="line">r = 1 - t*t*z;                 <span class="comment">// 牛顿迭代</span></div>
+<div class="line">t *= rt0 + r*(rt1 + ...);      <span class="comment">// 4次多项式优化</span></div>
+<div class="line">y = (t24*c + c) - t24*c;       <span class="comment">// 精度截断</span></div>
+<div class="line">cc = (z - y²)/(t + y);         <span class="comment">// 修正项</span></div>
+<div class="line">p = (f6*z + f5)*z + ...;       <span class="comment">// 泰勒展开</span></div>
+<div class="line">res = π/2 - 2*(y + cc + y*p);  <span class="comment">// 最终结果</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md3-特殊值处理"></a>
+3. 特殊值处理</h3>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (|x| == 1) </div>
+<div class="line">    <span class="keywordflow">return</span> sign(x)*π/2;  <span class="comment">// 边界值</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (|x| &gt; 1) </div>
+<div class="line">    <span class="keywordflow">return</span> NaN;          <span class="comment">// 非法输入</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md4-精度保障技术"></a>
+4. 精度保障技术</h3>
+<ul>
+<li><b>双常数补偿</b> ： <br  />
+ <code>hp0 + hp1 ≈ π/2</code>（分离高低位）</li>
+<li><b>精度截断</b> ： <br  />
+ <code>y = (t24*c + c) - t24*c</code> 消除低位误差</li>
+<li><b>牛顿迭代</b> ： <br  />
+ 平方根倒数优化（1次迭代+4阶多项式）</li>
+<li><b>ULP控制</b> ： <br  />
+ 各分段最大ULP误差0.513-0.524</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5-反余弦实现"></a>
+5. 反余弦实现</h3>
+<p>基于反正弦优化： </p><div class="fragment"><div class="line"><a class="code hl_function" href="#gaab6e536c8968c2089b60f7c0d598cac3">arccos</a>(x) =</div>
+<div class="line">{</div>
+<div class="line">    π/2 - <a class="code hl_function" href="#gadaae27d48fed7c80c5e93267dae0e9bd">arcsin</a>(x)                 <span class="comment">// 主路径</span></div>
+<div class="line">    π/2 + <a class="code hl_function" href="#gadaae27d48fed7c80c5e93267dae0e9bd">arcsin</a>(x)  (x &lt; 0)       <span class="comment">// 负值处理</span></div>
+<div class="line">    2*<a class="code hl_function" href="#gadaae27d48fed7c80c5e93267dae0e9bd">arcsin</a>(<a class="code hl_function" href="../../df/d00/group___math_funcs_pow.html#ga620a9b7af7ede23efc704b31d3302a98">sqrt</a>((1-x)/2)) (x≈1)  <span class="comment">// 高精度路径</span></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup___math_funcs_tri_html_gadaae27d48fed7c80c5e93267dae0e9bd"><div class="ttname"><a href="#gadaae27d48fed7c80c5e93267dae0e9bd">arcsin</a></div><div class="ttdeci">Angle __cdecl arcsin(float64 _X)</div><div class="ttdoc">计算反正弦函数</div></div>
+</div><!-- fragment --><h3><a class="anchor" id="性能优化"></a>
+性能优化</h3>
+<ol type="1">
+<li><b>查表加速</b> ：快速定位近似区间</li>
+<li><b>位操作</b> ：<code>k = msw &amp; 0x7FFFFFFF</code> 高效取绝对值</li>
+<li><b>多项式展开</b> ：减少复杂运算</li>
+<li><b>分支预测</b> ：按数量级分段处理</li>
+</ol>
+<p>该实现通过精细的分段策略和误差补偿技术，在保证0.52ULP精度的同时，实现了高效的超越函数计算。特别在接近±1的临界区域，采用变量变换和混合算法，有效解决了浮点精度衰减问题。 </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="gaab6e536c8968c2089b60f7c0d598cac3" name="gaab6e536c8968c2089b60f7c0d598cac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab6e536c8968c2089b60f7c0d598cac3">&#9670;&#160;</a></span>arccos() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arccos </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反余弦函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>余弦值（范围：[-1,1]） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[0°,180°]） </dd></dl>
+
+</div>
+</div>
+<a id="ga4eebc835f966a68c66aba6a310faba16" name="ga4eebc835f966a68c66aba6a310faba16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4eebc835f966a68c66aba6a310faba16">&#9670;&#160;</a></span>arccos() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arccos </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的反余弦 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>输入向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素反余弦结果向量 </dd></dl>
+
+</div>
+</div>
+<a id="ga8816c04bef23a05150e6f995b9b69940" name="ga8816c04bef23a05150e6f995b9b69940"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8816c04bef23a05150e6f995b9b69940">&#9670;&#160;</a></span>arccosc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arccosc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_SqrtIdx</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算复数的反余弦 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>复数值 </td></tr>
+    <tr><td class="paramname">_SqrtIdx</td><td>平方根分支索引（默认为0） </td></tr>
+    <tr><td class="paramname">K_OFFSET</td><td>分支选择偏移量（默认为0） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>复数的反余弦值 </dd></dl>
+
+</div>
+</div>
+<a id="ga258c7c6b98bbfbf8ac117867cb45ee03" name="ga258c7c6b98bbfbf8ac117867cb45ee03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga258c7c6b98bbfbf8ac117867cb45ee03">&#9670;&#160;</a></span>arccsc() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arccsc </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反正割函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>正割值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[-90°,90°]） </dd></dl>
+
+</div>
+</div>
+<a id="ga91d062400641967775544926852f09d9" name="ga91d062400641967775544926852f09d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91d062400641967775544926852f09d9">&#9670;&#160;</a></span>arccsc() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arccsc </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga258c7c6b98bbfbf8ac117867cb45ee03" title="计算反正割函数">arccsc</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga6ba83d78a77d8f8f719035a0460470bf" name="ga6ba83d78a77d8f8f719035a0460470bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ba83d78a77d8f8f719035a0460470bf">&#9670;&#160;</a></span>arccscc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arccscc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_SqrtIdx</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga258c7c6b98bbfbf8ac117867cb45ee03" title="计算反正割函数">arccsc</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga14a06ed7e10488c3165768da2455aba1" name="ga14a06ed7e10488c3165768da2455aba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14a06ed7e10488c3165768da2455aba1">&#9670;&#160;</a></span>arcctg() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arcctg </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反余切函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>余切值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[0°,180°]） </dd></dl>
+
+</div>
+</div>
+<a id="ga72ef0ba492c5979e9cf42ebfeaa5c8d9" name="ga72ef0ba492c5979e9cf42ebfeaa5c8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72ef0ba492c5979e9cf42ebfeaa5c8d9">&#9670;&#160;</a></span>arcctg() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arcctg </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga14a06ed7e10488c3165768da2455aba1" title="计算反余切函数">arcctg</a> </dd></dl>
+
+</div>
+</div>
+<a id="gadec5d60153dfb29e0ba5effd1f39fe9c" name="gadec5d60153dfb29e0ba5effd1f39fe9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadec5d60153dfb29e0ba5effd1f39fe9c">&#9670;&#160;</a></span>arcctgc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arcctgc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga14a06ed7e10488c3165768da2455aba1" title="计算反余切函数">arcctg</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga08edeb07c8dfaed548b2152b12490026" name="ga08edeb07c8dfaed548b2152b12490026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08edeb07c8dfaed548b2152b12490026">&#9670;&#160;</a></span>arcsec() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arcsec </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反正割函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>正割值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[0°,180°]） </dd></dl>
+
+</div>
+</div>
+<a id="gacdc015900cae8d2fee880636195d2123" name="gacdc015900cae8d2fee880636195d2123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacdc015900cae8d2fee880636195d2123">&#9670;&#160;</a></span>arcsec() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arcsec </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga08edeb07c8dfaed548b2152b12490026" title="计算反正割函数">arcsec</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga021cd9e4cd3bf9dc5aec3ffa033415f9" name="ga021cd9e4cd3bf9dc5aec3ffa033415f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga021cd9e4cd3bf9dc5aec3ffa033415f9">&#9670;&#160;</a></span>arcsecc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arcsecc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_SqrtIdx</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga08edeb07c8dfaed548b2152b12490026" title="计算反正割函数">arcsec</a> </dd></dl>
+
+</div>
+</div>
+<a id="gadaae27d48fed7c80c5e93267dae0e9bd" name="gadaae27d48fed7c80c5e93267dae0e9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadaae27d48fed7c80c5e93267dae0e9bd">&#9670;&#160;</a></span>arcsin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arcsin </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反正弦函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>正弦值（范围：[-1,1]） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[-90°,90°]） </dd></dl>
+
+</div>
+</div>
+<a id="ga2b1544acd93e071f28a83b7bcec7fb9e" name="ga2b1544acd93e071f28a83b7bcec7fb9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b1544acd93e071f28a83b7bcec7fb9e">&#9670;&#160;</a></span>arcsin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arcsin </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的反正弦 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>输入向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素反正弦结果向量 </dd></dl>
+
+</div>
+</div>
+<a id="gaea4503a9217b8c4d2f527d547a4342f4" name="gaea4503a9217b8c4d2f527d547a4342f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea4503a9217b8c4d2f527d547a4342f4">&#9670;&#160;</a></span>arcsinc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arcsinc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_SqrtIdx</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算复数的反正弦 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>复数值 </td></tr>
+    <tr><td class="paramname">_SqrtIdx</td><td>平方根分支索引（默认为0） </td></tr>
+    <tr><td class="paramname">K_OFFSET</td><td>分支选择偏移量（默认为0） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>复数的反正弦值 </dd></dl>
+
+</div>
+</div>
+<a id="ga39cbd0c3528a85c57330ef26e1f7a9ac" name="ga39cbd0c3528a85c57330ef26e1f7a9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39cbd0c3528a85c57330ef26e1f7a9ac">&#9670;&#160;</a></span>arctan() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl arctan </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算反正切函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>正切值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>角度值（范围：[-90°,90°]） </dd></dl>
+
+</div>
+</div>
+<a id="ga6bf2a1407f0183f141b8955cf249b908" name="ga6bf2a1407f0183f141b8955cf249b908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bf2a1407f0183f141b8955cf249b908">&#9670;&#160;</a></span>arctan() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl arctan </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的反正切 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>输入向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素反正切结果向量 </dd></dl>
+
+</div>
+</div>
+<a id="gaf723e93ea324d28786456bfb386462f0" name="gaf723e93ea324d28786456bfb386462f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf723e93ea324d28786456bfb386462f0">&#9670;&#160;</a></span>Arctan2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d28/struct_angle.html">Angle</a> __cdecl Arctan2 </td>
+          <td>(</td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_Y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算坐标点的反正切值 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_Y</td><td>y坐标值 </td></tr>
+    <tr><td class="paramname">_X</td><td>x坐标值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>点(_X,_Y)的角度（范围：-180°到180°） </dd></dl>
+
+</div>
+</div>
+<a id="gae54db0cce6e9b212a899d1b984a79d62" name="gae54db0cce6e9b212a899d1b984a79d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae54db0cce6e9b212a899d1b984a79d62">&#9670;&#160;</a></span>arctanc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl arctanc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>K_OFFSET</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算复数的反正切 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>复数值 </td></tr>
+    <tr><td class="paramname">K_OFFSET</td><td>分支选择偏移量（默认为0） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>复数的反正切值 </dd></dl>
+
+</div>
+</div>
+<a id="ga1e4f6d17312cadd8da74fea9e30b8748" name="ga1e4f6d17312cadd8da74fea9e30b8748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e4f6d17312cadd8da74fea9e30b8748">&#9670;&#160;</a></span>cos() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl cos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算余弦函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>余弦值 </dd></dl>
+
+</div>
+</div>
+<a id="gaec837c628261b896b5ce38f9f86c98e1" name="gaec837c628261b896b5ce38f9f86c98e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec837c628261b896b5ce38f9f86c98e1">&#9670;&#160;</a></span>cos() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl cos </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的余弦值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素余弦值向量 </dd></dl>
+
+</div>
+</div>
+<a id="ga97a8084e18a9450370715349fb9167d6" name="ga97a8084e18a9450370715349fb9167d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97a8084e18a9450370715349fb9167d6">&#9670;&#160;</a></span>cosc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl cosc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga1e4f6d17312cadd8da74fea9e30b8748" title="计算余弦函数">cos</a> </dd></dl>
+
+</div>
+</div>
+<a id="gad4c5a652ef5b026d56f0eaa1ef2026a8" name="gad4c5a652ef5b026d56f0eaa1ef2026a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4c5a652ef5b026d56f0eaa1ef2026a8">&#9670;&#160;</a></span>csc() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl csc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算余割函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>余割值 </dd></dl>
+
+</div>
+</div>
+<a id="ga7e1db7c456bd9f869d4050b0e1b121e0" name="ga7e1db7c456bd9f869d4050b0e1b121e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e1db7c456bd9f869d4050b0e1b121e0">&#9670;&#160;</a></span>csc() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl csc </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的余割值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素余割值向量 </dd></dl>
+
+</div>
+</div>
+<a id="gaeab60718523c9d88a96ab307c5463bb7" name="gaeab60718523c9d88a96ab307c5463bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeab60718523c9d88a96ab307c5463bb7">&#9670;&#160;</a></span>cscc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl cscc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gad4c5a652ef5b026d56f0eaa1ef2026a8" title="计算余割函数">csc</a> </dd></dl>
+
+</div>
+</div>
+<a id="gaa4c806706c52c0122f32afb12adebd28" name="gaa4c806706c52c0122f32afb12adebd28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4c806706c52c0122f32afb12adebd28">&#9670;&#160;</a></span>ctg() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl ctg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算余切函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>余切值 </dd></dl>
+
+</div>
+</div>
+<a id="ga8920eae6f1361993feaf02655644435e" name="ga8920eae6f1361993feaf02655644435e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8920eae6f1361993feaf02655644435e">&#9670;&#160;</a></span>ctg() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl ctg </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的余切值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素余切值向量 </dd></dl>
+
+</div>
+</div>
+<a id="gacea1c0ea3d8f377508603e8df7f301fc" name="gacea1c0ea3d8f377508603e8df7f301fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacea1c0ea3d8f377508603e8df7f301fc">&#9670;&#160;</a></span>ctgc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl ctgc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gaa4c806706c52c0122f32afb12adebd28" title="计算余切函数">ctg</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga3451721e4f109c636797bf6952eb543e" name="ga3451721e4f109c636797bf6952eb543e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3451721e4f109c636797bf6952eb543e">&#9670;&#160;</a></span>Quadrant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64 __cdecl Quadrant </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>确定角度所在象限 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>象限编号： 0 -&gt; x轴正方向, 1 -&gt; 第一象限, 2 -&gt; y轴正方向, 3 -&gt; 第二象限, 4 -&gt; x轴负方向, 5 -&gt; 第三象限, 6 -&gt; y轴负方向, 7 -&gt; 第四象限 </dd></dl>
+
+</div>
+</div>
+<a id="gac026cc4578114ee1c2f8faeac5521dac" name="gac026cc4578114ee1c2f8faeac5521dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac026cc4578114ee1c2f8faeac5521dac">&#9670;&#160;</a></span>sec() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl sec </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算正割函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>正割值 </dd></dl>
+
+</div>
+</div>
+<a id="ga4c0ed248c701e8d4850de9d9c62f3f9f" name="ga4c0ed248c701e8d4850de9d9c62f3f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c0ed248c701e8d4850de9d9c62f3f9f">&#9670;&#160;</a></span>sec() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl sec </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的正割值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素正割值向量 </dd></dl>
+
+</div>
+</div>
+<a id="ga507e422bbdb825f44217aee1571a8532" name="ga507e422bbdb825f44217aee1571a8532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga507e422bbdb825f44217aee1571a8532">&#9670;&#160;</a></span>secc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl secc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gac026cc4578114ee1c2f8faeac5521dac" title="计算正割函数">sec</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga9d45b19b174d7d393e8cc560ebc46044" name="ga9d45b19b174d7d393e8cc560ebc46044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d45b19b174d7d393e8cc560ebc46044">&#9670;&#160;</a></span>sin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl sin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算正弦函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>正弦值 </dd></dl>
+
+</div>
+</div>
+<a id="gabc6f138947984228fa8792a48086d27d" name="gabc6f138947984228fa8792a48086d27d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc6f138947984228fa8792a48086d27d">&#9670;&#160;</a></span>sin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl sin </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的正弦值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素正弦值向量 </dd></dl>
+
+</div>
+</div>
+<a id="gaed7f1e82645c1e7b71c16aad888b2b64" name="gaed7f1e82645c1e7b71c16aad888b2b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed7f1e82645c1e7b71c16aad888b2b64">&#9670;&#160;</a></span>sinc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl sinc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga9d45b19b174d7d393e8cc560ebc46044" title="计算正弦函数">sin</a> </dd></dl>
+
+</div>
+</div>
+<a id="gadc997a25f8f3ce12d8a2378f70b0133e" name="gadc997a25f8f3ce12d8a2378f70b0133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc997a25f8f3ce12d8a2378f70b0133e">&#9670;&#160;</a></span>tan() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 __cdecl tan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d28/struct_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算正切函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度值（实函数使用度，复函数使用弧度） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>正切值 </dd></dl>
+
+</div>
+</div>
+<a id="ga65caf908b6512af5cb615f93e4fe2cc8" name="ga65caf908b6512af5cb615f93e4fe2cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65caf908b6512af5cb615f93e4fe2cc8">&#9670;&#160;</a></span>tan() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">fvec&lt; N &gt; __cdecl tan </td>
+          <td>(</td>
+          <td class="paramtype">fvec&lt; N &gt;</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量各元素的正切值 </p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>向量维度 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_X</td><td>角度向量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>各元素正切值向量 </dd></dl>
+
+</div>
+</div>
+<a id="ga5a196ed55d74078accf2887904abe043" name="ga5a196ed55d74078accf2887904abe043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a196ed55d74078accf2887904abe043">&#9670;&#160;</a></span>tanc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">complex64 __cdecl tanc </td>
+          <td>(</td>
+          <td class="paramtype">complex64</td>          <td class="paramname"><span class="paramname"><em>_X</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gadc997a25f8f3ce12d8a2378f70b0133e" title="计算正切函数">tan</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

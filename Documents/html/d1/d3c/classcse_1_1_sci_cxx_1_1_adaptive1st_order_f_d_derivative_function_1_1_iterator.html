@@ -1,0 +1,807 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#friends">友元</a> &#124;
+<a href="../../d7/d4d/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>计算过程用到的迭代器  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d6b/_adv_math_8h_source.html">AdvMath.h</a>&gt;</code></p>
+<div class="dynheader">
+类 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.png" usemap="#cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator_map" alt=""/>
+  <map id="cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator_map" name="cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator_map">
+<area href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html" title="迭代型求解算法使用的通用迭代器(由SciPy翻译而来，并转写为抽象基类)" alt="cse::SciCxx::ElementwiseIterator" shape="rect" coords="0,0,353,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a4fa94ef8f310069846721f824830fee5" id="r_a4fa94ef8f310069846721f824830fee5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fa94ef8f310069846721f824830fee5">StateType</a> { <a class="el" href="#a4fa94ef8f310069846721f824830fee5af92129cc5ca47b5bd2142a3749a6b5dd">ErrorIncrease</a> = 2
+ }</td></tr>
+<tr class="memdesc:a4fa94ef8f310069846721f824830fee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代状态  <a href="#a4fa94ef8f310069846721f824830fee5">更多...</a><br /></td></tr>
+<tr class="separator:a4fa94ef8f310069846721f824830fee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f398db8404cf3d653a7f5473ba06e2b" id="r_a3f398db8404cf3d653a7f5473ba06e2b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f398db8404cf3d653a7f5473ba06e2b">Mybase</a> = <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">ElementwiseIterator</a></td></tr>
+<tr class="memdesc:a3f398db8404cf3d653a7f5473ba06e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">基类  <br /></td></tr>
+<tr class="separator:a3f398db8404cf3d653a7f5473ba06e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:adac6f716506c4229812a130431167497" id="r_adac6f716506c4229812a130431167497"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adac6f716506c4229812a130431167497">DerivativeWeight</a> (uint64 n)</td></tr>
+<tr class="memdesc:adac6f716506c4229812a130431167497"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算权重系数  <br /></td></tr>
+<tr class="separator:adac6f716506c4229812a130431167497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cc47d2f6ef7fcbcf0032f3b1c00009" id="r_a94cc47d2f6ef7fcbcf0032f3b1c00009"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94cc47d2f6ef7fcbcf0032f3b1c00009">PreEvaluator</a> () override</td></tr>
+<tr class="memdesc:a94cc47d2f6ef7fcbcf0032f3b1c00009"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取采样点  <br /></td></tr>
+<tr class="separator:a94cc47d2f6ef7fcbcf0032f3b1c00009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74048f688e7a4ec07728d1fbf2b0045c" id="r_a74048f688e7a4ec07728d1fbf2b0045c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74048f688e7a4ec07728d1fbf2b0045c">PostEvaluator</a> (<a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; x, <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; fx) override</td></tr>
+<tr class="memdesc:a74048f688e7a4ec07728d1fbf2b0045c"><td class="mdescLeft">&#160;</td><td class="mdescRight">求解主函数  <br /></td></tr>
+<tr class="separator:a74048f688e7a4ec07728d1fbf2b0045c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c68eff3b4e290e97e2d1eb0b9bf35dd" id="r_a0c68eff3b4e290e97e2d1eb0b9bf35dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c68eff3b4e290e97e2d1eb0b9bf35dd">CheckTerminate</a> () override</td></tr>
+<tr class="memdesc:a0c68eff3b4e290e97e2d1eb0b9bf35dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">终止检测  <br /></td></tr>
+<tr class="separator:a0c68eff3b4e290e97e2d1eb0b9bf35dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23454bb3d70f237a1e619bb0428b15d3" id="r_a23454bb3d70f237a1e619bb0428b15d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23454bb3d70f237a1e619bb0428b15d3">Finalize</a> () override</td></tr>
+<tr class="memdesc:a23454bb3d70f237a1e619bb0428b15d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">最终处理函数（空实现）  <br /></td></tr>
+<tr class="separator:a23454bb3d70f237a1e619bb0428b15d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcse_1_1_sci_cxx_1_1_elementwise_iterator')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">cse::SciCxx::ElementwiseIterator</a></td></tr>
+<tr class="memitem:a27404a384867fe92aa7dbb9c7769cbc1 inherit pub_methods_classcse_1_1_sci_cxx_1_1_elementwise_iterator" id="r_a27404a384867fe92aa7dbb9c7769cbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a27404a384867fe92aa7dbb9c7769cbc1">Run</a> (Function1D Function, float64 MaxIterLog)</td></tr>
+<tr class="memdesc:a27404a384867fe92aa7dbb9c7769cbc1 inherit pub_methods_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行主循环  <br /></td></tr>
+<tr class="separator:a27404a384867fe92aa7dbb9c7769cbc1 inherit pub_methods_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:af45934947bc4f90892e371f60ba7d54c" id="r_af45934947bc4f90892e371f60ba7d54c"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af45934947bc4f90892e371f60ba7d54c">Input</a></td></tr>
+<tr class="memdesc:af45934947bc4f90892e371f60ba7d54c"><td class="mdescLeft">&#160;</td><td class="mdescRight">输入值x  <br /></td></tr>
+<tr class="separator:af45934947bc4f90892e371f60ba7d54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dceef54b7e1946124e5df05e17daae" id="r_af5dceef54b7e1946124e5df05e17daae"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5dceef54b7e1946124e5df05e17daae">Output</a></td></tr>
+<tr class="memdesc:af5dceef54b7e1946124e5df05e17daae"><td class="mdescLeft">&#160;</td><td class="mdescRight">输出导数值  <br /></td></tr>
+<tr class="separator:af5dceef54b7e1946124e5df05e17daae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd022d7130fd0d14ba57ada6c877cb84" id="r_afd022d7130fd0d14ba57ada6c877cb84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd022d7130fd0d14ba57ada6c877cb84">Intermediates</a></td></tr>
+<tr class="memdesc:afd022d7130fd0d14ba57ada6c877cb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">中间计算结果  <br /></td></tr>
+<tr class="separator:afd022d7130fd0d14ba57ada6c877cb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0080279fa7c5676b2fbe17c71fcdef1" id="r_ac0080279fa7c5676b2fbe17c71fcdef1"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0080279fa7c5676b2fbe17c71fcdef1">Error</a></td></tr>
+<tr class="memdesc:ac0080279fa7c5676b2fbe17c71fcdef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前误差估计  <br /></td></tr>
+<tr class="separator:ac0080279fa7c5676b2fbe17c71fcdef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b3414ae0b6c5a4303d2b7446a742b4" id="r_ae7b3414ae0b6c5a4303d2b7446a742b4"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b3414ae0b6c5a4303d2b7446a742b4">Step</a></td></tr>
+<tr class="memdesc:ae7b3414ae0b6c5a4303d2b7446a742b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前步长  <br /></td></tr>
+<tr class="separator:ae7b3414ae0b6c5a4303d2b7446a742b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab173dca04ac5ce6b8f2c3bb1a16462d8" id="r_ab173dca04ac5ce6b8f2c3bb1a16462d8"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab173dca04ac5ce6b8f2c3bb1a16462d8">LastOutput</a></td></tr>
+<tr class="memdesc:ab173dca04ac5ce6b8f2c3bb1a16462d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次迭代的输出  <br /></td></tr>
+<tr class="separator:ab173dca04ac5ce6b8f2c3bb1a16462d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ed55fb21e1910ae3d70995079d72f3" id="r_ab2ed55fb21e1910ae3d70995079d72f3"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2ed55fb21e1910ae3d70995079d72f3">LastError</a></td></tr>
+<tr class="memdesc:ab2ed55fb21e1910ae3d70995079d72f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">上一次迭代的误差  <br /></td></tr>
+<tr class="separator:ab2ed55fb21e1910ae3d70995079d72f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580cfb946638a018d58ba4b33edad021" id="r_a580cfb946638a018d58ba4b33edad021"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a580cfb946638a018d58ba4b33edad021">StepFactor</a></td></tr>
+<tr class="memdesc:a580cfb946638a018d58ba4b33edad021"><td class="mdescLeft">&#160;</td><td class="mdescRight">步长调整因子（每次迭代步长减小系数）  <br /></td></tr>
+<tr class="separator:a580cfb946638a018d58ba4b33edad021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae478f5362e3790b87f5ffd900c19a52c" id="r_ae478f5362e3790b87f5ffd900c19a52c"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae478f5362e3790b87f5ffd900c19a52c">AbsoluteTolerence</a></td></tr>
+<tr class="memdesc:ae478f5362e3790b87f5ffd900c19a52c"><td class="mdescLeft">&#160;</td><td class="mdescRight">绝对误差  <br /></td></tr>
+<tr class="separator:ae478f5362e3790b87f5ffd900c19a52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005153b2d84d6b9da7c84e8c91fcdc2f" id="r_a005153b2d84d6b9da7c84e8c91fcdc2f"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a005153b2d84d6b9da7c84e8c91fcdc2f">RelativeTolerence</a></td></tr>
+<tr class="memdesc:a005153b2d84d6b9da7c84e8c91fcdc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">相对误差  <br /></td></tr>
+<tr class="separator:a005153b2d84d6b9da7c84e8c91fcdc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6b99c970c742c9cd8c7eb759d1ae82" id="r_a3e6b99c970c742c9cd8c7eb759d1ae82"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e6b99c970c742c9cd8c7eb759d1ae82">Terms</a></td></tr>
+<tr class="memdesc:a3e6b99c970c742c9cd8c7eb759d1ae82"><td class="mdescLeft">&#160;</td><td class="mdescRight">项数  <br /></td></tr>
+<tr class="separator:a3e6b99c970c742c9cd8c7eb759d1ae82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297dc362ded226e4ea58532910e9dde3" id="r_a297dc362ded226e4ea58532910e9dde3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/da5/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function.html#a77684fa330e9bd4a3cb0041cae24d35e">DirectionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a297dc362ded226e4ea58532910e9dde3">Direction</a></td></tr>
+<tr class="memdesc:a297dc362ded226e4ea58532910e9dde3"><td class="mdescLeft">&#160;</td><td class="mdescRight">差分方向  <br /></td></tr>
+<tr class="separator:a297dc362ded226e4ea58532910e9dde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa529733cc83adc41fb1834cd573205" id="r_a6fa529733cc83adc41fb1834cd573205"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fa529733cc83adc41fb1834cd573205">CentralWeights</a></td></tr>
+<tr class="memdesc:a6fa529733cc83adc41fb1834cd573205"><td class="mdescLeft">&#160;</td><td class="mdescRight">中心差分权重系数  <br /></td></tr>
+<tr class="separator:a6fa529733cc83adc41fb1834cd573205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabec45a70f6c2de8ef62e09e2f9e496" id="r_acabec45a70f6c2de8ef62e09e2f9e496"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acabec45a70f6c2de8ef62e09e2f9e496">ForwardWeights</a></td></tr>
+<tr class="memdesc:acabec45a70f6c2de8ef62e09e2f9e496"><td class="mdescLeft">&#160;</td><td class="mdescRight">前向差分权重系数  <br /></td></tr>
+<tr class="separator:acabec45a70f6c2de8ef62e09e2f9e496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">cse::SciCxx::ElementwiseIterator</a></td></tr>
+<tr class="memitem:a9f075615ff9f2aae27245a53bd0764c2 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator" id="r_a9f075615ff9f2aae27245a53bd0764c2"><td class="memItemLeft" align="right" valign="top">enum cse::SciCxx::ElementwiseIterator:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a9f075615ff9f2aae27245a53bd0764c2">State</a></td></tr>
+<tr class="memdesc:a9f075615ff9f2aae27245a53bd0764c2 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器状态  <br /></td></tr>
+<tr class="separator:a9f075615ff9f2aae27245a53bd0764c2 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac408171a9965e257411aec61ba4c1368 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator" id="r_ac408171a9965e257411aec61ba4c1368"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#ac408171a9965e257411aec61ba4c1368">IterCount</a> = 0</td></tr>
+<tr class="memdesc:ac408171a9965e257411aec61ba4c1368 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前迭代次数  <br /></td></tr>
+<tr class="separator:ac408171a9965e257411aec61ba4c1368 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a477f08e8cdb4e3c6daf9702a04d614 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator" id="r_a9a477f08e8cdb4e3c6daf9702a04d614"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a9a477f08e8cdb4e3c6daf9702a04d614">EvaluateCount</a> = 0</td></tr>
+<tr class="memdesc:a9a477f08e8cdb4e3c6daf9702a04d614 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数评估次数  <br /></td></tr>
+<tr class="separator:a9a477f08e8cdb4e3c6daf9702a04d614 inherit pro_attribs_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+友元</h2></td></tr>
+<tr class="memitem:af5b18c472d15f7862432d7f6a37670ee" id="r_af5b18c472d15f7862432d7f6a37670ee"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5b18c472d15f7862432d7f6a37670ee">Adaptive1stOrderFDDerivativeFunction</a></td></tr>
+<tr class="separator:af5b18c472d15f7862432d7f6a37670ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pro_types_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_types_classcse_1_1_sci_cxx_1_1_elementwise_iterator')"><img src="../../closed.png" alt="-"/>&#160;Protected 类型 继承自 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">cse::SciCxx::ElementwiseIterator</a></td></tr>
+<tr class="memitem:a24a0230de361916bbcddeac27cb37b92 inherit pro_types_classcse_1_1_sci_cxx_1_1_elementwise_iterator" id="r_a24a0230de361916bbcddeac27cb37b92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a24a0230de361916bbcddeac27cb37b92a36067a3d0a6947ff9408dd4b9af715ab">InProgress</a> = 1
+, <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a24a0230de361916bbcddeac27cb37b92a5366ff73adf9c9b6432c6ed02411ed77">Finished</a> = 0
+, <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a24a0230de361916bbcddeac27cb37b92adf9fb2ac61a274551f3abb084fcae17a">ValueError</a> = -3
+ }</td></tr>
+<tr class="memdesc:a24a0230de361916bbcddeac27cb37b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器状态  <a href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#a24a0230de361916bbcddeac27cb37b92">更多...</a><br /></td></tr>
+<tr class="separator:a24a0230de361916bbcddeac27cb37b92 inherit pro_types_classcse_1_1_sci_cxx_1_1_elementwise_iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>计算过程用到的迭代器 </p>
+<p>实现自适应步长调整和误差控制的迭代计算过程 </p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a3f398db8404cf3d653a7f5473ba06e2b" name="a3f398db8404cf3d653a7f5473ba06e2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f398db8404cf3d653a7f5473ba06e2b">&#9670;&#160;</a></span>Mybase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3f398db8404cf3d653a7f5473ba06e2b">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Mybase</a> = <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">ElementwiseIterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>基类 </p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a4fa94ef8f310069846721f824830fee5" name="a4fa94ef8f310069846721f824830fee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa94ef8f310069846721f824830fee5">&#9670;&#160;</a></span>StateType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a4fa94ef8f310069846721f824830fee5">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::StateType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>迭代状态 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a4fa94ef8f310069846721f824830fee5af92129cc5ca47b5bd2142a3749a6b5dd" name="a4fa94ef8f310069846721f824830fee5af92129cc5ca47b5bd2142a3749a6b5dd"></a>ErrorIncrease&#160;</td><td class="fielddoc"><p>误差增大 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a0c68eff3b4e290e97e2d1eb0b9bf35dd" name="a0c68eff3b4e290e97e2d1eb0b9bf35dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c68eff3b4e290e97e2d1eb0b9bf35dd">&#9670;&#160;</a></span>CheckTerminate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::CheckTerminate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>终止检测 </p>
+<dl class="section return"><dt>返回</dt><dd>bool 是否满足终止条件 </dd></dl>
+
+<p>实现了 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#ad02312607eb2f5b9ee23eea5f4bcf8ca">cse::SciCxx::ElementwiseIterator</a>.</p>
+
+</div>
+</div>
+<a id="adac6f716506c4229812a130431167497" name="adac6f716506c4229812a130431167497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac6f716506c4229812a130431167497">&#9670;&#160;</a></span>DerivativeWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; float64 &gt; cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::DerivativeWeight </td>
+          <td>(</td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算权重系数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">n</td><td>权重项数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::vector&lt;float64&gt; 权重系数向量 </dd></dl>
+
+</div>
+</div>
+<a id="a23454bb3d70f237a1e619bb0428b15d3" name="a23454bb3d70f237a1e619bb0428b15d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23454bb3d70f237a1e619bb0428b15d3">&#9670;&#160;</a></span>Finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>最终处理函数（空实现） </p>
+
+<p>实现了 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#ad05ae87bb392b26b7582795687c4d06f">cse::SciCxx::ElementwiseIterator</a>.</p>
+
+</div>
+</div>
+<a id="a74048f688e7a4ec07728d1fbf2b0045c" name="a74048f688e7a4ec07728d1fbf2b0045c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74048f688e7a4ec07728d1fbf2b0045c">&#9670;&#160;</a></span>PostEvaluator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::PostEvaluator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>fx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>求解主函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>采样点矩阵 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fx</td><td>采样点函数值矩阵 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>实现了 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#ad9aa76fd22991a074d7d1a7154029623">cse::SciCxx::ElementwiseIterator</a>.</p>
+
+</div>
+</div>
+<a id="a94cc47d2f6ef7fcbcf0032f3b1c00009" name="a94cc47d2f6ef7fcbcf0032f3b1c00009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cc47d2f6ef7fcbcf0032f3b1c00009">&#9670;&#160;</a></span>PreEvaluator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::PreEvaluator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取采样点 </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix&lt;float64&gt;</a> 采样点 </dd></dl>
+
+<p>实现了 <a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html#aa255d0d3969b1063b34ff8e4c4f62bed">cse::SciCxx::ElementwiseIterator</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">友元及相关符号说明</h2>
+<a id="af5b18c472d15f7862432d7f6a37670ee" name="af5b18c472d15f7862432d7f6a37670ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b18c472d15f7862432d7f6a37670ee">&#9670;&#160;</a></span>Adaptive1stOrderFDDerivativeFunction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d7/da5/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function.html">Adaptive1stOrderFDDerivativeFunction</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ae478f5362e3790b87f5ffd900c19a52c" name="ae478f5362e3790b87f5ffd900c19a52c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae478f5362e3790b87f5ffd900c19a52c">&#9670;&#160;</a></span>AbsoluteTolerence</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::AbsoluteTolerence</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>绝对误差 </p>
+
+</div>
+</div>
+<a id="a6fa529733cc83adc41fb1834cd573205" name="a6fa529733cc83adc41fb1834cd573205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa529733cc83adc41fb1834cd573205">&#9670;&#160;</a></span>CentralWeights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;float64&gt; cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::CentralWeights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>中心差分权重系数 </p>
+
+</div>
+</div>
+<a id="a297dc362ded226e4ea58532910e9dde3" name="a297dc362ded226e4ea58532910e9dde3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a297dc362ded226e4ea58532910e9dde3">&#9670;&#160;</a></span>Direction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/da5/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function.html#a77684fa330e9bd4a3cb0041cae24d35e">DirectionType</a> cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Direction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>差分方向 </p>
+
+</div>
+</div>
+<a id="ac0080279fa7c5676b2fbe17c71fcdef1" name="ac0080279fa7c5676b2fbe17c71fcdef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0080279fa7c5676b2fbe17c71fcdef1">&#9670;&#160;</a></span>Error</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Error</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前误差估计 </p>
+
+</div>
+</div>
+<a id="acabec45a70f6c2de8ef62e09e2f9e496" name="acabec45a70f6c2de8ef62e09e2f9e496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabec45a70f6c2de8ef62e09e2f9e496">&#9670;&#160;</a></span>ForwardWeights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;float64&gt; cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::ForwardWeights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>前向差分权重系数 </p>
+
+</div>
+</div>
+<a id="af45934947bc4f90892e371f60ba7d54c" name="af45934947bc4f90892e371f60ba7d54c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af45934947bc4f90892e371f60ba7d54c">&#9670;&#160;</a></span>Input</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Input</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>输入值x </p>
+
+</div>
+</div>
+<a id="afd022d7130fd0d14ba57ada6c877cb84" name="afd022d7130fd0d14ba57ada6c877cb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd022d7130fd0d14ba57ada6c877cb84">&#9670;&#160;</a></span>Intermediates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt;float64&gt; cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Intermediates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>中间计算结果 </p>
+
+</div>
+</div>
+<a id="ab2ed55fb21e1910ae3d70995079d72f3" name="ab2ed55fb21e1910ae3d70995079d72f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ed55fb21e1910ae3d70995079d72f3">&#9670;&#160;</a></span>LastError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::LastError</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次迭代的误差 </p>
+
+</div>
+</div>
+<a id="ab173dca04ac5ce6b8f2c3bb1a16462d8" name="ab173dca04ac5ce6b8f2c3bb1a16462d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab173dca04ac5ce6b8f2c3bb1a16462d8">&#9670;&#160;</a></span>LastOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::LastOutput</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>上一次迭代的输出 </p>
+
+</div>
+</div>
+<a id="af5dceef54b7e1946124e5df05e17daae" name="af5dceef54b7e1946124e5df05e17daae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dceef54b7e1946124e5df05e17daae">&#9670;&#160;</a></span>Output</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Output</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>输出导数值 </p>
+
+</div>
+</div>
+<a id="a005153b2d84d6b9da7c84e8c91fcdc2f" name="a005153b2d84d6b9da7c84e8c91fcdc2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005153b2d84d6b9da7c84e8c91fcdc2f">&#9670;&#160;</a></span>RelativeTolerence</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::RelativeTolerence</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>相对误差 </p>
+
+</div>
+</div>
+<a id="ae7b3414ae0b6c5a4303d2b7446a742b4" name="ae7b3414ae0b6c5a4303d2b7446a742b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b3414ae0b6c5a4303d2b7446a742b4">&#9670;&#160;</a></span>Step</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Step</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前步长 </p>
+
+</div>
+</div>
+<a id="a580cfb946638a018d58ba4b33edad021" name="a580cfb946638a018d58ba4b33edad021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580cfb946638a018d58ba4b33edad021">&#9670;&#160;</a></span>StepFactor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::StepFactor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>步长调整因子（每次迭代步长减小系数） </p>
+
+</div>
+</div>
+<a id="a3e6b99c970c742c9cd8c7eb759d1ae82" name="a3e6b99c970c742c9cd8c7eb759d1ae82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6b99c970c742c9cd8c7eb759d1ae82">&#9670;&#160;</a></span>Terms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64 cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator::Terms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>项数 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/d5d/namespacecse.html">cse</a></li><li class="navelem"><a class="el" href="../../dc/d75/namespacecse_1_1_sci_cxx.html">SciCxx</a></li><li class="navelem"><a class="el" href="../../d7/da5/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function.html">Adaptive1stOrderFDDerivativeFunction</a></li><li class="navelem"><a class="el" href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html">Iterator</a></li>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['2_20关键步骤_20strong_0',['&lt;strong&gt;2. 关键步骤&lt;/strong&gt;',['../dc/d2a/group___math_funcs_log.html#autotoc_md2-关键步骤',1,'']]],
+  ['2_20分段处理策略_1',['2. 分段处理策略',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-分段处理策略-1',1,'']]],
+  ['2_20分段处理策略_20strong_2',['&lt;strong&gt;2. 分段处理策略&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-分段处理策略',1,'']]],
+  ['2_20初始近似值查找_20strong_3',['&lt;strong&gt;2. 初始近似值查找&lt;/strong&gt;',['../df/d00/group___math_funcs_pow.html#autotoc_md2-初始近似值查找',1,'']]],
+  ['2_20小值（2_2026_20≤_20x_200_20125）_4',['(2) 小值（2^-26 ≤ |x| &lt; 0.125）',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-小值2-26--x--0125',1,'']]],
+  ['2_20查表与多项式逼近_20strong_5',['&lt;strong&gt;(2) 查表与多项式逼近&lt;/strong&gt;',['../dc/d2a/group___math_funcs_log.html#autotoc_md2-查表与多项式逼近',1,'']]],
+  ['2_20范围缩减（range_20reduction）_20strong_6',['&lt;strong&gt;2. 范围缩减（Range Reduction）&lt;/strong&gt;',['../d6/ddb/group___math_funcs_exp.html#autotoc_md2-范围缩减range-reduction',1,'']]],
+  ['2_201024_20tt_20strong_7',['&lt;strong&gt;(VI) 极大区间：&lt;tt&gt;1e8 \&lt; w \&lt; 2^1024&lt;/tt&gt;&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#vi-极大区间1e8--w--21024',1,'']]],
+  ['2_2026）_8',['(1) 极小值（|x| &lt; 2^-26）',['../d8/dbe/group___math_funcs_tri.html#autotoc_md1-极小值x--2-26',1,'']]],
+  ['2_20k_20n_20strong_9',['&lt;strong&gt;3. 查表获取 2^(k/N)&lt;/strong&gt;',['../d6/ddb/group___math_funcs_exp.html#autotoc_md3-查表获取-2kn',1,'']]],
+  ['2_20strong_10',['2 strong',['../dc/d2a/group___math_funcs_log.html#变换法e--2',1,'&lt;strong&gt;变换法（|e| &gt; 2)&lt;/strong&gt;'],['../dc/d2a/group___math_funcs_log.html#直接多项式逼近法e--2',1,'&lt;strong&gt;直接多项式逼近法（|e| &lt;= 2)&lt;/strong&gt;']]],
+  ['2_20strong_20复数立方根计算_20strong_11',['2. &lt;strong&gt;复数立方根计算&lt;/strong&gt;',['../df/d00/group___math_funcs_pow.html#autotoc_md2-复数立方根计算',1,'']]],
+  ['2_20strong_20核心数据结构：预计算正弦表_20strong_12',['2. &lt;strong&gt;核心数据结构：预计算正弦表&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-核心数据结构预计算正弦表',1,'']]],
+  ['2_20strong_20核心计算（kernel_20functions）_20strong_13',['2. &lt;strong&gt;核心计算（Kernel Functions）&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-核心计算kernel-functions',1,'']]],
+  ['2_20strong_20浮点数分解_20strong_14',['2. &lt;strong&gt;浮点数分解&lt;/strong&gt;',['../dc/d2a/group___math_funcs_log.html#autotoc_md2-浮点数分解',1,'']]],
+  ['2_20strong_20tt_20arcsin_20tt_20函数_20strong_15',['2. &lt;strong&gt;&lt;tt&gt;arcsin&lt;/tt&gt; 函数&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-arcsin-函数',1,'']]],
+  ['25_20tt_20strong_16',['&lt;strong&gt;(IV) 大区间：&lt;tt&gt;0.787 \&lt; w ≤ 25&lt;/tt&gt;&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#iv-大区间0787--w--25',1,'']]],
+  ['25_20w_20≤_201e8_20tt_20strong_17',['&lt;strong&gt;(V) 更大区间：&lt;tt&gt;25 \&lt; w ≤ 1e8&lt;/tt&gt;&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#v-更大区间25--w--1e8',1,'']]],
+  ['259e_208_20tt_20strong_18',['&lt;strong&gt;(I) 极小区间：&lt;tt&gt;w ≤ 1.259e-8&lt;/tt&gt;&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#i-极小区间w--1259e-8',1,'']]],
+  ['259e_208_20w_20≤_200_200608_20tt_20strong_19',['&lt;strong&gt;(II) 小区间：&lt;tt&gt;1.259e-8 \&lt; w ≤ 0.0608&lt;/tt&gt;&lt;/strong&gt;',['../d8/dbe/group___math_funcs_tri.html#ii-小区间1259e-8--w--00608',1,'']]],
+  ['26）_20',['(1) 极小值（|x| &lt; 2^-26）',['../d8/dbe/group___math_funcs_tri.html#autotoc_md1-极小值x--2-26',1,'']]],
+  ['26_20≤_20x_200_20125）_21',['(2) 小值（2^-26 ≤ |x| &lt; 0.125）',['../d8/dbe/group___math_funcs_tri.html#autotoc_md2-小值2-26--x--0125',1,'']]]
+];

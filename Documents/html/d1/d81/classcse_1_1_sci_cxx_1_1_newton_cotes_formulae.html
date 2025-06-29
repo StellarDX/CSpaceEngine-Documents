@@ -1,0 +1,1044 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: cse::SciCxx::NewtonCotesFormulae类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d1/d81/classcse_1_1_sci_cxx_1_1_newton_cotes_formulae.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-static-methods">静态 Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="../../d4/d6c/classcse_1_1_sci_cxx_1_1_newton_cotes_formulae-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">cse::SciCxx::NewtonCotesFormulae类 参考<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d1/d31/group___adv_math.html">高等数学</a> &raquo; <a class="el" href="../../dc/d20/group___integrations.html">积分</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>牛顿-科特斯积分  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d6b/_adv_math_8h_source.html">AdvMath.h</a>&gt;</code></p>
+<div class="dynheader">
+类 cse::SciCxx::NewtonCotesFormulae 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d1/d81/classcse_1_1_sci_cxx_1_1_newton_cotes_formulae.png" usemap="#cse::SciCxx::NewtonCotesFormulae_map" alt=""/>
+  <map id="cse::SciCxx::NewtonCotesFormulae_map" name="cse::SciCxx::NewtonCotesFormulae_map">
+<area href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html" title="基于采样点的定积分" alt="cse::SciCxx::SampleBasedIntegratingFunction" shape="rect" coords="0,56,267,80"/>
+<area href="../../de/dab/classcse_1_1_sci_cxx_1_1_definite_integrating_function.html" title="一元函数的定积分" alt="cse::SciCxx::DefiniteIntegratingFunction" shape="rect" coords="0,0,267,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html">Block</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">积分块数据结构  <a href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:afa2ccdfd9c7477fb98d7c3b2f872f2fb" id="r_afa2ccdfd9c7477fb98d7c3b2f872f2fb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa2ccdfd9c7477fb98d7c3b2f872f2fb">Mybase</a> = <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">SampleBasedIntegratingFunction</a></td></tr>
+<tr class="memdesc:afa2ccdfd9c7477fb98d7c3b2f872f2fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">基类  <br /></td></tr>
+<tr class="separator:afa2ccdfd9c7477fb98d7c3b2f872f2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;Public 类型 继承自 <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">cse::SciCxx::SampleBasedIntegratingFunction</a></td></tr>
+<tr class="memitem:ada00b057590e2cb02317a01cf49dcff6 inherit pub_types_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_ada00b057590e2cb02317a01cf49dcff6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#ada00b057590e2cb02317a01cf49dcff6">Mybase</a> = <a class="el" href="../../de/dab/classcse_1_1_sci_cxx_1_1_definite_integrating_function.html">DefiniteIntegratingFunction</a></td></tr>
+<tr class="memdesc:ada00b057590e2cb02317a01cf49dcff6 inherit pub_types_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">基类  <br /></td></tr>
+<tr class="separator:ada00b057590e2cb02317a01cf49dcff6 inherit pub_types_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a05b49f333f0d79c4b5a3ad7aaaa29f5d" id="r_a05b49f333f0d79c4b5a3ad7aaaa29f5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05b49f333f0d79c4b5a3ad7aaaa29f5d">NewtonCotesFormulae</a> ()</td></tr>
+<tr class="memdesc:a05b49f333f0d79c4b5a3ad7aaaa29f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数(1阶梯形法则)  <br /></td></tr>
+<tr class="separator:a05b49f333f0d79c4b5a3ad7aaaa29f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654c0169cf93b94de24bab1ee8d13f1f" id="r_a654c0169cf93b94de24bab1ee8d13f1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a654c0169cf93b94de24bab1ee8d13f1f">NewtonCotesFormulae</a> (uint64 N)</td></tr>
+<tr class="memdesc:a654c0169cf93b94de24bab1ee8d13f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数  <br /></td></tr>
+<tr class="separator:a654c0169cf93b94de24bab1ee8d13f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49babcd3706b1432342b4bd89f1250f" id="r_af49babcd3706b1432342b4bd89f1250f"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af49babcd3706b1432342b4bd89f1250f">SingleIntegrate</a> (std::vector&lt; vec2 &gt; Samples) const</td></tr>
+<tr class="memdesc:af49babcd3706b1432342b4bd89f1250f"><td class="mdescLeft">&#160;</td><td class="mdescRight">单次积分  <br /></td></tr>
+<tr class="separator:af49babcd3706b1432342b4bd89f1250f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d76d0a425ba594ac6bc1fb7a34fcf4" id="r_ae7d76d0a425ba594ac6bc1fb7a34fcf4"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7d76d0a425ba594ac6bc1fb7a34fcf4">CompositeIntegrate</a> (std::vector&lt; vec2 &gt; Samples) const</td></tr>
+<tr class="memdesc:ae7d76d0a425ba594ac6bc1fb7a34fcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">复合积分(适用于等距采样)  <br /></td></tr>
+<tr class="separator:ae7d76d0a425ba594ac6bc1fb7a34fcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aa3602c32a5ecfe01b721772d928312" id="r_a4aa3602c32a5ecfe01b721772d928312"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aa3602c32a5ecfe01b721772d928312">DiscreteIntegrate</a> (std::vector&lt; vec2 &gt; Samples) const</td></tr>
+<tr class="memdesc:a4aa3602c32a5ecfe01b721772d928312"><td class="mdescLeft">&#160;</td><td class="mdescRight">离散积分(适用于非等距采样)  <br /></td></tr>
+<tr class="separator:a4aa3602c32a5ecfe01b721772d928312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">cse::SciCxx::SampleBasedIntegratingFunction</a></td></tr>
+<tr class="memitem:a9a1d7d60d8d2e630184b54e37dd0f458 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_a9a1d7d60d8d2e630184b54e37dd0f458"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; vec2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#a9a1d7d60d8d2e630184b54e37dd0f458">GetSamplesFromFunction</a> (Function1D f, float64 a, float64 b, uint64 Samples=0) const</td></tr>
+<tr class="memdesc:a9a1d7d60d8d2e630184b54e37dd0f458 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取函数采样点  <br /></td></tr>
+<tr class="separator:a9a1d7d60d8d2e630184b54e37dd0f458 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb20fdf2f73a841acb411e8ce47f2f97 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_abb20fdf2f73a841acb411e8ce47f2f97"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#abb20fdf2f73a841acb411e8ce47f2f97">operator()</a> (std::vector&lt; vec2 &gt; Samples) const</td></tr>
+<tr class="memdesc:abb20fdf2f73a841acb411e8ce47f2f97 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于采样点计算积分  <br /></td></tr>
+<tr class="separator:abb20fdf2f73a841acb411e8ce47f2f97 inherit pub_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../de/dab/classcse_1_1_sci_cxx_1_1_definite_integrating_function.html">cse::SciCxx::DefiniteIntegratingFunction</a></td></tr>
+<tr class="memitem:aed923829bf0b883f82e633f0c09b301b inherit pub_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function" id="r_aed923829bf0b883f82e633f0c09b301b"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dab/classcse_1_1_sci_cxx_1_1_definite_integrating_function.html#aed923829bf0b883f82e633f0c09b301b">operator()</a> (Function1D f, float64 a, float64 b) const</td></tr>
+<tr class="memdesc:aed923829bf0b883f82e633f0c09b301b inherit pub_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">运算符重载，提供函数式调用接口  <br /></td></tr>
+<tr class="separator:aed923829bf0b883f82e633f0c09b301b inherit pub_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:af9606489f710ec20189d427a0f9b87c2" id="r_af9606489f710ec20189d427a0f9b87c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9606489f710ec20189d427a0f9b87c2">GetEvenlySizedParameters</a> (uint64 N, std::vector&lt; float64 &gt; *Weight, float64 *Error)</td></tr>
+<tr class="memdesc:af9606489f710ec20189d427a0f9b87c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取等距节点的积分参数  <br /></td></tr>
+<tr class="separator:af9606489f710ec20189d427a0f9b87c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eedb5354b1b270882c62a20b27a8d0b" id="r_a7eedb5354b1b270882c62a20b27a8d0b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eedb5354b1b270882c62a20b27a8d0b">GetSpecialCaseParameters</a> (uint64 N, std::vector&lt; float64 &gt; *Weight, float64 *Error)</td></tr>
+<tr class="memdesc:a7eedb5354b1b270882c62a20b27a8d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取预定义特殊情况的积分参数  <br /></td></tr>
+<tr class="separator:a7eedb5354b1b270882c62a20b27a8d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326d85f008e6e357840de7f5fdbf0225" id="r_a326d85f008e6e357840de7f5fdbf0225"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a326d85f008e6e357840de7f5fdbf0225">GetParametersFromSamples</a> (std::vector&lt; float64 &gt; SamplePos, std::vector&lt; float64 &gt; *Weight, float64 *Error)</td></tr>
+<tr class="memdesc:a326d85f008e6e357840de7f5fdbf0225"><td class="mdescLeft">&#160;</td><td class="mdescRight">从采样点获取积分参数  <br /></td></tr>
+<tr class="separator:a326d85f008e6e357840de7f5fdbf0225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702915a8d3bb4e2e83b32b2679070686" id="r_a702915a8d3bb4e2e83b32b2679070686"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a702915a8d3bb4e2e83b32b2679070686">IsEvenlySized</a> (std::vector&lt; vec2 &gt; Samples)</td></tr>
+<tr class="memdesc:a702915a8d3bb4e2e83b32b2679070686"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断采样点是否为等距分布  <br /></td></tr>
+<tr class="separator:a702915a8d3bb4e2e83b32b2679070686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb917e3305a9b073ada53e2c8d15305" id="r_aedb917e3305a9b073ada53e2c8d15305"><td class="memItemLeft" align="right" valign="top">static float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedb917e3305a9b073ada53e2c8d15305">Trapezoidal</a> (std::vector&lt; vec2 &gt; Samples)</td></tr>
+<tr class="memdesc:aedb917e3305a9b073ada53e2c8d15305"><td class="mdescLeft">&#160;</td><td class="mdescRight">梯形积分  <br /></td></tr>
+<tr class="separator:aedb917e3305a9b073ada53e2c8d15305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5f1498375374263d3b5d8014add0ba" id="r_a1e5f1498375374263d3b5d8014add0ba"><td class="memItemLeft" align="right" valign="top">static float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e5f1498375374263d3b5d8014add0ba">Simpson</a> (std::vector&lt; vec2 &gt; Samples)</td></tr>
+<tr class="memdesc:a1e5f1498375374263d3b5d8014add0ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">辛普森积分，可自动处理偶数个采样点的情况  <br /></td></tr>
+<tr class="separator:a1e5f1498375374263d3b5d8014add0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a31e0219bf6fbb83a02e7ea6b886923" id="r_a3a31e0219bf6fbb83a02e7ea6b886923"><td class="memItemLeft" align="right" valign="top">static float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a31e0219bf6fbb83a02e7ea6b886923">Romberg</a> (std::vector&lt; vec2 &gt; Samples, <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; *RichardsonExtrapolationTable=nullptr)</td></tr>
+<tr class="memdesc:a3a31e0219bf6fbb83a02e7ea6b886923"><td class="mdescLeft">&#160;</td><td class="mdescRight">龙贝格积分  <br /></td></tr>
+<tr class="separator:a3a31e0219bf6fbb83a02e7ea6b886923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;静态 Public 成员函数 继承自 <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">cse::SciCxx::SampleBasedIntegratingFunction</a></td></tr>
+<tr class="memitem:aa8db5f2101df4811111e115a9f849d5e inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_aa8db5f2101df4811111e115a9f849d5e"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; vec2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#aa8db5f2101df4811111e115a9f849d5e">GetEvenlySpacedSamplesFromFunction</a> (Function1D f, float64 a, float64 b, uint64 Samples)</td></tr>
+<tr class="memdesc:aa8db5f2101df4811111e115a9f849d5e inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">对一元函数进行固定步长采样  <br /></td></tr>
+<tr class="separator:aa8db5f2101df4811111e115a9f849d5e inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ce15748d79206be57f04afe415b32c inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_a06ce15748d79206be57f04afe415b32c"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; vec2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#a06ce15748d79206be57f04afe415b32c">GetSamplesFromParametricCurve</a> (Function1D x, Function1D y, float64 a, float64 b, uint64 Samples)</td></tr>
+<tr class="memdesc:a06ce15748d79206be57f04afe415b32c inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">对参数曲线进行采样  <br /></td></tr>
+<tr class="separator:a06ce15748d79206be57f04afe415b32c inherit pub_static_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a4e72b381752c81095766ef4d8f20868f" id="r_a4e72b381752c81095766ef4d8f20868f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html">Block</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e72b381752c81095766ef4d8f20868f">CreateBlock</a> (uint64 N) const</td></tr>
+<tr class="memdesc:a4e72b381752c81095766ef4d8f20868f"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建等距采样积分块  <br /></td></tr>
+<tr class="separator:a4e72b381752c81095766ef4d8f20868f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc67b563144866a25c52869dab70f35" id="r_abbc67b563144866a25c52869dab70f35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html">Block</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbc67b563144866a25c52869dab70f35">CreateBlock</a> (std::vector&lt; vec2 &gt; Samples) const</td></tr>
+<tr class="memdesc:abbc67b563144866a25c52869dab70f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建自定义节点积分块  <br /></td></tr>
+<tr class="separator:abbc67b563144866a25c52869dab70f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0fdb0bc02fc5f7cf8b2755dc13a58d0" id="r_aa0fdb0bc02fc5f7cf8b2755dc13a58d0"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0fdb0bc02fc5f7cf8b2755dc13a58d0">SingleIntegrateImpl</a> (std::vector&lt; vec2 &gt; Samples, uint64 L) const</td></tr>
+<tr class="memdesc:aa0fdb0bc02fc5f7cf8b2755dc13a58d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">单次积分实现  <br /></td></tr>
+<tr class="separator:aa0fdb0bc02fc5f7cf8b2755dc13a58d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d8b28158a16078028da0e4a4c4ca7cf" id="r_a9d8b28158a16078028da0e4a4c4ca7cf"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d8b28158a16078028da0e4a4c4ca7cf">Run</a> (std::vector&lt; vec2 &gt; Samples) const override</td></tr>
+<tr class="memdesc:a9d8b28158a16078028da0e4a4c4ca7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">积分计算  <br /></td></tr>
+<tr class="separator:a9d8b28158a16078028da0e4a4c4ca7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">cse::SciCxx::SampleBasedIntegratingFunction</a></td></tr>
+<tr class="memitem:a693f6d60b878a41c77b4fad6bfbb318e inherit pro_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function" id="r_a693f6d60b878a41c77b4fad6bfbb318e"><td class="memItemLeft" align="right" valign="top">float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#a693f6d60b878a41c77b4fad6bfbb318e">Run</a> (Function1D f, float64 a, float64 b) const final</td></tr>
+<tr class="memdesc:a693f6d60b878a41c77b4fad6bfbb318e inherit pro_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 继承基类运算符  <br /></td></tr>
+<tr class="separator:a693f6d60b878a41c77b4fad6bfbb318e inherit pro_methods_classcse_1_1_sci_cxx_1_1_sample_based_integrating_function"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_classcse_1_1_sci_cxx_1_1_definite_integrating_function')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../de/dab/classcse_1_1_sci_cxx_1_1_definite_integrating_function.html">cse::SciCxx::DefiniteIntegratingFunction</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+静态 Protected 成员函数</h2></td></tr>
+<tr class="memitem:aff3d62ab76832d84f415789f2dc11b94" id="r_aff3d62ab76832d84f415789f2dc11b94"><td class="memItemLeft" align="right" valign="top">static float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff3d62ab76832d84f415789f2dc11b94">SimpsonImpl</a> (std::vector&lt; vec2 &gt; Samples)</td></tr>
+<tr class="memdesc:aff3d62ab76832d84f415789f2dc11b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">辛普森积分实现  <br /></td></tr>
+<tr class="separator:aff3d62ab76832d84f415789f2dc11b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cce05a3208009ff65944960dc6d33c4" id="r_a9cce05a3208009ff65944960dc6d33c4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cce05a3208009ff65944960dc6d33c4">GetWeightsErrorsFromSamples</a> (std::vector&lt; float64 &gt; SamplePos, bool IsEqual, std::vector&lt; float64 &gt; *WeightOut, float64 *ErrorOut)</td></tr>
+<tr class="memdesc:a9cce05a3208009ff65944960dc6d33c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">从采样点计算权重和误差系数  <br /></td></tr>
+<tr class="separator:a9cce05a3208009ff65944960dc6d33c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ad5c60d85359f3fc24443e764a0bedbb2" id="r_ad5c60d85359f3fc24443e764a0bedbb2"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5c60d85359f3fc24443e764a0bedbb2">Level</a></td></tr>
+<tr class="memdesc:ad5c60d85359f3fc24443e764a0bedbb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">积分阶数(0=龙贝格,1=梯形,2=辛普森,...)  <br /></td></tr>
+<tr class="separator:ad5c60d85359f3fc24443e764a0bedbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>牛顿-科特斯积分 </p>
+<p>此积分定义为如下，梯形、辛普森等均为该积分的子集：   </p><p class="formulaDsp">
+\[
+\int _{a}^{b}f(x)\,dx\approx \sum _{i=0}^{n} \left( w_{i} f(x_{i}) \right)
+\]
+</p>
+<p>其中：</p><ul>
+<li>\(n\) 为积分阶数</li>
+<li>\(x_i\) 为等距或非等距采样点</li>
+<li>\(w_i\) 为权重系数，可通过求解以下线性系统得到：               <p class="formulaDsp">
+\[
+\begin{bmatrix}
+1      &amp; 1      &amp; \cdots &amp; 1      \\
+x_0    &amp; x_1    &amp; \cdots &amp; x_n    \\
+x_0^2  &amp; x_1^2  &amp; \cdots &amp; x_n^2  \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+x_0^{n} &amp; x_1^{n} &amp; \cdots &amp; x_n^{n}
+\end{bmatrix} 
+\begin{bmatrix}
+w_0 \\ w_1 \\ w_2 \\ \vdots \\ w_n
+\end{bmatrix} = 
+\begin{bmatrix}
+n \\ \frac{n^2}{2} \\ \frac{n^3}{3} \\ \vdots \\ \frac{n^{n+1}}{n+1}
+\end{bmatrix}
+\]
+</p>
+</li>
+</ul>
+<dl class="section user"><dt>参考文献</dt><dd>Keesling J. Closed Newton-Cotes Integration[R/OL]. <a href="https://people.clas.ufl.edu/kees/files/NewtonCotes.pdf">https://people.clas.ufl.edu/kees/files/NewtonCotes.pdf</a>.</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>使用此方法计算封闭图形的面积(即曲线积分)时阶数不能太高，最好直接使用梯形或辛普森，要不然结果会很怪 </dd></dl>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="afa2ccdfd9c7477fb98d7c3b2f872f2fb" name="afa2ccdfd9c7477fb98d7c3b2f872f2fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2ccdfd9c7477fb98d7c3b2f872f2fb">&#9670;&#160;</a></span>Mybase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#afa2ccdfd9c7477fb98d7c3b2f872f2fb">cse::SciCxx::NewtonCotesFormulae::Mybase</a> = <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html">SampleBasedIntegratingFunction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>基类 </p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a05b49f333f0d79c4b5a3ad7aaaa29f5d" name="a05b49f333f0d79c4b5a3ad7aaaa29f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b49f333f0d79c4b5a3ad7aaaa29f5d">&#9670;&#160;</a></span>NewtonCotesFormulae() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cse::SciCxx::NewtonCotesFormulae::NewtonCotesFormulae </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>默认构造函数(1阶梯形法则) </p>
+
+</div>
+</div>
+<a id="a654c0169cf93b94de24bab1ee8d13f1f" name="a654c0169cf93b94de24bab1ee8d13f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654c0169cf93b94de24bab1ee8d13f1f">&#9670;&#160;</a></span>NewtonCotesFormulae() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cse::SciCxx::NewtonCotesFormulae::NewtonCotesFormulae </td>
+          <td>(</td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>N</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>积分阶数(0=龙贝格,1=梯形,2=辛普森,...) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ae7d76d0a425ba594ac6bc1fb7a34fcf4" name="ae7d76d0a425ba594ac6bc1fb7a34fcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d76d0a425ba594ac6bc1fb7a34fcf4">&#9670;&#160;</a></span>CompositeIntegrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::NewtonCotesFormulae::CompositeIntegrate </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>复合积分(适用于等距采样) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点非等距时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abbc67b563144866a25c52869dab70f35" name="abbc67b563144866a25c52869dab70f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc67b563144866a25c52869dab70f35">&#9670;&#160;</a></span>CreateBlock() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html">Block</a> cse::SciCxx::NewtonCotesFormulae::CreateBlock </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建自定义节点积分块 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合(包含x,y坐标) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html" title="积分块数据结构">Block</a> 构造的积分块 </dd></dl>
+
+</div>
+</div>
+<a id="a4e72b381752c81095766ef4d8f20868f" name="a4e72b381752c81095766ef4d8f20868f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e72b381752c81095766ef4d8f20868f">&#9670;&#160;</a></span>CreateBlock() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html">Block</a> cse::SciCxx::NewtonCotesFormulae::CreateBlock </td>
+          <td>(</td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>N</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>创建等距采样积分块 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>采样点数量 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="../../d6/d17/structcse_1_1_sci_cxx_1_1_newton_cotes_formulae_1_1_block.html" title="积分块数据结构">Block</a> 构造的积分块 </dd></dl>
+
+</div>
+</div>
+<a id="a4aa3602c32a5ecfe01b721772d928312" name="a4aa3602c32a5ecfe01b721772d928312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa3602c32a5ecfe01b721772d928312">&#9670;&#160;</a></span>DiscreteIntegrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::NewtonCotesFormulae::DiscreteIntegrate </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>离散积分(适用于非等距采样) </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+
+</div>
+</div>
+<a id="af9606489f710ec20189d427a0f9b87c2" name="af9606489f710ec20189d427a0f9b87c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9606489f710ec20189d427a0f9b87c2">&#9670;&#160;</a></span>GetEvenlySizedParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void cse::SciCxx::NewtonCotesFormulae::GetEvenlySizedParameters </td>
+          <td>(</td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float64 &gt; *</td>          <td class="paramname"><span class="paramname"><em>Weight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64 *</td>          <td class="paramname"><span class="paramname"><em>Error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取等距节点的积分参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>节点数量 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Weight</td><td>输出的权重系数 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>输出的误差系数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当N为0时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a326d85f008e6e357840de7f5fdbf0225" name="a326d85f008e6e357840de7f5fdbf0225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a326d85f008e6e357840de7f5fdbf0225">&#9670;&#160;</a></span>GetParametersFromSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void cse::SciCxx::NewtonCotesFormulae::GetParametersFromSamples </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>SamplePos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float64 &gt; *</td>          <td class="paramname"><span class="paramname"><em>Weight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64 *</td>          <td class="paramname"><span class="paramname"><em>Error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从采样点获取积分参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">SamplePos</td><td>采样点位置 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Weight</td><td>输出的权重系数 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>输出的误差系数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点少于2个时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7eedb5354b1b270882c62a20b27a8d0b" name="a7eedb5354b1b270882c62a20b27a8d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eedb5354b1b270882c62a20b27a8d0b">&#9670;&#160;</a></span>GetSpecialCaseParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void cse::SciCxx::NewtonCotesFormulae::GetSpecialCaseParameters </td>
+          <td>(</td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float64 &gt; *</td>          <td class="paramname"><span class="paramname"><em>Weight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64 *</td>          <td class="paramname"><span class="paramname"><em>Error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取预定义特殊情况的积分参数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>节点数量(1-14) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Weight</td><td>输出的权重系数 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Error</td><td>输出的误差系数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9cce05a3208009ff65944960dc6d33c4" name="a9cce05a3208009ff65944960dc6d33c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cce05a3208009ff65944960dc6d33c4">&#9670;&#160;</a></span>GetWeightsErrorsFromSamples()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void cse::SciCxx::NewtonCotesFormulae::GetWeightsErrorsFromSamples </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>SamplePos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>IsEqual</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; float64 &gt; *</td>          <td class="paramname"><span class="paramname"><em>WeightOut</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64 *</td>          <td class="paramname"><span class="paramname"><em>ErrorOut</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从采样点计算权重和误差系数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">SamplePos</td><td>采样点位置 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">IsEqual</td><td>是否为等距节点 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">WeightOut</td><td>输出的权重系数 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ErrorOut</td><td>输出的误差系数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a702915a8d3bb4e2e83b32b2679070686" name="a702915a8d3bb4e2e83b32b2679070686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702915a8d3bb4e2e83b32b2679070686">&#9670;&#160;</a></span>IsEvenlySized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool cse::SciCxx::NewtonCotesFormulae::IsEvenlySized </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>判断采样点是否为等距分布 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>bool true-等距, false-非等距 </dd></dl>
+
+</div>
+</div>
+<a id="a3a31e0219bf6fbb83a02e7ea6b886923" name="a3a31e0219bf6fbb83a02e7ea6b886923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a31e0219bf6fbb83a02e7ea6b886923">&#9670;&#160;</a></span>Romberg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float64 cse::SciCxx::NewtonCotesFormulae::Romberg </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; *</td>          <td class="paramname"><span class="paramname"><em>RichardsonExtrapolationTable</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>龙贝格积分 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>等距采样点集合(数量需为2^N+1) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">RichardsonExtrapolationTable</td><td>理查森外推表(可选输出) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>积分近似值 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点非等距或数量不符合要求时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d8b28158a16078028da0e4a4c4ca7cf" name="a9d8b28158a16078028da0e4a4c4ca7cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8b28158a16078028da0e4a4c4ca7cf">&#9670;&#160;</a></span>Run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::NewtonCotesFormulae::Run </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>积分计算 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果</dd></dl>
+<p>根据Level自动选择适当的积分方法 </p>
+
+<p>实现了 <a class="el" href="../../d7/d5d/classcse_1_1_sci_cxx_1_1_sample_based_integrating_function.html#aac1c23d11724ca8b289bd99b048e1663">cse::SciCxx::SampleBasedIntegratingFunction</a>.</p>
+
+</div>
+</div>
+<a id="a1e5f1498375374263d3b5d8014add0ba" name="a1e5f1498375374263d3b5d8014add0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5f1498375374263d3b5d8014add0ba">&#9670;&#160;</a></span>Simpson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float64 cse::SciCxx::NewtonCotesFormulae::Simpson </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>辛普森积分，可自动处理偶数个采样点的情况 </p>
+<p>辛普森积分定义如下，适用于等距采样：   </p><p class="formulaDsp">
+\[
+{\begin{aligned}\int _{a}^{b}f(x)\,dx&amp;\approx {\frac {1}{3}}h\sum _{i=1}^{n/2}{\big [}f(x_{2i-2})+4f(x_{2i-1})+f(x_{2i}){\big ]}\\&amp;={\frac {1}{3}}h{\big [}f(x_{0})+4f(x_{1})+2f(x_{2})+4f(x_{3})+2f(x_{4})+\dots +2f(x_{n-2})+4f(x_{n-1})+f(x_{n}){\big ]}\\&amp;={\frac {1}{3}}h\left[f(x_{0})+4\sum _{i=1}^{n/2}f(x_{2i-1})+2\sum _{i=1}^{n/2-1}f(x_{2i})+f(x_{n})\right].\end{aligned}}
+\]
+</p>
+<p>如果样本点非等距则使用以下算法：   </p><p class="formulaDsp">
+\[
+\int _{a}^{b}f(x)\,dx\approx \sum _{i=0}^{N/2-1}{\frac {h_{2i}+h_{2i+1}}{6}}\left[\left(2-{\frac {h_{2i+1}}{h_{2i}}}\right)f_{2i}+{\frac {(h_{2i}+h_{2i+1})^{2}}{h_{2i}h_{2i+1}}}f_{2i+1}+\left(2-{\frac {h_{2i}}{h_{2i+1}}}\right)f_{2i+2}\right]
+\]
+</p>
+<p>如果样本点个数为偶数，则正常积分到倒数第二个点，最后一个点按如下方法处理后相加：   </p><p class="formulaDsp">
+\[
+\alpha f_{N}+\beta f_{N-1}-\eta f_{N-2}
+\]
+</p>
+<p> 其中：   </p><p class="formulaDsp">
+\[
+{\begin{aligned}\alpha &amp;={\frac {2h_{N-1}^{2}+3h_{N-1}h_{N-2}}{6(h_{N-2}+h_{N-1})}},\\[1ex]\beta &amp;={\frac {h_{N-1}^{2}+3h_{N-1}h_{N-2}}{6h_{N-2}}},\\[1ex]\eta &amp;={\frac {h_{N-1}^{3}}{6h_{N-2}(h_{N-2}+h_{N-1})}}.\end{aligned}}
+\]
+</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点少于3个时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aff3d62ab76832d84f415789f2dc11b94" name="aff3d62ab76832d84f415789f2dc11b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff3d62ab76832d84f415789f2dc11b94">&#9670;&#160;</a></span>SimpsonImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float64 cse::SciCxx::NewtonCotesFormulae::SimpsonImpl </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>辛普森积分实现 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>积分结果 </dd></dl>
+
+</div>
+</div>
+<a id="af49babcd3706b1432342b4bd89f1250f" name="af49babcd3706b1432342b4bd89f1250f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49babcd3706b1432342b4bd89f1250f">&#9670;&#160;</a></span>SingleIntegrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::NewtonCotesFormulae::SingleIntegrate </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>单次积分 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点数量与阶数不匹配时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa0fdb0bc02fc5f7cf8b2755dc13a58d0" name="aa0fdb0bc02fc5f7cf8b2755dc13a58d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0fdb0bc02fc5f7cf8b2755dc13a58d0">&#9670;&#160;</a></span>SingleIntegrateImpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float64 cse::SciCxx::NewtonCotesFormulae::SingleIntegrateImpl </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64</td>          <td class="paramname"><span class="paramname"><em>L</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>单次积分实现 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">L</td><td>积分阶数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+
+</div>
+</div>
+<a id="aedb917e3305a9b073ada53e2c8d15305" name="aedb917e3305a9b073ada53e2c8d15305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb917e3305a9b073ada53e2c8d15305">&#9670;&#160;</a></span>Trapezoidal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static float64 cse::SciCxx::NewtonCotesFormulae::Trapezoidal </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; vec2 &gt;</td>          <td class="paramname"><span class="paramname"><em>Samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>梯形积分 </p>
+<p>梯形积分的定义如下：   </p><p class="formulaDsp">
+\[
+\int _{a}^{b}f(x)\,dx\approx \sum _{k=1}^{N}{\frac {f(x_{k-1})+f(x_{k})}{2}}\Delta x_{k}
+\]
+</p>
+ <dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Samples</td><td>采样点集合 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>float64 积分结果 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>当采样点少于2个时抛出 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ad5c60d85359f3fc24443e764a0bedbb2" name="ad5c60d85359f3fc24443e764a0bedbb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c60d85359f3fc24443e764a0bedbb2">&#9670;&#160;</a></span>Level</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64 cse::SciCxx::NewtonCotesFormulae::Level</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>积分阶数(0=龙贝格,1=梯形,2=辛普森,...) </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/d5d/namespacecse.html">cse</a></li><li class="navelem"><a class="el" href="../../dc/d75/namespacecse_1_1_sci_cxx.html">SciCxx</a></li><li class="navelem"><a class="el" href="../../d1/d81/classcse_1_1_sci_cxx_1_1_newton_cotes_formulae.html">NewtonCotesFormulae</a></li>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

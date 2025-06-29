@@ -1,0 +1,1180 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: 变长矩阵</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d6/dea/group___dynamic_matrix.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">变长矩阵<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d1/d31/group___adv_math.html">高等数学</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>可变长度矩阵类型及其运算  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">cse::SciCxx::DynamicMatrix&lt; _Ty &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">可变大小的数学矩阵模板类  <a href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga4fba013a2796f2669d539875219b6f76" id="r_ga4fba013a2796f2669d539875219b6f76"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga4fba013a2796f2669d539875219b6f76"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4fba013a2796f2669d539875219b6f76">cse::SciCxx::operator+</a> (std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="memdesc:ga4fba013a2796f2669d539875219b6f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量一元正号  <br /></td></tr>
+<tr class="separator:ga4fba013a2796f2669d539875219b6f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b1502a824125db9800767d6a7bb681d" id="r_ga2b1502a824125db9800767d6a7bb681d"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga2b1502a824125db9800767d6a7bb681d"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2b1502a824125db9800767d6a7bb681d">cse::SciCxx::operator-</a> (std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="memdesc:ga2b1502a824125db9800767d6a7bb681d"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量一元负号  <br /></td></tr>
+<tr class="separator:ga2b1502a824125db9800767d6a7bb681d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2605d390cd99a21b609e59dd8c27b7d3" id="r_ga2605d390cd99a21b609e59dd8c27b7d3"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga2605d390cd99a21b609e59dd8c27b7d3"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga2605d390cd99a21b609e59dd8c27b7d3">cse::SciCxx::operator+</a> (std::vector&lt; _Tp &gt; const &amp;v, _Tp scalar)</td></tr>
+<tr class="memdesc:ga2605d390cd99a21b609e59dd8c27b7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量标量加法  <br /></td></tr>
+<tr class="separator:ga2605d390cd99a21b609e59dd8c27b7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga505c1138151ea50a66a376e201ced253" id="r_ga505c1138151ea50a66a376e201ced253"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga505c1138151ea50a66a376e201ced253"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga505c1138151ea50a66a376e201ced253">cse::SciCxx::operator+</a> (_Tp scalar, std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="separator:ga505c1138151ea50a66a376e201ced253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f6586c26dbf0caed4f926050d80e421" id="r_ga3f6586c26dbf0caed4f926050d80e421"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga3f6586c26dbf0caed4f926050d80e421"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga3f6586c26dbf0caed4f926050d80e421">cse::SciCxx::operator+</a> (std::vector&lt; _Tp &gt; const &amp;v1, std::vector&lt; _Tp &gt; const &amp;v2)</td></tr>
+<tr class="memdesc:ga3f6586c26dbf0caed4f926050d80e421"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量加法  <br /></td></tr>
+<tr class="separator:ga3f6586c26dbf0caed4f926050d80e421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf9692dde75a58ce96b26f9e3b649da7" id="r_gadf9692dde75a58ce96b26f9e3b649da7"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:gadf9692dde75a58ce96b26f9e3b649da7"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gadf9692dde75a58ce96b26f9e3b649da7">cse::SciCxx::operator-</a> (std::vector&lt; _Tp &gt; const &amp;v, _Tp scalar)</td></tr>
+<tr class="memdesc:gadf9692dde75a58ce96b26f9e3b649da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量标量减法  <br /></td></tr>
+<tr class="separator:gadf9692dde75a58ce96b26f9e3b649da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86b45f1c2f5d46f7ab0eee681daef347" id="r_ga86b45f1c2f5d46f7ab0eee681daef347"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga86b45f1c2f5d46f7ab0eee681daef347"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga86b45f1c2f5d46f7ab0eee681daef347">cse::SciCxx::operator-</a> (_Tp scalar, std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="separator:ga86b45f1c2f5d46f7ab0eee681daef347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff862a680c6a6fc370acd65da9c460b0" id="r_gaff862a680c6a6fc370acd65da9c460b0"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:gaff862a680c6a6fc370acd65da9c460b0"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gaff862a680c6a6fc370acd65da9c460b0">cse::SciCxx::operator-</a> (std::vector&lt; _Tp &gt; const &amp;v1, std::vector&lt; _Tp &gt; const &amp;v2)</td></tr>
+<tr class="memdesc:gaff862a680c6a6fc370acd65da9c460b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量减法  <br /></td></tr>
+<tr class="separator:gaff862a680c6a6fc370acd65da9c460b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1879643a7a4afc2fed4a3f04c4ce0a0b" id="r_ga1879643a7a4afc2fed4a3f04c4ce0a0b"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga1879643a7a4afc2fed4a3f04c4ce0a0b"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1879643a7a4afc2fed4a3f04c4ce0a0b">cse::SciCxx::operator*</a> (std::vector&lt; _Tp &gt; const &amp;v, _Tp scalar)</td></tr>
+<tr class="memdesc:ga1879643a7a4afc2fed4a3f04c4ce0a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量标量乘法  <br /></td></tr>
+<tr class="separator:ga1879643a7a4afc2fed4a3f04c4ce0a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95896cfea692033382387a3fafa3a387" id="r_ga95896cfea692033382387a3fafa3a387"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga95896cfea692033382387a3fafa3a387"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga95896cfea692033382387a3fafa3a387">cse::SciCxx::operator*</a> (_Tp scalar, std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="separator:ga95896cfea692033382387a3fafa3a387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c00d9d37d252d04c6f18d7140069697" id="r_ga7c00d9d37d252d04c6f18d7140069697"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga7c00d9d37d252d04c6f18d7140069697"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga7c00d9d37d252d04c6f18d7140069697">cse::SciCxx::operator*</a> (std::vector&lt; _Tp &gt; const &amp;v1, std::vector&lt; _Tp &gt; const &amp;v2)</td></tr>
+<tr class="memdesc:ga7c00d9d37d252d04c6f18d7140069697"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量逐元素乘法  <br /></td></tr>
+<tr class="separator:ga7c00d9d37d252d04c6f18d7140069697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e36db3f5127350838d51fef5e9d423b" id="r_ga4e36db3f5127350838d51fef5e9d423b"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga4e36db3f5127350838d51fef5e9d423b"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4e36db3f5127350838d51fef5e9d423b">cse::SciCxx::operator/</a> (std::vector&lt; _Tp &gt; const &amp;v, _Tp scalar)</td></tr>
+<tr class="memdesc:ga4e36db3f5127350838d51fef5e9d423b"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量标量除法  <br /></td></tr>
+<tr class="separator:ga4e36db3f5127350838d51fef5e9d423b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7291fe828bdfd1497d93c356b93714f0" id="r_ga7291fe828bdfd1497d93c356b93714f0"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga7291fe828bdfd1497d93c356b93714f0"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga7291fe828bdfd1497d93c356b93714f0">cse::SciCxx::operator/</a> (_Tp scalar, std::vector&lt; _Tp &gt; const &amp;v)</td></tr>
+<tr class="separator:ga7291fe828bdfd1497d93c356b93714f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82c08addc2e18f02a791b3eb01f68662" id="r_ga82c08addc2e18f02a791b3eb01f68662"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga82c08addc2e18f02a791b3eb01f68662"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::vector&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga82c08addc2e18f02a791b3eb01f68662">cse::SciCxx::operator/</a> (std::vector&lt; _Tp &gt; const &amp;v1, std::vector&lt; _Tp &gt; const &amp;v2)</td></tr>
+<tr class="memdesc:ga82c08addc2e18f02a791b3eb01f68662"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量逐元素除法  <br /></td></tr>
+<tr class="separator:ga82c08addc2e18f02a791b3eb01f68662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b5b68816c001f98b88b2da52801ceb5" id="r_ga4b5b68816c001f98b88b2da52801ceb5"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga4b5b68816c001f98b88b2da52801ceb5"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga4b5b68816c001f98b88b2da52801ceb5">cse::SciCxx::operator&lt;&lt;</a> (std::ostream &amp;os, std::vector&lt; _Tp &gt; const &amp;vec)</td></tr>
+<tr class="memdesc:ga4b5b68816c001f98b88b2da52801ceb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量输出运算符  <br /></td></tr>
+<tr class="separator:ga4b5b68816c001f98b88b2da52801ceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a8d887b5359cb8660cd3e1d2e2af3b1" id="r_ga9a8d887b5359cb8660cd3e1d2e2af3b1"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga9a8d887b5359cb8660cd3e1d2e2af3b1"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga9a8d887b5359cb8660cd3e1d2e2af3b1">cse::SciCxx::operator&lt;&lt;</a> (std::wostream &amp;os, std::vector&lt; _Tp &gt; const &amp;vec)</td></tr>
+<tr class="separator:ga9a8d887b5359cb8660cd3e1d2e2af3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8167b9da4126308a85a6906d8a6bf288" id="r_ga8167b9da4126308a85a6906d8a6bf288"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga8167b9da4126308a85a6906d8a6bf288"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga8167b9da4126308a85a6906d8a6bf288">cse::SciCxx::operator+</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga8167b9da4126308a85a6906d8a6bf288"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵一元正号  <br /></td></tr>
+<tr class="separator:ga8167b9da4126308a85a6906d8a6bf288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga161faa89ab278a8ea1b1eebf26bcddd2" id="r_ga161faa89ab278a8ea1b1eebf26bcddd2"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga161faa89ab278a8ea1b1eebf26bcddd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga161faa89ab278a8ea1b1eebf26bcddd2">cse::SciCxx::operator-</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:ga161faa89ab278a8ea1b1eebf26bcddd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵一元负号  <br /></td></tr>
+<tr class="separator:ga161faa89ab278a8ea1b1eebf26bcddd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga828e6a7734b1855b7b8c396f7eab8d12" id="r_ga828e6a7734b1855b7b8c396f7eab8d12"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga828e6a7734b1855b7b8c396f7eab8d12"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga828e6a7734b1855b7b8c396f7eab8d12">cse::SciCxx::operator+</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m1, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m2)</td></tr>
+<tr class="memdesc:ga828e6a7734b1855b7b8c396f7eab8d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵加法  <br /></td></tr>
+<tr class="separator:ga828e6a7734b1855b7b8c396f7eab8d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cb89c5db72d68510c9948a214e05b50" id="r_ga5cb89c5db72d68510c9948a214e05b50"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga5cb89c5db72d68510c9948a214e05b50"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga5cb89c5db72d68510c9948a214e05b50">cse::SciCxx::operator-</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m1, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m2)</td></tr>
+<tr class="memdesc:ga5cb89c5db72d68510c9948a214e05b50"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵减法  <br /></td></tr>
+<tr class="separator:ga5cb89c5db72d68510c9948a214e05b50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae083440f1b6f5603cf7575593ab4b585" id="r_gae083440f1b6f5603cf7575593ab4b585"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:gae083440f1b6f5603cf7575593ab4b585"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gae083440f1b6f5603cf7575593ab4b585">cse::SciCxx::operator*</a> (_Tp factor, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;matrix)</td></tr>
+<tr class="memdesc:gae083440f1b6f5603cf7575593ab4b585"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵标量乘法  <br /></td></tr>
+<tr class="separator:gae083440f1b6f5603cf7575593ab4b585"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb45d9aa18e46343d09a83e5892bbc3d" id="r_gacb45d9aa18e46343d09a83e5892bbc3d"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:gacb45d9aa18e46343d09a83e5892bbc3d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gacb45d9aa18e46343d09a83e5892bbc3d">cse::SciCxx::operator*</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;matrix, _Tp factor)</td></tr>
+<tr class="separator:gacb45d9aa18e46343d09a83e5892bbc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga755ce6224a2a178674c9ec92d783b6c5" id="r_ga755ce6224a2a178674c9ec92d783b6c5"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga755ce6224a2a178674c9ec92d783b6c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga755ce6224a2a178674c9ec92d783b6c5">cse::SciCxx::operator/</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;matrix, _Tp divisor)</td></tr>
+<tr class="memdesc:ga755ce6224a2a178674c9ec92d783b6c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵标量除法  <br /></td></tr>
+<tr class="separator:ga755ce6224a2a178674c9ec92d783b6c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d22a18d731586bcb6d8d69e473203dc" id="r_ga1d22a18d731586bcb6d8d69e473203dc"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga1d22a18d731586bcb6d8d69e473203dc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga1d22a18d731586bcb6d8d69e473203dc">cse::SciCxx::operator*</a> (const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m1, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m2)</td></tr>
+<tr class="memdesc:ga1d22a18d731586bcb6d8d69e473203dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵乘法  <br /></td></tr>
+<tr class="separator:ga1d22a18d731586bcb6d8d69e473203dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a6b942aadcf861ee8d0fe9ecd3e0857" id="r_ga8a6b942aadcf861ee8d0fe9ecd3e0857"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga8a6b942aadcf861ee8d0fe9ecd3e0857"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga8a6b942aadcf861ee8d0fe9ecd3e0857">cse::SciCxx::operator&lt;&lt;</a> (std::ostream &amp;dbg, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m)</td></tr>
+<tr class="memdesc:ga8a6b942aadcf861ee8d0fe9ecd3e0857"><td class="mdescLeft">&#160;</td><td class="mdescRight">矩阵输出运算符  <br /></td></tr>
+<tr class="separator:ga8a6b942aadcf861ee8d0fe9ecd3e0857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5076af78466e24923510ce7560aeaa9a" id="r_ga5076af78466e24923510ce7560aeaa9a"><td class="memTemplParams" colspan="2">template&lt;typename _Tp &gt; </td></tr>
+<tr class="memitem:ga5076af78466e24923510ce7560aeaa9a"><td class="memTemplItemLeft" align="right" valign="top">std::wostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga5076af78466e24923510ce7560aeaa9a">cse::SciCxx::operator&lt;&lt;</a> (std::wostream &amp;dbg, const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;m)</td></tr>
+<tr class="separator:ga5076af78466e24923510ce7560aeaa9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>可变长度矩阵类型及其运算 </p>
+<h2 class="groupheader">函数说明</h2>
+<a id="gae083440f1b6f5603cf7575593ab4b585" name="gae083440f1b6f5603cf7575593ab4b585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae083440f1b6f5603cf7575593ab4b585">&#9670;&#160;</a></span>operator*() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>factor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵标量乘法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">factor</td><td>标量 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">matrix</td><td>输入矩阵 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果矩阵 </dd></dl>
+
+</div>
+</div>
+<a id="ga95896cfea692033382387a3fafa3a387" name="ga95896cfea692033382387a3fafa3a387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95896cfea692033382387a3fafa3a387">&#9670;&#160;</a></span>operator*() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga1879643a7a4afc2fed4a3f04c4ce0a0b" title="向量标量乘法">operator*(std\vector&lt;_Tp&gt; const&amp;, _Tp)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga1d22a18d731586bcb6d8d69e473203dc" name="ga1d22a18d731586bcb6d8d69e473203dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d22a18d731586bcb6d8d69e473203dc">&#9670;&#160;</a></span>operator*() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵乘法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>左矩阵(A) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>右矩阵(B) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果矩阵(C) </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>矩阵尺寸不匹配</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>计算公式:</dt><dd><p class="formulaDsp">
+\[
+\mathbf{C} = \mathbf{A} \times \mathbf{B} \quad \text{其中} \quad 
+c_{ij} = \sum_{k=0}^{K} a_{ik} \times b_{kj}
+\]
+</p>
+ </dd></dl>
+<dl class="section user"><dt>尺寸要求:</dt><dd><ul>
+<li>A的列数 = B的行数</li>
+<li>结果矩阵尺寸: (B.cols x A.rows) </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="gacb45d9aa18e46343d09a83e5892bbc3d" name="gacb45d9aa18e46343d09a83e5892bbc3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb45d9aa18e46343d09a83e5892bbc3d">&#9670;&#160;</a></span>operator*() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>factor</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gae083440f1b6f5603cf7575593ab4b585" title="矩阵标量乘法">operator*(_Tp, const DynamicMatrix&lt;_Tp&gt;&amp;)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga1879643a7a4afc2fed4a3f04c4ce0a0b" name="ga1879643a7a4afc2fed4a3f04c4ce0a0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1879643a7a4afc2fed4a3f04c4ce0a0b">&#9670;&#160;</a></span>operator*() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量标量乘法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7c00d9d37d252d04c6f18d7140069697" name="ga7c00d9d37d252d04c6f18d7140069697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c00d9d37d252d04c6f18d7140069697">&#9670;&#160;</a></span>operator*() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator* </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量逐元素乘法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga505c1138151ea50a66a376e201ced253" name="ga505c1138151ea50a66a376e201ced253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga505c1138151ea50a66a376e201ced253">&#9670;&#160;</a></span>operator+() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga2605d390cd99a21b609e59dd8c27b7d3" title="向量标量加法">operator+(std\vector&lt;_Tp&gt; const&amp;, _Tp)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga828e6a7734b1855b7b8c396f7eab8d12" name="ga828e6a7734b1855b7b8c396f7eab8d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga828e6a7734b1855b7b8c396f7eab8d12">&#9670;&#160;</a></span>operator+() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵加法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>矩阵A </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>矩阵B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果矩阵 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>矩阵尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8167b9da4126308a85a6906d8a6bf288" name="ga8167b9da4126308a85a6906d8a6bf288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8167b9da4126308a85a6906d8a6bf288">&#9670;&#160;</a></span>operator+() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵一元正号 </p>
+<dl class="section return"><dt>返回</dt><dd>矩阵副本 </dd></dl>
+
+</div>
+</div>
+<a id="ga4fba013a2796f2669d539875219b6f76" name="ga4fba013a2796f2669d539875219b6f76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4fba013a2796f2669d539875219b6f76">&#9670;&#160;</a></span>operator+() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量一元正号 </p>
+<dl class="section return"><dt>返回</dt><dd>向量副本 </dd></dl>
+
+</div>
+</div>
+<a id="ga2605d390cd99a21b609e59dd8c27b7d3" name="ga2605d390cd99a21b609e59dd8c27b7d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2605d390cd99a21b609e59dd8c27b7d3">&#9670;&#160;</a></span>operator+() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量标量加法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3f6586c26dbf0caed4f926050d80e421" name="ga3f6586c26dbf0caed4f926050d80e421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f6586c26dbf0caed4f926050d80e421">&#9670;&#160;</a></span>operator+() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量加法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga86b45f1c2f5d46f7ab0eee681daef347" name="ga86b45f1c2f5d46f7ab0eee681daef347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86b45f1c2f5d46f7ab0eee681daef347">&#9670;&#160;</a></span>operator-() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#gadf9692dde75a58ce96b26f9e3b649da7" title="向量标量减法">operator-(std\vector&lt;_Tp&gt; const&amp;, _Tp)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga5cb89c5db72d68510c9948a214e05b50" name="ga5cb89c5db72d68510c9948a214e05b50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cb89c5db72d68510c9948a214e05b50">&#9670;&#160;</a></span>operator-() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵减法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>矩阵A </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>矩阵B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果矩阵 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>矩阵尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga161faa89ab278a8ea1b1eebf26bcddd2" name="ga161faa89ab278a8ea1b1eebf26bcddd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga161faa89ab278a8ea1b1eebf26bcddd2">&#9670;&#160;</a></span>operator-() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵一元负号 </p>
+<dl class="section return"><dt>返回</dt><dd>负矩阵 </dd></dl>
+
+</div>
+</div>
+<a id="ga2b1502a824125db9800767d6a7bb681d" name="ga2b1502a824125db9800767d6a7bb681d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b1502a824125db9800767d6a7bb681d">&#9670;&#160;</a></span>operator-() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量一元负号 </p>
+<dl class="section return"><dt>返回</dt><dd>负向量 </dd></dl>
+
+</div>
+</div>
+<a id="gadf9692dde75a58ce96b26f9e3b649da7" name="gadf9692dde75a58ce96b26f9e3b649da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf9692dde75a58ce96b26f9e3b649da7">&#9670;&#160;</a></span>operator-() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量标量减法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaff862a680c6a6fc370acd65da9c460b0" name="gaff862a680c6a6fc370acd65da9c460b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff862a680c6a6fc370acd65da9c460b0">&#9670;&#160;</a></span>operator-() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator- </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量减法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7291fe828bdfd1497d93c356b93714f0" name="ga7291fe828bdfd1497d93c356b93714f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7291fe828bdfd1497d93c356b93714f0">&#9670;&#160;</a></span>operator/() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga4e36db3f5127350838d51fef5e9d423b" title="向量标量除法">operator/(std\vector&lt;_Tp&gt; const&amp;, _Tp)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga755ce6224a2a178674c9ec92d783b6c5" name="ga755ce6224a2a178674c9ec92d783b6c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga755ce6224a2a178674c9ec92d783b6c5">&#9670;&#160;</a></span>operator/() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; cse::SciCxx::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>matrix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>divisor</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>矩阵标量除法 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">matrix</td><td>被除矩阵 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">divisor</td><td>标量除数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>结果矩阵 </dd></dl>
+
+</div>
+</div>
+<a id="ga4e36db3f5127350838d51fef5e9d423b" name="ga4e36db3f5127350838d51fef5e9d423b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e36db3f5127350838d51fef5e9d423b">&#9670;&#160;</a></span>operator/() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">_Tp</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量标量除法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga82c08addc2e18f02a791b3eb01f68662" name="ga82c08addc2e18f02a791b3eb01f68662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82c08addc2e18f02a791b3eb01f68662">&#9670;&#160;</a></span>operator/() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; _Tp &gt; cse::SciCxx::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>v2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>向量逐元素除法 </p>
+<dl class="section return"><dt>返回</dt><dd>结果向量 </dd></dl>
+<dl class="exception"><dt>异常</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>向量尺寸不匹配 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8a6b942aadcf861ee8d0fe9ecd3e0857" name="ga8a6b942aadcf861ee8d0fe9ecd3e0857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a6b942aadcf861ee8d0fe9ecd3e0857">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; cse::SciCxx::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>dbg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>矩阵输出运算符 </p>
+<dl class="section user"><dt>输出格式:</dt><dd>[[m00, m01, ..., m0n]<br  />
+ [m10, m11, ..., m1n]<br  />
+ ...<br  />
+ [mm0, mm1, ..., mmn]] </dd></dl>
+
+</div>
+</div>
+<a id="ga4b5b68816c001f98b88b2da52801ceb5" name="ga4b5b68816c001f98b88b2da52801ceb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b5b68816c001f98b88b2da52801ceb5">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; cse::SciCxx::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向量输出运算符 </p>
+<dl class="section user"><dt>输出格式: (v0, v1, ..., vn)</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ga5076af78466e24923510ce7560aeaa9a" name="ga5076af78466e24923510ce7560aeaa9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5076af78466e24923510ce7560aeaa9a">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream &amp; cse::SciCxx::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;</td>          <td class="paramname"><span class="paramname"><em>dbg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; _Tp &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga8a6b942aadcf861ee8d0fe9ecd3e0857" title="矩阵输出运算符">operator&lt;&lt;(std\ostream&amp;, const DynamicMatrix&lt;_Tp&gt; &amp;)</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga9a8d887b5359cb8660cd3e1d2e2af3b1" name="ga9a8d887b5359cb8660cd3e1d2e2af3b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a8d887b5359cb8660cd3e1d2e2af3b1">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename _Tp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wostream &amp; cse::SciCxx::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::wostream &amp;</td>          <td class="paramname"><span class="paramname"><em>os</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; _Tp &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="#ga4b5b68816c001f98b88b2da52801ceb5" title="向量输出运算符">operator&lt;&lt;(std\ostream&amp;, std\vector&lt;_Tp&gt; const&amp;)</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

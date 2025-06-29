@@ -1,0 +1,460 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: cse::SciCxx::ElementwiseIterator类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-types">Protected 类型</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="../../de/d8b/classcse_1_1_sci_cxx_1_1_elementwise_iterator-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">cse::SciCxx::ElementwiseIterator类 参考<span class="mlabels"><span class="mlabel">abstract</span></span><div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d1/d31/group___adv_math.html">高等数学</a> &raquo; <a class="el" href="../../d9/d5c/group___iterators.html">迭代器</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>迭代型求解算法使用的通用迭代器(由SciPy翻译而来，并转写为抽象基类)  
+ <a href="#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d6b/_adv_math_8h_source.html">AdvMath.h</a>&gt;</code></p>
+<div class="dynheader">
+类 cse::SciCxx::ElementwiseIterator 继承关系图:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.png" usemap="#cse::SciCxx::ElementwiseIterator_map" alt=""/>
+  <map id="cse::SciCxx::ElementwiseIterator_map" name="cse::SciCxx::ElementwiseIterator_map">
+<area href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html" title="计算过程用到的迭代器" alt="cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator" shape="rect" coords="0,56,395,80"/>
+<area href="../../db/dd5/classcse_1_1_sci_cxx_1_1_riemann_liouville_binomial_f_d_derivative_function_1_1_iterator.html" title="导数计算的迭代器" alt="cse::SciCxx::RiemannLiouvilleBinomialFDDerivativeFunction::Iterator" shape="rect" coords="405,56,800,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:aa255d0d3969b1063b34ff8e4c4f62bed" id="r_aa255d0d3969b1063b34ff8e4c4f62bed"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa255d0d3969b1063b34ff8e4c4f62bed">PreEvaluator</a> ()=0</td></tr>
+<tr class="memdesc:aa255d0d3969b1063b34ff8e4c4f62bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">预评估函数（纯虚函数）  <br /></td></tr>
+<tr class="separator:aa255d0d3969b1063b34ff8e4c4f62bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9aa76fd22991a074d7d1a7154029623" id="r_ad9aa76fd22991a074d7d1a7154029623"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9aa76fd22991a074d7d1a7154029623">PostEvaluator</a> (<a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; x, <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; fx)=0</td></tr>
+<tr class="memdesc:ad9aa76fd22991a074d7d1a7154029623"><td class="mdescLeft">&#160;</td><td class="mdescRight">后评估函数（纯虚函数）  <br /></td></tr>
+<tr class="separator:ad9aa76fd22991a074d7d1a7154029623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad02312607eb2f5b9ee23eea5f4bcf8ca" id="r_ad02312607eb2f5b9ee23eea5f4bcf8ca"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad02312607eb2f5b9ee23eea5f4bcf8ca">CheckTerminate</a> ()=0</td></tr>
+<tr class="memdesc:ad02312607eb2f5b9ee23eea5f4bcf8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">终止条件检查（纯虚函数）  <br /></td></tr>
+<tr class="separator:ad02312607eb2f5b9ee23eea5f4bcf8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05ae87bb392b26b7582795687c4d06f" id="r_ad05ae87bb392b26b7582795687c4d06f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad05ae87bb392b26b7582795687c4d06f">Finalize</a> ()=0</td></tr>
+<tr class="memdesc:ad05ae87bb392b26b7582795687c4d06f"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代终止处理函数（纯虚函数）  <br /></td></tr>
+<tr class="separator:ad05ae87bb392b26b7582795687c4d06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27404a384867fe92aa7dbb9c7769cbc1" id="r_a27404a384867fe92aa7dbb9c7769cbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27404a384867fe92aa7dbb9c7769cbc1">Run</a> (Function1D Function, float64 MaxIterLog)</td></tr>
+<tr class="memdesc:a27404a384867fe92aa7dbb9c7769cbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行主循环  <br /></td></tr>
+<tr class="separator:a27404a384867fe92aa7dbb9c7769cbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected 类型</h2></td></tr>
+<tr class="memitem:a24a0230de361916bbcddeac27cb37b92" id="r_a24a0230de361916bbcddeac27cb37b92"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="#a24a0230de361916bbcddeac27cb37b92a36067a3d0a6947ff9408dd4b9af715ab">InProgress</a> = 1
+, <a class="el" href="#a24a0230de361916bbcddeac27cb37b92a5366ff73adf9c9b6432c6ed02411ed77">Finished</a> = 0
+, <a class="el" href="#a24a0230de361916bbcddeac27cb37b92adf9fb2ac61a274551f3abb084fcae17a">ValueError</a> = -3
+ }</td></tr>
+<tr class="memdesc:a24a0230de361916bbcddeac27cb37b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器状态  <a href="#a24a0230de361916bbcddeac27cb37b92">更多...</a><br /></td></tr>
+<tr class="separator:a24a0230de361916bbcddeac27cb37b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a9f075615ff9f2aae27245a53bd0764c2" id="r_a9f075615ff9f2aae27245a53bd0764c2"><td class="memItemLeft" align="right" valign="top">enum cse::SciCxx::ElementwiseIterator:: { ... } &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f075615ff9f2aae27245a53bd0764c2">State</a></td></tr>
+<tr class="memdesc:a9f075615ff9f2aae27245a53bd0764c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">迭代器状态  <br /></td></tr>
+<tr class="separator:a9f075615ff9f2aae27245a53bd0764c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac408171a9965e257411aec61ba4c1368" id="r_ac408171a9965e257411aec61ba4c1368"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac408171a9965e257411aec61ba4c1368">IterCount</a> = 0</td></tr>
+<tr class="memdesc:ac408171a9965e257411aec61ba4c1368"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前迭代次数  <br /></td></tr>
+<tr class="separator:ac408171a9965e257411aec61ba4c1368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a477f08e8cdb4e3c6daf9702a04d614" id="r_a9a477f08e8cdb4e3c6daf9702a04d614"><td class="memItemLeft" align="right" valign="top">uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a477f08e8cdb4e3c6daf9702a04d614">EvaluateCount</a> = 0</td></tr>
+<tr class="memdesc:a9a477f08e8cdb4e3c6daf9702a04d614"><td class="mdescLeft">&#160;</td><td class="mdescRight">函数评估次数  <br /></td></tr>
+<tr class="separator:a9a477f08e8cdb4e3c6daf9702a04d614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>迭代型求解算法使用的通用迭代器(由SciPy翻译而来，并转写为抽象基类) </p>
+<dl class="section note"><dt>注解</dt><dd>此工具仅供内部使用 </dd></dl>
+</div><h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a24a0230de361916bbcddeac27cb37b92" name="a24a0230de361916bbcddeac27cb37b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a0230de361916bbcddeac27cb37b92">&#9670;&#160;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>迭代器状态 </p>
+<dl class="section note"><dt>注解</dt><dd>状态转移由具体实现控制 </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a24a0230de361916bbcddeac27cb37b92a36067a3d0a6947ff9408dd4b9af715ab" name="a24a0230de361916bbcddeac27cb37b92a36067a3d0a6947ff9408dd4b9af715ab"></a>InProgress&#160;</td><td class="fielddoc"><p>进行中 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a24a0230de361916bbcddeac27cb37b92a5366ff73adf9c9b6432c6ed02411ed77" name="a24a0230de361916bbcddeac27cb37b92a5366ff73adf9c9b6432c6ed02411ed77"></a>Finished&#160;</td><td class="fielddoc"><p>已完成 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a24a0230de361916bbcddeac27cb37b92adf9fb2ac61a274551f3abb084fcae17a" name="a24a0230de361916bbcddeac27cb37b92adf9fb2ac61a274551f3abb084fcae17a"></a>ValueError&#160;</td><td class="fielddoc"><p>数值错误 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad02312607eb2f5b9ee23eea5f4bcf8ca" name="ad02312607eb2f5b9ee23eea5f4bcf8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02312607eb2f5b9ee23eea5f4bcf8ca">&#9670;&#160;</a></span>CheckTerminate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool cse::SciCxx::ElementwiseIterator::CheckTerminate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>终止条件检查（纯虚函数） </p>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>满足终止条件 </td></tr>
+    <tr><td class="paramname">false</td><td>未满足终止条件 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>派生类应实现具体终止条件判断逻辑 </dd></dl>
+
+<p>在 <a class="el" href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html#a0c68eff3b4e290e97e2d1eb0b9bf35dd">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator</a> , 以及 <a class="el" href="../../db/dd5/classcse_1_1_sci_cxx_1_1_riemann_liouville_binomial_f_d_derivative_function_1_1_iterator.html#a84a8f4c8c83f8aee78f1d3ea80042e03">cse::SciCxx::RiemannLiouvilleBinomialFDDerivativeFunction::Iterator</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad05ae87bb392b26b7582795687c4d06f" name="ad05ae87bb392b26b7582795687c4d06f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05ae87bb392b26b7582795687c4d06f">&#9670;&#160;</a></span>Finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void cse::SciCxx::ElementwiseIterator::Finalize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>迭代终止处理函数（纯虚函数） </p>
+<dl class="section note"><dt>注解</dt><dd>用于在迭代结束后执行的处理 </dd></dl>
+
+<p>在 <a class="el" href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html#a23454bb3d70f237a1e619bb0428b15d3">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator</a> , 以及 <a class="el" href="../../db/dd5/classcse_1_1_sci_cxx_1_1_riemann_liouville_binomial_f_d_derivative_function_1_1_iterator.html#a9d513ba20153b07c455c6a3884683d9a">cse::SciCxx::RiemannLiouvilleBinomialFDDerivativeFunction::Iterator</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad9aa76fd22991a074d7d1a7154029623" name="ad9aa76fd22991a074d7d1a7154029623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9aa76fd22991a074d7d1a7154029623">&#9670;&#160;</a></span>PostEvaluator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void cse::SciCxx::ElementwiseIterator::PostEvaluator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt;</td>          <td class="paramname"><span class="paramname"><em>fx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>后评估函数（纯虚函数） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>当前迭代点矩阵 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fx</td><td>目标函数值矩阵 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>派生类必须实现此方法，用于每次迭代后的处理 </dd></dl>
+
+<p>在 <a class="el" href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html#a74048f688e7a4ec07728d1fbf2b0045c">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator</a> , 以及 <a class="el" href="../../db/dd5/classcse_1_1_sci_cxx_1_1_riemann_liouville_binomial_f_d_derivative_function_1_1_iterator.html#a55f81e82c0eef5ad4bd413a69313f89a">cse::SciCxx::RiemannLiouvilleBinomialFDDerivativeFunction::Iterator</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa255d0d3969b1063b34ff8e4c4f62bed" name="aa255d0d3969b1063b34ff8e4c4f62bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa255d0d3969b1063b34ff8e4c4f62bed">&#9670;&#160;</a></span>PreEvaluator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix</a>&lt; float64 &gt; cse::SciCxx::ElementwiseIterator::PreEvaluator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>预评估函数（纯虚函数） </p>
+<dl class="section return"><dt>返回</dt><dd><a class="el" href="../../db/d31/classcse_1_1_sci_cxx_1_1_dynamic_matrix.html">DynamicMatrix&lt;float64&gt;</a> 返回预评估结果矩阵 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>派生类必须实现此方法，用于每次迭代前的预处理 </dd></dl>
+
+<p>在 <a class="el" href="../../d1/d3c/classcse_1_1_sci_cxx_1_1_adaptive1st_order_f_d_derivative_function_1_1_iterator.html#a94cc47d2f6ef7fcbcf0032f3b1c00009">cse::SciCxx::Adaptive1stOrderFDDerivativeFunction::Iterator</a> , 以及 <a class="el" href="../../db/dd5/classcse_1_1_sci_cxx_1_1_riemann_liouville_binomial_f_d_derivative_function_1_1_iterator.html#afbd144407436e107951e6a92e0749233">cse::SciCxx::RiemannLiouvilleBinomialFDDerivativeFunction::Iterator</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a27404a384867fe92aa7dbb9c7769cbc1" name="a27404a384867fe92aa7dbb9c7769cbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27404a384867fe92aa7dbb9c7769cbc1">&#9670;&#160;</a></span>Run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cse::SciCxx::ElementwiseIterator::Run </td>
+          <td>(</td>
+          <td class="paramtype">Function1D</td>          <td class="paramname"><span class="paramname"><em>Function</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>MaxIterLog</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>执行主循环 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Function</td><td>目标函数对象 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">MaxIterLog</td><td>最大迭代次数的对数 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a9a477f08e8cdb4e3c6daf9702a04d614" name="a9a477f08e8cdb4e3c6daf9702a04d614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a477f08e8cdb4e3c6daf9702a04d614">&#9670;&#160;</a></span>EvaluateCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64 cse::SciCxx::ElementwiseIterator::EvaluateCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>函数评估次数 </p>
+
+</div>
+</div>
+<a id="ac408171a9965e257411aec61ba4c1368" name="ac408171a9965e257411aec61ba4c1368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac408171a9965e257411aec61ba4c1368">&#9670;&#160;</a></span>IterCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64 cse::SciCxx::ElementwiseIterator::IterCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>当前迭代次数 </p>
+
+</div>
+</div>
+<a id="a9f075615ff9f2aae27245a53bd0764c2" name="a9f075615ff9f2aae27245a53bd0764c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f075615ff9f2aae27245a53bd0764c2">&#9670;&#160;</a></span>[]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum  { ... }  cse::SciCxx::ElementwiseIterator::State</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>迭代器状态 </p>
+<dl class="section note"><dt>注解</dt><dd>状态转移由具体实现控制 </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d6/d5d/namespacecse.html">cse</a></li><li class="navelem"><a class="el" href="../../dc/d75/namespacecse_1_1_sci_cxx.html">SciCxx</a></li><li class="navelem"><a class="el" href="../../d3/df8/classcse_1_1_sci_cxx_1_1_elementwise_iterator.html">ElementwiseIterator</a></li>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

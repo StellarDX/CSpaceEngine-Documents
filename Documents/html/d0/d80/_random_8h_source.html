@@ -1,0 +1,523 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: Headers/CSE/Base/Random.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d0/d80/_random_8h_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Random.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d5d/namespacecse.html">cse</a> {</div>
+<div class="foldopen" id="foldopen00002" data-start="{" data-end="}">
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno"><a class="line" href="../../d0/d21/namespacecse_1_1_probability.html">    2</a></span><span class="keyword">namespace </span>Probability {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> _Ty = <span class="keywordtype">float</span>64&gt;</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html">triangular_distribution</a> : <span class="keyword">public</span> std::piecewise_linear_distribution&lt;_Ty&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af641fa4d141a9155bc501d8876ecca26">   22</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af641fa4d141a9155bc501d8876ecca26">_Mybase</a>     = std::piecewise_linear_distribution&lt;_Ty&gt;;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af6bcb2d711ec5b90bbf66da1b83d9690">   23</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af6bcb2d711ec5b90bbf66da1b83d9690">_Mypbase</a>    = <span class="keyword">typename</span> _Mybase::param_type;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#aeaf69e1946a4aefd08da88faa79d8e46">   24</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#aeaf69e1946a4aefd08da88faa79d8e46">result_type</a> = _Ty;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a6ca838353d7223701e10cbede1cc0b7b">   26</a></span>    <a class="code hl_function" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a6ca838353d7223701e10cbede1cc0b7b">triangular_distribution</a>() {}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a0fc9b5ab025c2995bceef1e3c8e53955">   34</a></span>    <a class="code hl_function" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a0fc9b5ab025c2995bceef1e3c8e53955">triangular_distribution</a>(_Ty _Min0, _Ty _Max0, _Ty _Peak)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        std::array&lt;_Ty, 3&gt; _Values{ _Min0, _Peak, _Max0 };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        std::array&lt;_Ty, 3&gt; _Weights{ 0, 1, 0 };</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        _Mybase::_Par = _Mybase::param_type(_Values.begin(), _Values.end(), _Weights.begin());</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> _Ty = <span class="keywordtype">float</span>64&gt;</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html">   47</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html">beta_distribution</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#abf55fd5d211314ea1c9bbc96a8aebadb">   50</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#abf55fd5d211314ea1c9bbc96a8aebadb">result_type</a> = _Ty;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">   52</a></span>    _Ty <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">_Ax</a>; </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">   53</a></span>    _Ty <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">_Bx</a>; </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#afa3bb283b6af96190207eac342863001">   60</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#afa3bb283b6af96190207eac342863001">beta_distribution</a>(<span class="keyword">const</span> _Ty&amp; _Ax0 = _Ty{1}, <span class="keyword">const</span> _Ty&amp; _Bx0 = _Ty{1}) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a4a2bcd6302ad78bcf656bda2b4ff24ce">_Init</a>(_Ax0, _Bx0);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a4a2bcd6302ad78bcf656bda2b4ff24ce">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a4a2bcd6302ad78bcf656bda2b4ff24ce">_Init</a>(_Ty _Ax0, _Ty _Bx0) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span>(0.0 &gt;= _Ax0){ <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;invalid a argument for _Beta_distribution&quot;</span>);}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span>(0.0 &gt;= _Bx0){ <span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;invalid b argument for _Beta_distribution&quot;</span>);}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">_Ax</a> = _Ax0;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">_Bx</a> = _Bx0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> _Engine&gt;</div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a8b251ad78f618b415c32ad522be889c8">   86</a></span>    <a class="code hl_typedef" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#abf55fd5d211314ea1c9bbc96a8aebadb">result_type</a> <a class="code hl_function" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a8b251ad78f618b415c32ad522be889c8">operator()</a>(_Engine&amp; _Eng)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">_Ax</a> &lt; _Ty{1} &amp;&amp; <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">_Bx</a> &lt; _Ty{1})</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            _Ty _Wx;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            _Ty _Px1;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            _Ty _Px2;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                _Px1 = std::generate_canonical&lt;_Ty, std::numeric_limits&lt;_Ty&gt;::digits&gt;(_Eng);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                _Px2 = std::generate_canonical&lt;_Ty, std::numeric_limits&lt;_Ty&gt;::digits&gt;(_Eng);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                _Px1 = <a class="code hl_function" href="../../df/d00/group___math_funcs_pow.html#gafc258d90abd7e349eb59fc72f7fbc92a">pow</a>(_Px1, _Ty{1} / <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">_Ax</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                _Px2 = <a class="code hl_function" href="../../df/d00/group___math_funcs_pow.html#gafc258d90abd7e349eb59fc72f7fbc92a">pow</a>(_Px2, _Ty{1} / <a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">_Bx</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                _Wx  = _Px1 + _Px2;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">if</span> (_Wx &lt;= _Ty{1} &amp;&amp; _Wx != _Ty{0}){<span class="keywordflow">break</span>;}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> _Px1 / _Wx;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            _Ty _Px1;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            _Ty _Px2;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            _Ty _PSum;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            std::gamma_distribution&lt;_Ty&gt; _Dist1(<a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">_Ax</a>, 1);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            std::gamma_distribution&lt;_Ty&gt; _Dist2(<a class="code hl_variable" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">_Bx</a>, 1);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                _Px1  = _Dist1(_Eng);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                _Px2  = _Dist2(_Eng);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                _PSum = _Px1 + _Px2;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <span class="keywordflow">if</span> (_PSum != _Ty{0}) {<span class="keywordflow">break</span>;}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">return</span> _Px1 / _PSum;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> _Ty = <span class="keywordtype">float</span>64&gt;</div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="};">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html">  131</a></span><span class="keyword">class </span><a class="code hl_class" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html">_Custom_Distribution</a></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a6a43005afc14fd5888d30cf72299a4b8">  134</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a6a43005afc14fd5888d30cf72299a4b8">result_type</a>  = _Ty;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a5d0b0e055cd9381dff9526b1c6ed4817">  135</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a5d0b0e055cd9381dff9526b1c6ed4817">icdf_ptr</a>     = std::shared_ptr&lt;_SCICXX InverseFunction&gt;;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ad25a2c58f1af73f7f0550eb0475adf30">  136</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ad25a2c58f1af73f7f0550eb0475adf30">default_invf</a> = _SCICXX BrentInverseFunction;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">  138</a></span>    <a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a5d0b0e055cd9381dff9526b1c6ed4817">icdf_ptr</a> <a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">ICDF</a>; </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a77f21e181dbda054adb548fe79ba2073">  139</a></span>    vec2 <a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a77f21e181dbda054adb548fe79ba2073">Doamin</a> = _SCICXX __Whole_Line; </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae875db9f3df16a282da467eccde28c1a">  145</a></span>    <a class="code hl_function" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae875db9f3df16a282da467eccde28c1a">_Custom_Distribution</a>(<a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a5d0b0e055cd9381dff9526b1c6ed4817">icdf_ptr</a> InvF) : <a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">ICDF</a>(InvF) {}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#abacac307d421f11edb534ded16b48fa9">  152</a></span>    <a class="code hl_function" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#abacac307d421f11edb534ded16b48fa9">_Custom_Distribution</a>(_SCICXX Function1D CDF, vec2 Domain) : <a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a77f21e181dbda054adb548fe79ba2073">Doamin</a>(Domain)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">ICDF</a> = std::make_shared&lt;default_invf&gt;(</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ad25a2c58f1af73f7f0550eb0475adf30">default_invf</a>([Domain, &amp;CDF](float64 x)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            vec2 _Domain = Domain;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordflow">if</span> (_Domain[0] &gt; _Domain[1]) {std::swap(_Domain[0], _Domain[1]);}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">if</span> (x &lt; _Domain[0]) {<span class="keywordflow">return</span> 0.;}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span> (x &gt; _Domain[1]) {<span class="keywordflow">return</span> 1.;}</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            float64 Min = CDF(_Domain[0]), Max = CDF(_Domain[1]);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">return</span> (CDF(x) - Min) / (Max - Min);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }, Domain));</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> _Engine&gt;</div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#acc99bb60df8f3051de7b20112d4a6afb">  173</a></span>    <a class="code hl_typedef" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a6a43005afc14fd5888d30cf72299a4b8">result_type</a> <a class="code hl_function" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#acc99bb60df8f3051de7b20112d4a6afb">operator()</a>(_Engine&amp; _Eng)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">return</span> (*<a class="code hl_variable" href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">ICDF</a>)(std::generate_canonical&lt;_Ty, std::numeric_limits&lt;_Ty&gt;::digits&gt;(_Eng));</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>};</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> _Rand_Engine&gt;</div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="};">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html">  184</a></span><span class="keyword">class </span><a class="code hl_class" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html">_CSE_Random_Engine</a></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a74ab9c08dd32208b5003c12ea47f0296">  187</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a74ab9c08dd32208b5003c12ea47f0296">Engine</a>  = _Rand_Engine; </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">  188</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a>    = uint64;       </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">  191</a></span>    _Rand_Engine <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>; </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">  192</a></span>    <a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a>;       </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// ---------- 构造函数 ---------- //</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abfd04969372020bd30a93c51af4a8405">  197</a></span>    <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abfd04969372020bd30a93c51af4a8405">_CSE_Random_Engine</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="foldopen" id="foldopen00203" data-start="{" data-end="}">
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abf53f2f1267659a9b67b5bd9eb746311">  203</a></span>    <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abf53f2f1267659a9b67b5bd9eb746311">_CSE_Random_Engine</a>(<a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> _Xx0 = 0x1571U) : <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a>(_Xx0)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a> = _Rand_Engine(_Xx0);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    };</div>
+</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6be02a8df4acbae78c16376e71bd3fba">  211</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6be02a8df4acbae78c16376e71bd3fba">reset</a>(){ <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a> = _Rand_Engine(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a>); }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="comment">// ---------- 簿记函数 ---------- //</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a39763c60e7400ad052f29cbdce89b00d">  219</a></span>    <a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a39763c60e7400ad052f29cbdce89b00d">seed</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a>;}</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#adcfba09ab6306fa10372b000173f9d86">  226</a></span>    <a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#adcfba09ab6306fa10372b000173f9d86">seed</a>(<a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> _New)</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <a class="code hl_typedef" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">Seed</a> _Old = <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">_Seed</a> = _New;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6be02a8df4acbae78c16376e71bd3fba">reset</a>();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">return</span> _Old;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="comment">// ---------- 整数相关函数 ---------- //</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> genType&gt;</div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8f9cd4b7ab6c7ac6d95ab3909c9afcf2">  244</a></span>    genType <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8f9cd4b7ab6c7ac6d95ab3909c9afcf2">randrange</a>(genType _Begin, genType _End, genType _Step)</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        std::vector&lt;genType&gt; _Range;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">for</span> (genType i = _Begin; i &lt; _End; i += _Step)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            _Range.push_back(i);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        }</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        std::uniform_int_distribution&lt;uint64&gt; _Gen(0, _Range.size() - 1);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">return</span> _Range[_Gen(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>)];</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
+</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aa81ff327051c4f9defcef7c4cffe4af5">  261</a></span>    int64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aa81ff327051c4f9defcef7c4cffe4af5">randint</a>(int64 _Min0, int64 _Max0)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">return</span> std::uniform_int_distribution&lt;int64&gt;(_Min0, _Max0)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="comment">// ---------- 序列相关函数 ---------- //</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator, <span class="keyword">typename</span> genType&gt;</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ae3d37991719484cb847271294f696997">  276</a></span>    genType <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ae3d37991719484cb847271294f696997">choice</a>(Iterator _Begin, Iterator _End)</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordflow">if</span>(_Begin &gt; _End){<span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Sequence is empty.&quot;</span>);}</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        std::vector&lt;genType&gt; _Range;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="keywordflow">for</span> (; _Begin &lt; _End; ++_Begin)</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            _Range.push_back(*_Begin);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        std::uniform_int_distribution&lt;uint64&gt; _Gen(0, _Range.size() - 1);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">return</span> _Range[_Gen(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>)];</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
+</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Iterator&gt;</div>
+<div class="foldopen" id="foldopen00295" data-start="{" data-end="}">
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8c60665f41be9f9347252674567030db">  295</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8c60665f41be9f9347252674567030db">shuffle</a>(Iterator _Begin, Iterator _End)</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">if</span>(_Begin &gt; _End){<span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Sequence is empty.&quot;</span>);}</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordflow">if</span> (_Begin == _End) {<span class="keywordflow">return</span>;}</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keyword">using </span>_Diff = ptrdiff_t;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keyword">auto</span> _UTarget = _Begin;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        _Diff _Target_index = 1;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">for</span> ( ; ++_UTarget != _End; ++_Target_index)</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            _Diff _Off = <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aa81ff327051c4f9defcef7c4cffe4af5">randint</a>(0, <span class="keyword">static_cast&lt;</span>_Diff<span class="keyword">&gt;</span>(_Target_index));</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            <span class="keywordflow">if</span>(0 &gt; _Off &amp;&amp; _Off &gt; _Target_index){<span class="keywordflow">throw</span> std::logic_error(<span class="stringliteral">&quot;Random value out of range&quot;</span>);}</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="keywordflow">if</span> (_Off != _Target_index)</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>            {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                std::iter_swap(_UTarget, _Begin + _Off);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
+</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="comment">// ---------- 实数分布函数 ---------- //</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="foldopen" id="foldopen00320" data-start="{" data-end="}">
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a798d25989e102b4a5e3a67fb0ac2e950">  320</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a798d25989e102b4a5e3a67fb0ac2e950">random</a>()</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        <span class="keywordflow">return</span> std::uniform_real_distribution&lt;float64&gt;(0., 1.)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="foldopen" id="foldopen00331" data-start="{" data-end="}">
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad2fa4b105cee2747bb107fcd33c60759">  331</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad2fa4b105cee2747bb107fcd33c60759">uniform</a>(float64 _Min0, float64 _Max0)</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">return</span> std::uniform_real_distribution&lt;float64&gt;(_Min0, _Max0)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
+</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="foldopen" id="foldopen00343" data-start="{" data-end="}">
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6805baf676781497825ec8ad870f1fd3">  343</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6805baf676781497825ec8ad870f1fd3">triangular</a>(float64 _Min0, float64 _Max0, float64 _Peak)</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html">triangular_distribution&lt;float64&gt;</a>(_Min0, _Max0, _Peak)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    }</div>
+</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="foldopen" id="foldopen00352" data-start="{" data-end="}">
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad12a1c0140c776300e0a2297f7d3e858">  352</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad12a1c0140c776300e0a2297f7d3e858">triangular</a>()</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    {</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad12a1c0140c776300e0a2297f7d3e858">triangular</a>(0., 1., 0.5);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
+</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
+<div class="foldopen" id="foldopen00363" data-start="{" data-end="}">
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab0b52cc0403c3897e04fbeea63008fde">  363</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab0b52cc0403c3897e04fbeea63008fde">triangular</a>(float64 _Min0, float64 _Max0)</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad12a1c0140c776300e0a2297f7d3e858">triangular</a>(_Min0, _Max0, (_Min0 + _Max0) / 2.);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    }</div>
+</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="foldopen" id="foldopen00374" data-start="{" data-end="}">
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aeebebd22512f8a7792c9d4818521c0d1">  374</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aeebebd22512f8a7792c9d4818521c0d1">betavariate</a>(float64 _Alf = 1., float64 _Bet = 1.)</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    {</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html">beta_distribution&lt;float64&gt;</a>(_Alf, _Bet)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    }</div>
+</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
+<div class="foldopen" id="foldopen00384" data-start="{" data-end="}">
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad5dc174e874fdac9930ca562ceb74686">  384</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad5dc174e874fdac9930ca562ceb74686">expovariate</a>(float64 _Lam = 1.)</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    {</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        <span class="keywordflow">return</span> std::exponential_distribution&lt;float64&gt;(_Lam)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    }</div>
+</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
+<div class="foldopen" id="foldopen00395" data-start="{" data-end="}">
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a1120dc714bcc3028fc221e33ec3d54f4">  395</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a1120dc714bcc3028fc221e33ec3d54f4">gammavariate</a>(float64 _Alf = 1., float64 _Bet = 1.)</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    {</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        <span class="keywordflow">return</span> std::gamma_distribution&lt;float64&gt;(_Alf, _Bet)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    }</div>
+</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="foldopen" id="foldopen00406" data-start="{" data-end="}">
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab166e8f64e485e6e777cf7b114339381">  406</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab166e8f64e485e6e777cf7b114339381">kgamma</a>(float64 _K = 1., float64 _Tet = 1.)</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    {</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a1120dc714bcc3028fc221e33ec3d54f4">gammavariate</a>(_K, 1. / _Tet);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    }</div>
+</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="foldopen" id="foldopen00417" data-start="{" data-end="}">
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a73622a133ef0d82e1d72486db9eb2cc6">  417</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a73622a133ef0d82e1d72486db9eb2cc6">normalvariate</a>(float64 _Mean = 0., float64 _StDev = 1.)</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    {</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>        <span class="keywordflow">return</span> std::normal_distribution&lt;float64&gt;(_Mean, _StDev)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    }</div>
+</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="foldopen" id="foldopen00428" data-start="{" data-end="}">
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a3cae6014da1f6326c2616ec39cc0859d">  428</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a3cae6014da1f6326c2616ec39cc0859d">lognormvariate</a>(float64 _Mean = 0., float64 _StDev = 1.)</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    {</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>        <span class="keywordflow">return</span> std::lognormal_distribution&lt;float64&gt;(_Mean, _StDev)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    }</div>
+</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="foldopen" id="foldopen00439" data-start="{" data-end="}">
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a92daa8ea4f4821b8f1cfcea8f1aba311">  439</a></span>    float64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a92daa8ea4f4821b8f1cfcea8f1aba311">weibullvariate</a>(float64 _Lam = 0., float64 _k = 1.)</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    {</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>        <span class="keywordflow">return</span> std::weibull_distribution&lt;float64&gt;(_Lam, _k)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    }</div>
+</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span> </div>
+<div class="foldopen" id="foldopen00449" data-start="{" data-end="}">
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno"><a class="line" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#acdcab27c57e7b68e334760c01bbbae8c">  449</a></span>    uint64 <a class="code hl_function" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#acdcab27c57e7b68e334760c01bbbae8c">probability</a>(std::initializer_list&lt;float64&gt; _Ilist)</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    {</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        <span class="keywordflow">return</span> std::discrete_distribution&lt;uint64&gt;(_Ilist)(<a class="code hl_variable" href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">_Rd</a>);</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    }</div>
+</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>};</div>
+</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span> </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span> </div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>} <span class="comment">// End Probability</span></div>
+</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span><span class="keyword">extern</span> Probability::_CSE_Random_Engine&lt;std::mersenne_twister_engine</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    &lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, 64, 312, 156, 31, 0xB5026F5AA96619E9ULL, 29,</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    0x5555555555555555ULL, 17, 0x71D67FFFEDA60000ULL, 37, 0xFFF7EEE000000000ULL, 43, 0x5851F42D4C957F2DULL&gt;&gt;</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <a class="code hl_variable" href="../../d2/d0d/group___random.html#gaaf6e40af426ae85657c63bd41408da07">random</a>;</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>}</div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html">cse::Probability::_CSE_Random_Engine</a></div><div class="ttdoc">随机数引擎</div><div class="ttdef"><b>定义</b> Random.h:185</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a1120dc714bcc3028fc221e33ec3d54f4"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a1120dc714bcc3028fc221e33ec3d54f4">cse::Probability::_CSE_Random_Engine::gammavariate</a></div><div class="ttdeci">float64 gammavariate(float64 _Alf=1., float64 _Bet=1.)</div><div class="ttdoc">返回Gamma分布随机数</div><div class="ttdef"><b>定义</b> Random.h:395</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a15ca106e3196184c209a0fe9753e9f82"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a15ca106e3196184c209a0fe9753e9f82">cse::Probability::_CSE_Random_Engine::Seed</a></div><div class="ttdeci">uint64 Seed</div><div class="ttdoc">种子类型</div><div class="ttdef"><b>定义</b> Random.h:188</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a39763c60e7400ad052f29cbdce89b00d"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a39763c60e7400ad052f29cbdce89b00d">cse::Probability::_CSE_Random_Engine::seed</a></div><div class="ttdeci">Seed seed() const</div><div class="ttdoc">获取当前种子</div><div class="ttdef"><b>定义</b> Random.h:219</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a3cae6014da1f6326c2616ec39cc0859d"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a3cae6014da1f6326c2616ec39cc0859d">cse::Probability::_CSE_Random_Engine::lognormvariate</a></div><div class="ttdeci">float64 lognormvariate(float64 _Mean=0., float64 _StDev=1.)</div><div class="ttdoc">返回对数正态分布随机数</div><div class="ttdef"><b>定义</b> Random.h:428</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a5e2327fb023ca30f662fc0819efb8fc3"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a5e2327fb023ca30f662fc0819efb8fc3">cse::Probability::_CSE_Random_Engine::_Seed</a></div><div class="ttdeci">Seed _Seed</div><div class="ttdoc">当前种子</div><div class="ttdef"><b>定义</b> Random.h:192</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a6805baf676781497825ec8ad870f1fd3"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6805baf676781497825ec8ad870f1fd3">cse::Probability::_CSE_Random_Engine::triangular</a></div><div class="ttdeci">float64 triangular(float64 _Min0, float64 _Max0, float64 _Peak)</div><div class="ttdoc">返回三角形分布的随机浮点数</div><div class="ttdef"><b>定义</b> Random.h:343</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a6be02a8df4acbae78c16376e71bd3fba"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a6be02a8df4acbae78c16376e71bd3fba">cse::Probability::_CSE_Random_Engine::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">重置随机数引擎</div><div class="ttdef"><b>定义</b> Random.h:211</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a73622a133ef0d82e1d72486db9eb2cc6"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a73622a133ef0d82e1d72486db9eb2cc6">cse::Probability::_CSE_Random_Engine::normalvariate</a></div><div class="ttdeci">float64 normalvariate(float64 _Mean=0., float64 _StDev=1.)</div><div class="ttdoc">返回正态（高斯）分布随机数</div><div class="ttdef"><b>定义</b> Random.h:417</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a74ab9c08dd32208b5003c12ea47f0296"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a74ab9c08dd32208b5003c12ea47f0296">cse::Probability::_CSE_Random_Engine::Engine</a></div><div class="ttdeci">_Rand_Engine Engine</div><div class="ttdoc">随机数引擎类型</div><div class="ttdef"><b>定义</b> Random.h:187</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a798d25989e102b4a5e3a67fb0ac2e950"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a798d25989e102b4a5e3a67fb0ac2e950">cse::Probability::_CSE_Random_Engine::random</a></div><div class="ttdeci">float64 random()</div><div class="ttdoc">返回[0.0, 1.0]范围内的随机浮点数</div><div class="ttdef"><b>定义</b> Random.h:320</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a8c60665f41be9f9347252674567030db"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8c60665f41be9f9347252674567030db">cse::Probability::_CSE_Random_Engine::shuffle</a></div><div class="ttdeci">void shuffle(Iterator _Begin, Iterator _End)</div><div class="ttdoc">随机打乱序列</div><div class="ttdef"><b>定义</b> Random.h:295</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a8f9cd4b7ab6c7ac6d95ab3909c9afcf2"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a8f9cd4b7ab6c7ac6d95ab3909c9afcf2">cse::Probability::_CSE_Random_Engine::randrange</a></div><div class="ttdeci">genType randrange(genType _Begin, genType _End, genType _Step)</div><div class="ttdoc">从range(start, stop, step)中随机选择一个元素</div><div class="ttdef"><b>定义</b> Random.h:244</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_a92daa8ea4f4821b8f1cfcea8f1aba311"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#a92daa8ea4f4821b8f1cfcea8f1aba311">cse::Probability::_CSE_Random_Engine::weibullvariate</a></div><div class="ttdeci">float64 weibullvariate(float64 _Lam=0., float64 _k=1.)</div><div class="ttdoc">返回Weibull分布随机数</div><div class="ttdef"><b>定义</b> Random.h:439</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_aa81ff327051c4f9defcef7c4cffe4af5"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aa81ff327051c4f9defcef7c4cffe4af5">cse::Probability::_CSE_Random_Engine::randint</a></div><div class="ttdeci">int64 randint(int64 _Min0, int64 _Max0)</div><div class="ttdoc">返回[a, b]范围内的随机整数</div><div class="ttdef"><b>定义</b> Random.h:261</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ab04cb9f538631f3ed6358701f35f12ad"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab04cb9f538631f3ed6358701f35f12ad">cse::Probability::_CSE_Random_Engine::_Rd</a></div><div class="ttdeci">_Rand_Engine _Rd</div><div class="ttdoc">随机数引擎实例</div><div class="ttdef"><b>定义</b> Random.h:191</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ab0b52cc0403c3897e04fbeea63008fde"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab0b52cc0403c3897e04fbeea63008fde">cse::Probability::_CSE_Random_Engine::triangular</a></div><div class="ttdeci">float64 triangular(float64 _Min0, float64 _Max0)</div><div class="ttdoc">返回指定范围内的三角形分布随机数，峰值为中值</div><div class="ttdef"><b>定义</b> Random.h:363</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ab166e8f64e485e6e777cf7b114339381"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ab166e8f64e485e6e777cf7b114339381">cse::Probability::_CSE_Random_Engine::kgamma</a></div><div class="ttdeci">float64 kgamma(float64 _K=1., float64 _Tet=1.)</div><div class="ttdoc">返回Gamma分布随机数（另一种参数化方式）</div><div class="ttdef"><b>定义</b> Random.h:406</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_abf53f2f1267659a9b67b5bd9eb746311"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abf53f2f1267659a9b67b5bd9eb746311">cse::Probability::_CSE_Random_Engine::_CSE_Random_Engine</a></div><div class="ttdeci">_CSE_Random_Engine(Seed _Xx0=0x1571U)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> Random.h:203</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_abfd04969372020bd30a93c51af4a8405"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#abfd04969372020bd30a93c51af4a8405">cse::Probability::_CSE_Random_Engine::_CSE_Random_Engine</a></div><div class="ttdeci">_CSE_Random_Engine()=delete</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_acdcab27c57e7b68e334760c01bbbae8c"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#acdcab27c57e7b68e334760c01bbbae8c">cse::Probability::_CSE_Random_Engine::probability</a></div><div class="ttdeci">uint64 probability(std::initializer_list&lt; float64 &gt; _Ilist)</div><div class="ttdoc">根据概率列表生成随机数</div><div class="ttdef"><b>定义</b> Random.h:449</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ad12a1c0140c776300e0a2297f7d3e858"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad12a1c0140c776300e0a2297f7d3e858">cse::Probability::_CSE_Random_Engine::triangular</a></div><div class="ttdeci">float64 triangular()</div><div class="ttdoc">返回[0.0, 1.0]范围内，峰值为0.5的三角形分布随机数</div><div class="ttdef"><b>定义</b> Random.h:352</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ad2fa4b105cee2747bb107fcd33c60759"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad2fa4b105cee2747bb107fcd33c60759">cse::Probability::_CSE_Random_Engine::uniform</a></div><div class="ttdeci">float64 uniform(float64 _Min0, float64 _Max0)</div><div class="ttdoc">返回[a, b]范围内的随机浮点数</div><div class="ttdef"><b>定义</b> Random.h:331</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ad5dc174e874fdac9930ca562ceb74686"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ad5dc174e874fdac9930ca562ceb74686">cse::Probability::_CSE_Random_Engine::expovariate</a></div><div class="ttdeci">float64 expovariate(float64 _Lam=1.)</div><div class="ttdoc">返回指数分布随机数</div><div class="ttdef"><b>定义</b> Random.h:384</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_adcfba09ab6306fa10372b000173f9d86"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#adcfba09ab6306fa10372b000173f9d86">cse::Probability::_CSE_Random_Engine::seed</a></div><div class="ttdeci">Seed seed(Seed _New)</div><div class="ttdoc">设置新种子</div><div class="ttdef"><b>定义</b> Random.h:226</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_ae3d37991719484cb847271294f696997"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#ae3d37991719484cb847271294f696997">cse::Probability::_CSE_Random_Engine::choice</a></div><div class="ttdeci">genType choice(Iterator _Begin, Iterator _End)</div><div class="ttdoc">从非空序列中随机选择一个元素</div><div class="ttdef"><b>定义</b> Random.h:276</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___c_s_e___random___engine_html_aeebebd22512f8a7792c9d4818521c0d1"><div class="ttname"><a href="../../d6/d56/classcse_1_1_probability_1_1___c_s_e___random___engine.html#aeebebd22512f8a7792c9d4818521c0d1">cse::Probability::_CSE_Random_Engine::betavariate</a></div><div class="ttdeci">float64 betavariate(float64 _Alf=1., float64 _Bet=1.)</div><div class="ttdoc">返回Beta分布随机数</div><div class="ttdef"><b>定义</b> Random.h:374</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html">cse::Probability::_Custom_Distribution</a></div><div class="ttdoc">自定义分布</div><div class="ttdef"><b>定义</b> Random.h:132</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_a5d0b0e055cd9381dff9526b1c6ed4817"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a5d0b0e055cd9381dff9526b1c6ed4817">cse::Probability::_Custom_Distribution::icdf_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; _SCICXX InverseFunction &gt; icdf_ptr</div><div class="ttdef"><b>定义</b> Random.h:135</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_a6a43005afc14fd5888d30cf72299a4b8"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a6a43005afc14fd5888d30cf72299a4b8">cse::Probability::_Custom_Distribution::result_type</a></div><div class="ttdeci">_Ty result_type</div><div class="ttdef"><b>定义</b> Random.h:134</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_a77f21e181dbda054adb548fe79ba2073"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#a77f21e181dbda054adb548fe79ba2073">cse::Probability::_Custom_Distribution::Doamin</a></div><div class="ttdeci">vec2 Doamin</div><div class="ttdoc">定义域</div><div class="ttdef"><b>定义</b> Random.h:139</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_abacac307d421f11edb534ded16b48fa9"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#abacac307d421f11edb534ded16b48fa9">cse::Probability::_Custom_Distribution::_Custom_Distribution</a></div><div class="ttdeci">_Custom_Distribution(_SCICXX Function1D CDF, vec2 Domain)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> Random.h:152</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_acc99bb60df8f3051de7b20112d4a6afb"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#acc99bb60df8f3051de7b20112d4a6afb">cse::Probability::_Custom_Distribution::operator()</a></div><div class="ttdeci">result_type operator()(_Engine &amp;_Eng) const</div><div class="ttdoc">生成随机数</div><div class="ttdef"><b>定义</b> Random.h:173</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_ad25a2c58f1af73f7f0550eb0475adf30"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ad25a2c58f1af73f7f0550eb0475adf30">cse::Probability::_Custom_Distribution::default_invf</a></div><div class="ttdeci">_SCICXX BrentInverseFunction default_invf</div><div class="ttdef"><b>定义</b> Random.h:136</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_ae536266583f9ecf85e06a85730c081cd"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae536266583f9ecf85e06a85730c081cd">cse::Probability::_Custom_Distribution::ICDF</a></div><div class="ttdeci">icdf_ptr ICDF</div><div class="ttdoc">累积分布函数的反函数指针</div><div class="ttdef"><b>定义</b> Random.h:138</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1___custom___distribution_html_ae875db9f3df16a282da467eccde28c1a"><div class="ttname"><a href="../../dd/dd0/classcse_1_1_probability_1_1___custom___distribution.html#ae875db9f3df16a282da467eccde28c1a">cse::Probability::_Custom_Distribution::_Custom_Distribution</a></div><div class="ttdeci">_Custom_Distribution(icdf_ptr InvF)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> Random.h:145</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html">cse::Probability::beta_distribution</a></div><div class="ttdoc">Beta分布</div><div class="ttdef"><b>定义</b> Random.h:48</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_a4a2bcd6302ad78bcf656bda2b4ff24ce"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a4a2bcd6302ad78bcf656bda2b4ff24ce">cse::Probability::beta_distribution::_Init</a></div><div class="ttdeci">void _Init(_Ty _Ax0, _Ty _Bx0) noexcept</div><div class="ttdoc">初始化Beta分布参数</div><div class="ttdef"><b>定义</b> Random.h:71</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_a8b251ad78f618b415c32ad522be889c8"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#a8b251ad78f618b415c32ad522be889c8">cse::Probability::beta_distribution::operator()</a></div><div class="ttdeci">result_type operator()(_Engine &amp;_Eng) const</div><div class="ttdoc">生成随机数</div><div class="ttdef"><b>定义</b> Random.h:86</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_abf55fd5d211314ea1c9bbc96a8aebadb"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#abf55fd5d211314ea1c9bbc96a8aebadb">cse::Probability::beta_distribution::result_type</a></div><div class="ttdeci">_Ty result_type</div><div class="ttdef"><b>定义</b> Random.h:50</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_ae49bc9496806a5742f588f84e8fd1457"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#ae49bc9496806a5742f588f84e8fd1457">cse::Probability::beta_distribution::_Bx</a></div><div class="ttdeci">_Ty _Bx</div><div class="ttdoc">Beta参数</div><div class="ttdef"><b>定义</b> Random.h:53</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_aea79a7a7323a11b0db47671a8a29f899"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#aea79a7a7323a11b0db47671a8a29f899">cse::Probability::beta_distribution::_Ax</a></div><div class="ttdeci">_Ty _Ax</div><div class="ttdoc">Alpha参数</div><div class="ttdef"><b>定义</b> Random.h:52</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1beta__distribution_html_afa3bb283b6af96190207eac342863001"><div class="ttname"><a href="../../d7/db8/classcse_1_1_probability_1_1beta__distribution.html#afa3bb283b6af96190207eac342863001">cse::Probability::beta_distribution::beta_distribution</a></div><div class="ttdeci">beta_distribution(const _Ty &amp;_Ax0=_Ty{1}, const _Ty &amp;_Bx0=_Ty{1}) noexcept</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> Random.h:60</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html">cse::Probability::triangular_distribution</a></div><div class="ttdoc">三角形分布</div><div class="ttdef"><b>定义</b> Random.h:20</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html_a0fc9b5ab025c2995bceef1e3c8e53955"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a0fc9b5ab025c2995bceef1e3c8e53955">cse::Probability::triangular_distribution::triangular_distribution</a></div><div class="ttdeci">triangular_distribution(_Ty _Min0, _Ty _Max0, _Ty _Peak)</div><div class="ttdoc">构造函数</div><div class="ttdef"><b>定义</b> Random.h:34</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html_a6ca838353d7223701e10cbede1cc0b7b"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#a6ca838353d7223701e10cbede1cc0b7b">cse::Probability::triangular_distribution::triangular_distribution</a></div><div class="ttdeci">triangular_distribution()</div><div class="ttdef"><b>定义</b> Random.h:26</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html_aeaf69e1946a4aefd08da88faa79d8e46"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#aeaf69e1946a4aefd08da88faa79d8e46">cse::Probability::triangular_distribution::result_type</a></div><div class="ttdeci">_Ty result_type</div><div class="ttdef"><b>定义</b> Random.h:24</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html_af641fa4d141a9155bc501d8876ecca26"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af641fa4d141a9155bc501d8876ecca26">cse::Probability::triangular_distribution::_Mybase</a></div><div class="ttdeci">std::piecewise_linear_distribution&lt; _Ty &gt; _Mybase</div><div class="ttdef"><b>定义</b> Random.h:22</div></div>
+<div class="ttc" id="aclasscse_1_1_probability_1_1triangular__distribution_html_af6bcb2d711ec5b90bbf66da1b83d9690"><div class="ttname"><a href="../../d1/de6/classcse_1_1_probability_1_1triangular__distribution.html#af6bcb2d711ec5b90bbf66da1b83d9690">cse::Probability::triangular_distribution::_Mypbase</a></div><div class="ttdeci">typename _Mybase::param_type _Mypbase</div><div class="ttdef"><b>定义</b> Random.h:23</div></div>
+<div class="ttc" id="agroup___math_funcs_pow_html_gafc258d90abd7e349eb59fc72f7fbc92a"><div class="ttname"><a href="../../df/d00/group___math_funcs_pow.html#gafc258d90abd7e349eb59fc72f7fbc92a">pow</a></div><div class="ttdeci">float64 __cdecl pow(float64 _X, float64 _Power)</div><div class="ttdoc">计算幂函数（x^y）</div></div>
+<div class="ttc" id="agroup___random_html_gaaf6e40af426ae85657c63bd41408da07"><div class="ttname"><a href="../../d2/d0d/group___random.html#gaaf6e40af426ae85657c63bd41408da07">cse::random</a></div><div class="ttdeci">Probability::_CSE_Random_Engine&lt; std::mersenne_twister_engine&lt; unsigned long long, 64, 312, 156, 31, 0xB5026F5AA96619E9ULL, 29, 0x5555555555555555ULL, 17, 0x71D67FFFEDA60000ULL, 37, 0xFFF7EEE000000000ULL, 43, 0x5851F42D4C957F2DULL &gt; &gt; random</div><div class="ttdoc">全局随机数引擎实例</div></div>
+<div class="ttc" id="anamespacecse_html"><div class="ttname"><a href="../../d6/d5d/namespacecse.html">cse</a></div><div class="ttdef"><b>定义</b> AdvMath.h:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_692516b589a32b3bfce781ca9f6d1534.html">Headers</a></li><li class="navelem"><a class="el" href="../../dir_a9a66301f80da3e34a8dae93b93fc334.html">CSE</a></li><li class="navelem"><a class="el" href="../../dir_75a219fcbe27aa4682cdd2aa49e404f4.html">Base</a></li><li class="navelem"><b>Random.h</b></li>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>

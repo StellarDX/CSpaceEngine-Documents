@@ -1,0 +1,579 @@
+<!-- HTML header for doxygen 1.14.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CSpaceEngine: 微分方程</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script type="text/javascript" src="../../darkmode_toggle.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">CSpaceEngine
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('de/dd7/group___o_d_es.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle"><div class="title">微分方程<div class="ingroups"><a class="el" href="../../d9/ded/group___base.html">基本</a> &raquo; <a class="el" href="../../d1/d31/group___adv_math.html">高等数学</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>一些微分方程算法  
+<a href="#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html">cse::SciCxx::OrdinaryDifferentialEquation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">常微分方程(ODE)求解器，此功能译自Scipy 以下是来自SciPy的原始功能描述：  <a href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d28/classcse_1_1_sci_cxx_1_1_runge_kutta_o_d_e_engine.html">cse::SciCxx::RungeKuttaODEEngine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">龙格-库塔微分方程求解引擎  <a href="../../d2/d28/classcse_1_1_sci_cxx_1_1_runge_kutta_o_d_e_engine.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d14/classcse_1_1_sci_cxx_1_1_runge_kutta2nd_order_o_d_e_engine.html">cse::SciCxx::RungeKutta2ndOrderODEEngine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">2阶龙格-库塔算法(阶数23方法)  <a href="../../d8/d14/classcse_1_1_sci_cxx_1_1_runge_kutta2nd_order_o_d_e_engine.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">4阶龙格-库塔算法(阶数45方法)  <a href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:gabbed531bbc85adee877da3dfb89f7d6c" id="r_gabbed531bbc85adee877da3dfb89f7d6c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d8/d14/classcse_1_1_sci_cxx_1_1_runge_kutta2nd_order_o_d_e_engine.html">cse::SciCxx::RungeKutta2ndOrderODEEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabbed531bbc85adee877da3dfb89f7d6c">cse::SciCxx::BogackiShampineODEEngine</a></td></tr>
+<tr class="separator:gabbed531bbc85adee877da3dfb89f7d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29fc7e0e6328cc0d2a1807d5bcdcb025" id="r_ga29fc7e0e6328cc0d2a1807d5bcdcb025"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga29fc7e0e6328cc0d2a1807d5bcdcb025">cse::SciCxx::DormandPrinceODEEngine</a></td></tr>
+<tr class="separator:ga29fc7e0e6328cc0d2a1807d5bcdcb025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac469de61a538c4c7b5e3eec285bdc1c" id="r_gaac469de61a538c4c7b5e3eec285bdc1c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaac469de61a538c4c7b5e3eec285bdc1c">cse::SciCxx::RungeKuttaDPODEEngine</a></td></tr>
+<tr class="separator:gaac469de61a538c4c7b5e3eec285bdc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga333c853f40fc39c803c28b92e3b7602d" id="r_ga333c853f40fc39c803c28b92e3b7602d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga333c853f40fc39c803c28b92e3b7602d">cse::SciCxx::DOPRIODEEngine</a></td></tr>
+<tr class="separator:ga333c853f40fc39c803c28b92e3b7602d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72dd96b1fe22d0fd5094ee378624a388" id="r_ga72dd96b1fe22d0fd5094ee378624a388"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga72dd96b1fe22d0fd5094ee378624a388">cse::SciCxx::DefaultODEEngine</a> = <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">RungeKutta4thOrderODEEngine</a></td></tr>
+<tr class="memdesc:ga72dd96b1fe22d0fd5094ee378624a388"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认ODE求解引擎(使用4阶龙格-库塔方法)  <br /></td></tr>
+<tr class="separator:ga72dd96b1fe22d0fd5094ee378624a388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gac465723a7cbb60d75a7907ed2172f441" id="r_gac465723a7cbb60d75a7907ed2172f441"><td class="memTemplParams" colspan="2">template&lt;typename Engine &gt; <br />
+requires std::is_base_of_v&lt;<a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html">OrdinaryDifferentialEquation</a>, Engine&gt;</td></tr>
+<tr class="memitem:gac465723a7cbb60d75a7907ed2172f441"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html">OrdinaryDifferentialEquation</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gac465723a7cbb60d75a7907ed2172f441">cse::SciCxx::CreateODEFunction</a> (std::function&lt; <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html#a3218bb3da3a23f3b2f9657495bee0a5a">OrdinaryDifferentialEquation::Fty</a> &gt; Func, <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html#a9aaeb9cd60ab1cf5c3649f8c0ca04517">OrdinaryDifferentialEquation::ValueArray</a> Coeffs, float64 First, float64 Last)</td></tr>
+<tr class="memdesc:gac465723a7cbb60d75a7907ed2172f441"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速创建常微分方程（ODE）  <br /></td></tr>
+<tr class="separator:gac465723a7cbb60d75a7907ed2172f441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:gaf665a4d2505947ed33810b6ff321a75a" id="r_gaf665a4d2505947ed33810b6ff321a75a"><td class="memItemLeft" align="right" valign="top">const uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf665a4d2505947ed33810b6ff321a75a">cse::SciCxx::__RK23_C_Table</a> [3]</td></tr>
+<tr class="memdesc:gaf665a4d2505947ed33810b6ff321a75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK23方法C系数表 \(c_i\)  <br /></td></tr>
+<tr class="separator:gaf665a4d2505947ed33810b6ff321a75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4e222163b6d07ad832ca905b420ea31" id="r_gab4e222163b6d07ad832ca905b420ea31"><td class="memItemLeft" align="right" valign="top">const uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab4e222163b6d07ad832ca905b420ea31">cse::SciCxx::__RK23_A_Table</a> [9]</td></tr>
+<tr class="memdesc:gab4e222163b6d07ad832ca905b420ea31"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK23方法A系数表 \(a_{ij}\)  <br /></td></tr>
+<tr class="separator:gab4e222163b6d07ad832ca905b420ea31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafcb2ffc55d40ec8ce7f18345183bcb67" id="r_gafcb2ffc55d40ec8ce7f18345183bcb67"><td class="memItemLeft" align="right" valign="top">const uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafcb2ffc55d40ec8ce7f18345183bcb67">cse::SciCxx::__RK23_B_Table</a> [3]</td></tr>
+<tr class="memdesc:gafcb2ffc55d40ec8ce7f18345183bcb67"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK23方法B系数表 \(b_i\)  <br /></td></tr>
+<tr class="separator:gafcb2ffc55d40ec8ce7f18345183bcb67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae041b66d2e1ea79bf543b5503a9987e1" id="r_gae041b66d2e1ea79bf543b5503a9987e1"><td class="memItemLeft" align="right" valign="top">const uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae041b66d2e1ea79bf543b5503a9987e1">cse::SciCxx::__RK23_E_Table</a> [4]</td></tr>
+<tr class="memdesc:gae041b66d2e1ea79bf543b5503a9987e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK23方法误差估计系数表 \(\hat{b}_i - b_i\)  <br /></td></tr>
+<tr class="separator:gae041b66d2e1ea79bf543b5503a9987e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0849d6492eaeda1e73f8e56fc9fb21d3" id="r_ga0849d6492eaeda1e73f8e56fc9fb21d3"><td class="memItemLeft" align="right" valign="top">const uint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0849d6492eaeda1e73f8e56fc9fb21d3">cse::SciCxx::__RK23_P_Table</a> [12]</td></tr>
+<tr class="memdesc:ga0849d6492eaeda1e73f8e56fc9fb21d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK23方法插值系数表  <br /></td></tr>
+<tr class="separator:ga0849d6492eaeda1e73f8e56fc9fb21d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18c76eb71ee012252cb56f8bdb14675f" id="r_ga18c76eb71ee012252cb56f8bdb14675f"><td class="memItemLeft" align="right" valign="top">const float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga18c76eb71ee012252cb56f8bdb14675f">cse::SciCxx::__RK45_C_Table</a> [6]</td></tr>
+<tr class="memdesc:ga18c76eb71ee012252cb56f8bdb14675f"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK45方法C系数表 \(c_i\)  <br /></td></tr>
+<tr class="separator:ga18c76eb71ee012252cb56f8bdb14675f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef1e29824071a64e24c1dd619ebd2b2c" id="r_gaef1e29824071a64e24c1dd619ebd2b2c"><td class="memItemLeft" align="right" valign="top">const float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef1e29824071a64e24c1dd619ebd2b2c">cse::SciCxx::__RK45_A_Table</a> [30]</td></tr>
+<tr class="memdesc:gaef1e29824071a64e24c1dd619ebd2b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK45方法A系数表 \(a_{ij}\)  <br /></td></tr>
+<tr class="separator:gaef1e29824071a64e24c1dd619ebd2b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17b6adbdc6b9baea87067cc28f3e0d13" id="r_ga17b6adbdc6b9baea87067cc28f3e0d13"><td class="memItemLeft" align="right" valign="top">const float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga17b6adbdc6b9baea87067cc28f3e0d13">cse::SciCxx::__RK45_B_Table</a> [6]</td></tr>
+<tr class="memdesc:ga17b6adbdc6b9baea87067cc28f3e0d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK45方法B系数表 \(b_i\)  <br /></td></tr>
+<tr class="separator:ga17b6adbdc6b9baea87067cc28f3e0d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46965e4bfec1cb88c536a2bd41be54d9" id="r_ga46965e4bfec1cb88c536a2bd41be54d9"><td class="memItemLeft" align="right" valign="top">const float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46965e4bfec1cb88c536a2bd41be54d9">cse::SciCxx::__RK45_E_Table</a> [7]</td></tr>
+<tr class="memdesc:ga46965e4bfec1cb88c536a2bd41be54d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK45方法误差估计系数表 \(\hat{b}_i - b_i\)  <br /></td></tr>
+<tr class="separator:ga46965e4bfec1cb88c536a2bd41be54d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0fcc25f7bc231c4e7ffbfe2d7a664bb" id="r_gaa0fcc25f7bc231c4e7ffbfe2d7a664bb"><td class="memItemLeft" align="right" valign="top">const float64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0fcc25f7bc231c4e7ffbfe2d7a664bb">cse::SciCxx::__RK45_P_Table</a> [28]</td></tr>
+<tr class="memdesc:gaa0fcc25f7bc231c4e7ffbfe2d7a664bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">RK45方法插值系数表  <br /></td></tr>
+<tr class="separator:gaa0fcc25f7bc231c4e7ffbfe2d7a664bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<p>一些微分方程算法 </p>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="gabbed531bbc85adee877da3dfb89f7d6c" name="gabbed531bbc85adee877da3dfb89f7d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbed531bbc85adee877da3dfb89f7d6c">&#9670;&#160;</a></span>BogackiShampineODEEngine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  <a class="el" href="../../d8/d14/classcse_1_1_sci_cxx_1_1_runge_kutta2nd_order_o_d_e_engine.html">cse::SciCxx::RungeKutta2ndOrderODEEngine</a> <a class="el" href="#gabbed531bbc85adee877da3dfb89f7d6c">cse::SciCxx::BogackiShampineODEEngine</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga72dd96b1fe22d0fd5094ee378624a388" name="ga72dd96b1fe22d0fd5094ee378624a388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72dd96b1fe22d0fd5094ee378624a388">&#9670;&#160;</a></span>DefaultODEEngine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ga72dd96b1fe22d0fd5094ee378624a388">cse::SciCxx::DefaultODEEngine</a> = <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">RungeKutta4thOrderODEEngine</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>默认ODE求解引擎(使用4阶龙格-库塔方法) </p>
+
+</div>
+</div>
+<a id="ga333c853f40fc39c803c28b92e3b7602d" name="ga333c853f40fc39c803c28b92e3b7602d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga333c853f40fc39c803c28b92e3b7602d">&#9670;&#160;</a></span>DOPRIODEEngine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a> <a class="el" href="#ga333c853f40fc39c803c28b92e3b7602d">cse::SciCxx::DOPRIODEEngine</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga29fc7e0e6328cc0d2a1807d5bcdcb025" name="ga29fc7e0e6328cc0d2a1807d5bcdcb025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29fc7e0e6328cc0d2a1807d5bcdcb025">&#9670;&#160;</a></span>DormandPrinceODEEngine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a> <a class="el" href="#ga29fc7e0e6328cc0d2a1807d5bcdcb025">cse::SciCxx::DormandPrinceODEEngine</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaac469de61a538c4c7b5e3eec285bdc1c" name="gaac469de61a538c4c7b5e3eec285bdc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac469de61a538c4c7b5e3eec285bdc1c">&#9670;&#160;</a></span>RungeKuttaDPODEEngine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef  <a class="el" href="../../dd/d80/classcse_1_1_sci_cxx_1_1_runge_kutta4th_order_o_d_e_engine.html">cse::SciCxx::RungeKutta4thOrderODEEngine</a> <a class="el" href="#gaac469de61a538c4c7b5e3eec285bdc1c">cse::SciCxx::RungeKuttaDPODEEngine</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="gac465723a7cbb60d75a7907ed2172f441" name="gac465723a7cbb60d75a7907ed2172f441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac465723a7cbb60d75a7907ed2172f441">&#9670;&#160;</a></span>CreateODEFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Engine &gt; <br />
+requires std::is_base_of_v&lt;<a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html">OrdinaryDifferentialEquation</a>, Engine&gt;</div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html">OrdinaryDifferentialEquation</a> &gt; cse::SciCxx::CreateODEFunction </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html#a3218bb3da3a23f3b2f9657495bee0a5a">OrdinaryDifferentialEquation::Fty</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>Func</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html#a9aaeb9cd60ab1cf5c3649f8c0ca04517">OrdinaryDifferentialEquation::ValueArray</a></td>          <td class="paramname"><span class="paramname"><em>Coeffs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>First</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float64</td>          <td class="paramname"><span class="paramname"><em>Last</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>快速创建常微分方程（ODE） </p>
+<p>创建指定的 ODE 求解引擎对象，初始化求解器并进行全区间积分计算， 最终返回包含求解结果的智能指针。求解过程满足：   </p><p class="formulaDsp">
+\[
+y&#39;(t) = f(t, y),\quad y(t_0) = y_0
+\]
+</p>
+<dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Engine</td><td>ODE 求解引擎类型，需满足：Engine 派生自 <a class="el" href="../../d0/de5/classcse_1_1_sci_cxx_1_1_ordinary_differential_equation.html" title="常微分方程(ODE)求解器，此功能译自Scipy 以下是来自SciPy的原始功能描述：">OrdinaryDifferentialEquation</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Func</td><td>常微分方程 \( f(t, y) \)，原型为 OrdinaryDifferentialEquation::Fty，注意函数返回的数组长度要和输入数组的长度相同 </td></tr>
+    <tr><td class="paramname">Coeffs</td><td>初值条件数组 \( y(t_0) \)，数组长度决定方程个数 </td></tr>
+    <tr><td class="paramname">First</td><td>积分起始点 \( t_0 \) </td></tr>
+    <tr><td class="paramname">Last</td><td>积分终止点 \( t_{\text{end}} \) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>std::shared_ptr&lt;OrdinaryDifferentialEquation&gt; 包含求解结果的 ODE 对象指针 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="gab4e222163b6d07ad832ca905b420ea31" name="gab4e222163b6d07ad832ca905b420ea31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4e222163b6d07ad832ca905b420ea31">&#9670;&#160;</a></span>__RK23_A_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64 cse::SciCxx::__RK23_A_Table[9]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK23方法A系数表 \(a_{ij}\) </p>
+
+</div>
+</div>
+<a id="gafcb2ffc55d40ec8ce7f18345183bcb67" name="gafcb2ffc55d40ec8ce7f18345183bcb67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafcb2ffc55d40ec8ce7f18345183bcb67">&#9670;&#160;</a></span>__RK23_B_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64 cse::SciCxx::__RK23_B_Table[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK23方法B系数表 \(b_i\) </p>
+
+</div>
+</div>
+<a id="gaf665a4d2505947ed33810b6ff321a75a" name="gaf665a4d2505947ed33810b6ff321a75a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf665a4d2505947ed33810b6ff321a75a">&#9670;&#160;</a></span>__RK23_C_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64 cse::SciCxx::__RK23_C_Table[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK23方法C系数表 \(c_i\) </p>
+
+</div>
+</div>
+<a id="gae041b66d2e1ea79bf543b5503a9987e1" name="gae041b66d2e1ea79bf543b5503a9987e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae041b66d2e1ea79bf543b5503a9987e1">&#9670;&#160;</a></span>__RK23_E_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64 cse::SciCxx::__RK23_E_Table[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK23方法误差估计系数表 \(\hat{b}_i - b_i\) </p>
+
+</div>
+</div>
+<a id="ga0849d6492eaeda1e73f8e56fc9fb21d3" name="ga0849d6492eaeda1e73f8e56fc9fb21d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0849d6492eaeda1e73f8e56fc9fb21d3">&#9670;&#160;</a></span>__RK23_P_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint64 cse::SciCxx::__RK23_P_Table[12]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK23方法插值系数表 </p>
+
+</div>
+</div>
+<a id="gaef1e29824071a64e24c1dd619ebd2b2c" name="gaef1e29824071a64e24c1dd619ebd2b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef1e29824071a64e24c1dd619ebd2b2c">&#9670;&#160;</a></span>__RK45_A_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float64 cse::SciCxx::__RK45_A_Table[30]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK45方法A系数表 \(a_{ij}\) </p>
+
+</div>
+</div>
+<a id="ga17b6adbdc6b9baea87067cc28f3e0d13" name="ga17b6adbdc6b9baea87067cc28f3e0d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17b6adbdc6b9baea87067cc28f3e0d13">&#9670;&#160;</a></span>__RK45_B_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float64 cse::SciCxx::__RK45_B_Table[6]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK45方法B系数表 \(b_i\) </p>
+
+</div>
+</div>
+<a id="ga18c76eb71ee012252cb56f8bdb14675f" name="ga18c76eb71ee012252cb56f8bdb14675f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18c76eb71ee012252cb56f8bdb14675f">&#9670;&#160;</a></span>__RK45_C_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float64 cse::SciCxx::__RK45_C_Table[6]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK45方法C系数表 \(c_i\) </p>
+
+</div>
+</div>
+<a id="ga46965e4bfec1cb88c536a2bd41be54d9" name="ga46965e4bfec1cb88c536a2bd41be54d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46965e4bfec1cb88c536a2bd41be54d9">&#9670;&#160;</a></span>__RK45_E_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float64 cse::SciCxx::__RK45_E_Table[7]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK45方法误差估计系数表 \(\hat{b}_i - b_i\) </p>
+
+</div>
+</div>
+<a id="gaa0fcc25f7bc231c4e7ffbfe2d7a664bb" name="gaa0fcc25f7bc231c4e7ffbfe2d7a664bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0fcc25f7bc231c4e7ffbfe2d7a664bb">&#9670;&#160;</a></span>__RK45_P_Table</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float64 cse::SciCxx::__RK45_P_Table[28]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>RK45方法插值系数表 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.14.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <!-- <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li> -->
+  </ul>
+</div>
+</body>
+</html>
