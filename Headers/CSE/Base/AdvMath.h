@@ -433,7 +433,7 @@ uint64 __Int_Comb(uint64 n, uint64 k);
  * \f[
  * B_{n+1,k+1}(x_{1} \to x_{n-k+1})=\sum _{i=0}^{n-k} \left( {C_{n}^{i}} \cdot x_{i+1} \cdot B_{n-i,k}(x_{1} \to x_{n-k-i+1}) \right)
  * \f]
- * 输出矩阵为下三角矩阵（按行优先存储），元素 \f$ m[i][j] \f$ 对应 \f$ B_{i,j} \f$，
+ * 输出矩阵为上三角矩阵（按列优先存储），元素 \f$ m[i][j] \f$ 对应 \f$ B_{i,j} \f$，
  * 无效位置用 NaN 填充。
  *
  * @par 示例
