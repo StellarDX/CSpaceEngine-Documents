@@ -1423,8 +1423,7 @@ HTML_STYLESHEET        =
 
 HTML_EXTRA_STYLESHEET  = Styles/DOxyAwesome/doxygen-awesome.css \
                          Styles/DOxyAwesome/doxygen-awesome-sidebar-only.css \
-                         Styles/DOxyAwesome/doxygen-awesome-sidebar-only-darkmode-toggle.css \
-                         Styles/CustomStyleSheets.css
+                         Styles/DOxyAwesome/doxygen-awesome-sidebar-only-darkmode-toggle.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1439,7 +1438,13 @@ HTML_EXTRA_FILES       = Styles/DOxyAwesome/doxygen-awesome-darkmode-toggle.js \
                          Styles/DOxyAwesome/doxygen-awesome-interactive-toc.js \
                          Styles/DOxyAwesome/doxygen-awesome-paragraph-link.js \
                          Styles/DOxyAwesome/doxygen-awesome-tabs.js \
-                         Styles/DOxyAwesome/doxygen-custom/toggle-alternative-theme.js
+                         Styles/DOxyAwesome/doxygen-custom/toggle-alternative-theme.js \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Black.ttf \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Bold.ttf \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Light.ttf \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Medium.ttf \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Regular.ttf \
+                         Assets/Fonts/HarmonyOS_Sans_SC_Thin.ttf
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.
@@ -1808,7 +1813,7 @@ ENUM_VALUES_PER_LINE   = 4
 # enumeration values besides the enumeration mnemonics.
 # The default value is: NO.
 
-SHOW_ENUM_VALUES       = NO
+SHOW_ENUM_VALUES       = YES
 
 # If the treeview is enabled (see GENERATE_TREEVIEW) then this tag can be used
 # to set the initial width (in pixels) of the frame in which the tree is shown.
