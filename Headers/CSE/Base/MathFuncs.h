@@ -1838,14 +1838,14 @@ public:
      * @param IValue 初始复数值(默认0.4+0.9i)
      * @return 初始值数组
      */
-    static std::vector<complex64> GetInitValuePower(float64 Power, complex64 IValue = 0.4 + 0.9i);
+    static std::vector<complex64> GetExponentialInitValue(float64 Power, complex64 IValue = 0.4 + 0.9i);
 
     /**
      * @brief 生成圆形分布初始值
      * @param Coeffs 多项式系数
      * @return 初始值数组
      */
-    static std::vector<complex64> GetInitValueCircle(InputArray Coeffs);
+    static std::vector<complex64> GetCircularInitValue(InputArray Coeffs);
 
     /**
      * @brief 生成同伦连续法初始值
@@ -1854,7 +1854,7 @@ public:
      * @return 初始值数组
      * @see 算法来源：江源.应用同伦方法加速DURAND-KERNER算法[D].中国科学技术大学,2011.
      */
-    static std::vector<complex64> GetInitValueHomotopy(InputArray Coeffs, float64 a = 0.5);
+    static std::vector<complex64> GetHomotopicInitValue(InputArray Coeffs, float64 a = 0.5);
 
     /**
      * @brief 执行杜兰德-肯纳迭代
