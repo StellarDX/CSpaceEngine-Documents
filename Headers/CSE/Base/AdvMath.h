@@ -748,7 +748,7 @@ public:
      * @param[in] x 求导点
      * @return 导数值
      */
-    float64 Binomial(uint64 x)const;
+    float64 Binomial(float64 x)const;
 
     /**
      * @brief 黎曼-刘维尔导数
