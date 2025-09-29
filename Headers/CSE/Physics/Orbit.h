@@ -769,6 +769,254 @@ using DefaultHyperbolicIKE = KE::__SDGH_Equacion_Inversa_de_Keplerh;
 
 ///@}
 
+/**
+ * @defgroup TLE 两行根数
+ * @brief    两行根数(Two-Line Element Set)数据解析类
+ * @{
+ */
+
+/**
+ * @struct SpacecraftBasicData
+ * @brief 航天器基础数据结构体
+ * @details 包含卫星编号、分类、国际标识符等基本信息
+ */
+struct SpacecraftBasicData
+{
+    uint32_t     CatalogNumber;  ///< 卫星目录编号
+    char         Classification; ///< 密级分类 (U: 未分类, C: 已分类, S: 秘密)
+
+    /**
+     * @struct COSPAR_ID
+     * @brief 国际卫星标识符结构体
+     */
+    struct COSPAR_ID
+    {
+        int32_t  LaunchYear;     ///< 发射年份的后两位数字
+        uint32_t LaunchNumber;   ///< 当年发射序号
+        char     LaunchPiece[3]; ///< 发射部件标识
+    } IntDesignator;             ///< 国际卫星标识符
+
+    float64      D1MeanMotion;   ///< 平运动一阶导数；弹道系数 (转/天²) (当前存储为度/秒)
+    float64      D2MeanMotion;   ///< 平运动二阶导数 (转/天³) (当前存储为度/秒³)
+    float64      BSTAR;          ///< B*阻力项或辐射压力系数 (1/地球半径) (当前存储为1/米)
+    uint32_t     EphemerisType;  ///< 星历类型 (通常为零；仅用于未分发的TLE数据)
+    uint32_t     ElementSet;     ///< 根数集编号，生成新TLE时递增
+    uint32_t     RevolutionNum;  ///< 历元时刻的圈数 (圈数)
+};
+
+/**
+ * @class TLE
+ * @brief 两行根数集解析类
+ * @details 提供NORAD和NASA标准双线轨道元素集的解析功能
+ * 
+ * 此类用于解析和处理标准的双线轨道元素集格式，与NORAD和NASA使用的格式兼容。
+ * 包含卫星名称、轨道参数等信息的提取和验证功能。
+ */
+class TLE // Two-line element set
+{
+public:
+    /// @name 数据长度常量
+    /// @{
+    static const auto TitleLength      = 24; ///< 卫星名称长度，与NORAD SATCAT一致
+    static const auto DataLength       = 69; ///< 第1行和第2行数据标准长度
+    /// @}
+
+    /// @name 第1行数据字段位置
+    /// @{
+    static const auto L1LineNumber     = 0;  ///< 行号位置
+    static const auto L1CatalogNumber  = 2;  ///< 目录编号位置
+    static const auto L1Classification = 7;  ///< 密级分类位置
+    static const auto L1COSPARIDYD     = 9;  ///< COSPAR标识年份位置
+    static const auto L1COSPARIDP      = 14; ///< COSPAR标识序号位置
+    static const auto L1EpochI         = 18; ///< 历元整数部分位置
+    static const auto L1EpochF         = 24; ///< 历元小数部分位置
+    static const auto L1D1MeanMotion   = 33; ///< 平运动一阶导数位置
+    static const auto L1D2MeanMotionM  = 44; ///< 平运动二阶导数尾数位置
+    static const auto L1D2MeanMotionE  = 50; ///< 平运动二阶导数指数位置
+    static const auto L1BSTARM         = 53; ///< B*阻力项尾数位置
+    static const auto L1BSTARE         = 59; ///< B*阻力项指数位置
+    static const auto L1EphemerisType  = 62; ///< 星历类型位置
+    static const auto L1ElementSet     = 64; ///< 根数集编号位置
+    static const auto L1Checksum       = 68; ///< 校验和位置
+    /// @}
+
+    /// @name 第2行数据字段位置  
+    /// @{
+    static const auto L2LineNumber     = 0;  ///< 行号位置
+    static const auto L2CatalogNumber  = 2;  ///< 目录编号位置
+    static const auto L2Inclination    = 8;  ///< 轨道倾角位置
+    static const auto L2AscendingNode  = 17; ///< 升交点赤经位置
+    static const auto L2Eccentricity   = 26; ///< 偏心率位置
+    static const auto L2ArgOfPericen   = 34; ///< 近地点幅角位置
+    static const auto L2MeanAnomaly    = 43; ///< 平近点角位置
+    static const auto L2MeanMotionI    = 52; ///< 平运动整数部分位置
+    static const auto L2MeanMotionF    = 55; ///< 平运动小数部分位置
+    static const auto L2Revolutions    = 63; ///< 圈数位置
+    static const auto L2Checksum       = 68; ///< 校验和位置
+    /// @}
+
+    /**
+     * @enum SatelliteClassification
+     * @brief 卫星密级分类枚举
+     */
+    enum SatelliteClassification : char
+    {
+        Unclassified = 'U', ///< 未分类
+        Classified   = 'C', ///< 已分类  
+        Secret       = 'S'  ///< 秘密
+    };
+
+protected:
+    char Title[TitleLength + 1]; ///< 卫星名称（防御性编程，预留结束符）
+    char Line1[DataLength + 1];  ///< 第1行数据（防御性编程，预留结束符）
+    char Line2[DataLength + 1];  ///< 第2行数据（防御性编程，预留结束符）
+
+public:
+    /**
+     * @brief 默认构造函数
+     */
+    TLE();
+    
+    /**
+     * @brief 参数化构造函数
+     * @param Name 卫星名称
+     * @param L1 第1行数据
+     * @param L2 第2行数据
+     */
+    TLE(char const* Name, char const* L1, char const* L2);
+    
+    /**
+     * @brief 数据数组构造函数
+     * @param Data 包含名称、第1行、第2行的数据数组
+     */
+    TLE(char const* const* Data) : TLE(Data[0], Data[1], Data[2]) {}
+
+    /**
+     * @brief 验证TLE数据有效性
+     * @return true 数据有效，false 数据无效
+     */
+    bool IsValid() const;
+
+    /**
+     * @brief 获取TLE数据
+     * @param Title 输出卫星名称
+     * @param L1 输出第1行数据  
+     * @param L2 输出第2行数据
+     */
+    void Get(void* Title, void* L1, void* L2) const;
+
+    /**
+     * @brief 获取卫星名称
+     * @return 卫星名称字符串
+     */
+    ustring SatelliteName() const;
+    
+    /**
+     * @brief 获取航天器基础数据
+     * @return SpacecraftBasicData结构体
+     */
+    SpacecraftBasicData BasicData() const;
+    
+    /**
+     * @brief 获取开普勒轨道根数
+     * @return KeplerianOrbitElems轨道根数
+     */
+    KeplerianOrbitElems OrbitElems() const;
+
+    /**
+     * @brief 将TLE转换为字符串
+     * @param Delim 分隔符，默认为换行符
+     * @return 格式化后的字符串
+     */
+    std::string ToString(char Delim = '\n') const;
+    
+    /**
+     * @brief 从字符串解析TLE数据
+     * @param Data 输入字符串数据
+     * @param Delim 分隔符，默认为换行符
+     * @return 解析后的TLE对象
+     */
+    static TLE FromString(char const* Data, char Delim = '\n');
+    
+    /**
+     * @brief 验证数据行校验和
+     * @param Line 数据行
+     * @param Size 数据行长度
+     * @param Checksum 校验和位置
+     * @return 校验结果
+     */
+    static int VerifyLine(const char* Line, int Size, int Checksum);
+};
+
+/**
+ * @class OEM
+ * @brief 轨道星历消息
+ *
+ * @details 
+ * @par 功能描述
+ * 实现CCSDS 502.0-B-3标准的轨道星历消息数据结构，用于高精度轨道数据存储。
+ *
+ * @par 参考文献
+ * [1] Orbit Data Messages[S/OL]. CCSDS 502.0-B-3. 2023. https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf<br>
+ * [2] Sease B. oem[C]. Github. https://github.com/bradsease/oem<br>
+ * [3] 刘泽康. 中国空间站OEM来啦，快来和我们一起追"星"吧！[EB/OL]. (2023-09-13). https://www.cmse.gov.cn/xwzx/202309/t20230913_54312.html<br>
+ *
+ * @todo 此功能待实现
+ */
+class OEM
+{
+public:
+    using KeyType = float64; ///< 键类型：儒略日
+
+    /**
+     * @struct ValueType
+     * @brief 轨道状态值类型
+     */
+    struct ValueType
+    {
+        vec3 Position     = vec3(0); ///< 位置矢量(m)
+        vec3 Velocity     = vec3(0); ///< 速度矢量(m/s)
+        vec3 Acceleration = vec3(0); ///< 加速度矢量(m/s²)
+    };
+
+protected:
+    std::string OEMVersion;        ///< OEM版本号
+    CSEDateTime CreationDate;      ///< 创建日期
+    std::string Originator;        ///< 数据来源机构
+
+    std::string ObjectName;        ///< 目标名称
+    std::string ObjectID;          ///< 目标标识符
+    std::string CenterName;        ///< 中心天体名称
+    std::string RefFrame;          ///< 参考坐标系
+    CSEDateTime RefFrameEpoch;     ///< 参考框架历元
+    std::string TimeSystem;        ///< 时间系统
+    CSEDateTime StartTime;         ///< 数据开始时间
+    CSEDateTime UseableStartTime;  ///< 有效开始时间
+    CSEDateTime UseableStopTime;   ///< 有效结束时间
+    CSEDateTime StopTime;          ///< 数据结束时间
+    std::string Interpolation;     ///< 插值方法
+    int64       InterpolaDegrees;  ///< 插值阶数
+
+    std::map<KeyType, ValueType> Data; ///< 轨道数据映射表
+
+public:
+    /**
+     * @brief 从字符串解析OEM数据
+     * @param[in] Src 输入字符串
+     * @return OEM 解析后的OEM对象
+     */
+    static OEM FromString(std::string Src);
+
+    /**
+     * @brief 从文件加载OEM数据
+     * @param[in] Path 文件路径
+     * @return OEM 解析后的OEM对象
+     */
+    static OEM FromFile(std::filesystem::path Path);
+};
+
+///@}
+
 ///@}
 
 }
