@@ -961,58 +961,192 @@ public:
  * [2] Sease B. oem[C]. Github. https://github.com/bradsease/oem<br>
  * [3] 刘泽康. 中国空间站OEM来啦，快来和我们一起追"星"吧！[EB/OL]. (2023-09-13). https://www.cmse.gov.cn/xwzx/202309/t20230913_54312.html<br>
  *
- * @todo 此功能待实现
+ * @todo 轨道状态向量计算功能待实现
+ * @todo 插值工具映射表功能待实现
  */
 class OEM
 {
 public:
-    using KeyType = float64; ///< 键类型：儒略日
+    std::string          OEMVersion;        ///< OEM版本号
+    std::string          Classification;    ///< 数据分类级别
+    CSEDateTime          CreationDate;      ///< 创建日期
+    std::string          Originator;        ///< 数据来源机构
+    std::string          MessageID;         ///< 消息标识符
 
     /**
      * @struct ValueType
-     * @brief 轨道状态值类型
+     * @brief 轨道数据值类型
      */
     struct ValueType
     {
-        vec3 Position     = vec3(0); ///< 位置矢量(m)
-        vec3 Velocity     = vec3(0); ///< 速度矢量(m/s)
-        vec3 Acceleration = vec3(0); ///< 加速度矢量(m/s²)
+        /**
+         * @struct MetadataType
+         * @brief 元数据类型
+         */
+        struct MetadataType
+        {
+            std::string  ObjectName;        ///< 目标名称
+            std::string  ObjectID;          ///< 目标标识符
+            std::string  CenterName;        ///< 中心点名称
+            std::string  RefFrame;          ///< 参考坐标系
+            CSEDateTime  RefFrameEpoch;     ///< 参考坐标系历元
+            std::string  TimeSystem;        ///< 时间系统
+            CSEDateTime  StartTime;         ///< 数据开始时间
+            CSEDateTime  UseableStartTime;  ///< 有效开始时间
+            CSEDateTime  UseableStopTime;   ///< 有效结束时间
+            CSEDateTime  StopTime;          ///< 数据结束时间
+            std::string  Interpolation;     ///< 插值方法
+            int64        InterpolaDegrees;  ///< 插值阶数
+        }MetaData;                          ///< 元数据实例
+
+        /**
+         * @struct EphemerisType
+         * @brief 星历数据类型
+         */
+        struct EphemerisType
+        {
+            CSEDateTime  Epoch;             ///< 历元时间
+            vec3         Position;          ///< 位置向量(km)
+            vec3         Velocity;          ///< 速度向量(km/s)
+            vec3         Acceleration;      ///< 加速度向量(km/s²)
+        };
+        std::vector<EphemerisType> Ephemeris;  ///< 星历数据集合
+
+        /**
+         * @struct CovarianceMatrixType
+         * @brief 协方差矩阵类型
+         */
+        struct CovarianceMatrixType
+        {
+            CSEDateTime  Epoch;             ///< 历元时间
+            std::string  RefFrame;          ///< 参考坐标系
+            matrix<6, 6> Data;              ///< 6x6协方差矩阵
+        };
+        std::vector<CovarianceMatrixType> CovarianceMatrices;  ///< 协方差矩阵集合
     };
 
+    using ValueSet = std::vector<ValueType>;  ///< 轨道数据集类型定义
+    ValueSet Data;                            ///< 轨道数据实例
+
+    /**
+     * @brief 插值工具映射表
+     * @details 存储Interpolation字段对应的插值工具或函数，通过指针侧载调用
+     * @todo 值类型目前未实现，暂时使用"能通过编译"的占位符
+     */
+    static const std::map<std::string, void*> InterpolationTools;
+
 protected:
-    std::string OEMVersion;        ///< OEM版本号
-    CSEDateTime CreationDate;      ///< 创建日期
-    std::string Originator;        ///< 数据来源机构
-
-    std::string ObjectName;        ///< 目标名称
-    std::string ObjectID;          ///< 目标标识符
-    std::string CenterName;        ///< 中心天体名称
-    std::string RefFrame;          ///< 参考坐标系
-    CSEDateTime RefFrameEpoch;     ///< 参考框架历元
-    std::string TimeSystem;        ///< 时间系统
-    CSEDateTime StartTime;         ///< 数据开始时间
-    CSEDateTime UseableStartTime;  ///< 有效开始时间
-    CSEDateTime UseableStopTime;   ///< 有效结束时间
-    CSEDateTime StopTime;          ///< 数据结束时间
-    std::string Interpolation;     ///< 插值方法
-    int64       InterpolaDegrees;  ///< 插值阶数
-
-    std::map<KeyType, ValueType> Data; ///< 轨道数据映射表
+    /**
+     * @brief 从输入流解析轨道数据
+     * @param[in] fin 输入流
+     * @param[out] out 输出的轨道数据集
+     */
+    static void Parse(std::istream& fin, ValueSet* out);
+    
+    /**
+     * @brief 解析注释行
+     * @param[in] Line 输入行
+     * @return bool 是否为注释行
+     */
+    static bool ParseComment(std::string Line);
+    
+    /**
+     * @brief 移除字符串中的空白字符
+     * @param[in,out] Line 待处理的字符串
+     */
+    static void RemoveWhiteSpace(std::string& Line);
+    
+    /**
+     * @brief 解析键值对
+     * @param[in] Line 输入行
+     * @return std::pair<std::string, std::string> 键值对
+     */
+    static std::pair<std::string, std::string> ParseKeyValue(std::string Line);
+    
+    /**
+     * @brief 解析原始数据行
+     * @param[in] Line 输入行
+     * @return std::vector<std::string> 解析后的数据字段
+     */
+    static std::vector<std::string> ParseRawData(std::string Line);
+    
+    /**
+     * @brief 解析星历数据
+     * @param[in] Line 输入行
+     * @return ValueType::EphemerisType 星历数据
+     */
+    static ValueType::EphemerisType ParseEphemeris(std::string Line);
+    
+    /**
+     * @brief 转换头部信息
+     * @param[in] Buf 头部信息缓冲区
+     * @param[out] out 输出的轨道数据集
+     */
+    static void TransferHeader(std::map<std::string, std::string> Buf, ValueSet* out);
+    
+    /**
+     * @brief 转换元数据
+     * @param[in] Buf 元数据缓冲区
+     * @param[out] out 输出的轨道数据集
+     */
+    static void TransferMetaData(std::map<std::string, std::string> Buf, ValueSet* out);
+    
+    /**
+     * @brief 转换星历数据
+     * @param[in] Buf 星历数据缓冲区
+     * @param[out] out 输出的轨道数据集
+     */
+    static void TransferEphemeris(std::vector<ValueType::EphemerisType> Buf, ValueSet* out);
+    
+    /**
+     * @brief 转换协方差矩阵数据
+     * @param[in] Buf 协方差矩阵数据缓冲区
+     * @param[out] out 输出的轨道数据集
+     */
+    static void TransferCovarianceMatrices(std::vector<ValueType::CovarianceMatrixType> Buf, ValueSet* out);
 
 public:
     /**
-     * @brief 从字符串解析OEM数据
+     * @brief 从字符串解析轨道数据
      * @param[in] Src 输入字符串
-     * @return OEM 解析后的OEM对象
+     * @return ValueSet 解析后的轨道数据集
      */
-    static OEM FromString(std::string Src);
+    static ValueSet FromString(std::string Src);
+    
+    /**
+     * @brief 从文件解析轨道数据
+     * @param[in] Path 文件路径
+     * @return ValueSet 解析后的轨道数据集
+     */
+    static ValueSet FromFile(std::filesystem::path Path);
+    
+    /**
+     * @brief 将轨道数据转换为字符串
+     * @return std::string 轨道数据的字符串表示
+     */
+    std::string ToString() const;
+    
+    /**
+     * @brief 将轨道数据写入文件
+     * @param[in] Path 文件路径
+     */
+    void ToFile(std::filesystem::path Path) const;
 
     /**
-     * @brief 从文件加载OEM数据
-     * @param[in] Path 文件路径
-     * @return OEM 解析后的OEM对象
+     * @brief 通过时间获取轨道状态向量
+     * @param[in] time 时间点
+     * @return OrbitStateVectors 轨道状态向量
+     * @todo 此功能待实现
      */
-    static OEM FromFile(std::filesystem::path Path);
+    OrbitStateVectors operator()(CSEDateTime time);
+    
+    /**
+     * @brief 通过时间偏移量获取轨道状态向量
+     * @param[in] offset 时间偏移量
+     * @return OrbitStateVectors 轨道状态向量
+     * @todo 此功能待实现
+     */
+    OrbitStateVectors operator()(float64 offset);
 };
 
 ///@}
