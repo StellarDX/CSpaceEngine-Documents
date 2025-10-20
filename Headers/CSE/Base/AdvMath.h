@@ -501,6 +501,8 @@ public:
  * cout << df(5) << '\n';
  * @endcode
  * 输出: 0.999999999998355 0.499999999999178 0.200000000000003
+ *
+ * @note 「凌波能信步，苦海岂无边。函数千千万万，一次最简单。」
  */
 class Adaptive1stOrderFDDerivativeFunction : public DerivativeFunction
 {
@@ -789,7 +791,6 @@ using DefaultDerivativeFunction = Adaptive1stOrderFDDerivativeFunction;
  * @defgroup Integrations 积分
  * @ingroup AdvMath
  * @brief 一些积分算法
- * @note 「每日一积，成为积佬」
  * @{
  */
 
@@ -956,6 +957,8 @@ extern const __Tbl_FpType __Kronrod61_Table[62];
  * \f]
  * 其中\f$w_i\f$为权重，\f$x_i\f$为积分点
  *
+ * @note 高斯-克朗罗德积分通过高阶(Kronrod)和低阶(Gauss)结果的差值估计误差
+ *
  * @par 示例：
  * 计算exp(-t^2)从0到+inf的积分：
  * \code{.cpp}
@@ -965,7 +968,7 @@ extern const __Tbl_FpType __Kronrod61_Table[62];
  * \endcode
  * 输出：0.886226925452758 (sqrt(pi)/2)
  *
- * @note 高斯-克朗罗德积分通过高阶(Kronrod)和低阶(Gauss)结果的差值估计误差
+ * @note 「每日一积，成为积佬」
  */
 class GaussKronrodQuadrature : public DefiniteIntegratingFunction
 {
@@ -1130,6 +1133,8 @@ extern const __Newton_Cotes_Param_Table_Type __Newton_Cotes_Table[14];
  * Keesling J. Closed Newton-Cotes Integration[R/OL]. https://people.clas.ufl.edu/kees/files/NewtonCotes.pdf.
  * 
  * @warning 使用此方法计算封闭图形的面积(即曲线积分)时阶数不能太高，最好直接使用梯形或辛普森，要不然结果会很怪
+ *
+ * @note 「一帆难遇风顺，一路高低不平。平平淡淡分秒，编织百味人生。」
  */
 class NewtonCotesFormulae : public SampleBasedIntegratingFunction
 {
@@ -1361,6 +1366,8 @@ using DefaultIntegratingFunction = GaussKronrodQuadrature;
  * 此时f(x)的一阶不定积分为\f$ F1(x) = \frac{1}{2}  x^2 - \frac{1}{2} \f$
  * 二阶不定积分为 \f$ F2(x) = \frac{1}{6}  x^3 - \frac{1}{2}  x + \frac{1}{3} \f$
  * 更高阶的不定积分以此类推。
+ *
+ * @note「量天何必苦登高，借问银河落九霄。直下凡尘几万里，几多里处宴蟠桃。」
  */
 class RiemannLiouvilleIntegratingFunction : public IndefiniteIntegratingFunction
 {
