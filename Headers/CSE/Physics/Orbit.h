@@ -32,6 +32,10 @@ namespace Orbit {
 /// @ingroup Physics
 /// @{
 
+/// @defgroup OrbitBasicElems 基本元素
+/// @brief 基本元素
+/// @{
+
 /**
  * @defgroup OrbitData 数据结构
  * @brief 三种用于存储物体空间状态的结构体
@@ -322,10 +326,543 @@ class EquinoctialSatelliteTracker : public SatelliteTracker
     // TODO...
 };
 
+/**
+ * @brief 根据近心点距离计算半长轴
+ * @param Eccentricity 离心率
+ * @param PericenterDist 近心点距离
+ * @return 半长轴
+ */
+float64 GetSemiMajorAxisFromPericenterDist(float64 Eccentricity, float64 PericenterDist);
+
+/**
+ * @brief 根据半长轴计算近心点距离
+ * @param Eccentricity 离心率
+ * @param SemiMajorAxis 半长轴
+ * @return 近心点距离
+ */
+float64 GetPericenterDistFromSemiMajorAxis(float64 Eccentricity, float64 SemiMajorAxis);
+
+/**
+ * @brief 根据偏近点角计算真近点角
+ * @param Eccentricity 离心率
+ * @param EccentricAnomaly 偏近点角
+ * @return 真近点角
+ */
+Angle GetTrueAnomalyFromEccentricAnomaly(float64 Eccentricity, Angle EccentricAnomaly);
+
+/**
+ * @brief 根据真近点角计算偏近点角
+ * @param Eccentricity 离心率
+ * @param TrueAnomaly 真近点角
+ * @return 偏近点角
+ */
+Angle GetEccentricAnomalyFromTrueAnomaly(float64 Eccentricity, Angle TrueAnomaly);
+
+/**
+ * @brief 根据近心点距离计算半通径
+ * @param Eccentricity 离心率
+ * @param PericenterDist 近心点距离
+ * @return 半通径
+ */
+float64 GetSemiLatusRectumFromPericenterDist(float64 Eccentricity, float64 PericenterDist);
+
+/**
+ * @brief 计算纬度参数
+ * @param ArgOfPericen 近心点幅角
+ * @param Anomaly 近点角
+ * @return 纬度参数
+ */
+Angle GetArgOfLatitude(Angle ArgOfPericen, Angle Anomaly);
+
+/**
+ * @brief 根据周期计算角速度
+ * @param Period 轨道周期
+ * @return 角速度
+ */
+Angle PeriodToAngularVelocity(float64 Period);
+
+/**
+ * @brief 根据近心点距离计算角速度
+ * @param Eccentricity 离心率
+ * @param PericenterDist 近心点距离
+ * @param GravParam 引力参数
+ * @return 角速度
+ */
+Angle PericenterDistToAngularVelocity(float64 Eccentricity, float64 PericenterDist, float64 GravParam);
+
 ///@}
 
 /**
- * @defgroup KeplerianEquations 开普勒方程（内部使用）
+ * @defgroup TLE 两行根数
+ * @brief    两行根数(Two-Line Element Set)数据解析类
+ * @{
+ */
+
+/**
+ * @struct SpacecraftBasicData
+ * @brief 航天器基础数据结构体
+ * @details 包含卫星编号、分类、国际标识符等基本信息
+ */
+struct SpacecraftBasicData
+{
+    uint32_t     CatalogNumber;  ///< 卫星目录编号
+    char         Classification; ///< 密级分类 (U: 未分类, C: 已分类, S: 秘密)
+
+    /**
+     * @struct COSPAR_ID
+     * @brief 国际卫星标识符结构体
+     */
+    struct COSPAR_ID
+    {
+        int32_t  LaunchYear;     ///< 发射年份的后两位数字
+        uint32_t LaunchNumber;   ///< 当年发射序号
+        char     LaunchPiece[3]; ///< 发射部件标识
+    } IntDesignator;             ///< 国际卫星标识符
+
+    float64      D1MeanMotion;   ///< 平运动一阶导数；弹道系数 (转/天²) (当前存储为度/秒)
+    float64      D2MeanMotion;   ///< 平运动二阶导数 (转/天³) (当前存储为度/秒³)
+    float64      BSTAR;          ///< B*阻力项或辐射压力系数 (1/地球半径) (当前存储为1/米)
+    uint32_t     EphemerisType;  ///< 星历类型 (通常为零；仅用于未分发的TLE数据)
+    uint32_t     ElementSet;     ///< 根数集编号，生成新TLE时递增
+    uint32_t     RevolutionNum;  ///< 历元时刻的圈数 (圈数)
+};
+
+/**
+ * @class TLE
+ * @brief 两行根数集解析类
+ * @details 提供NORAD和NASA标准双线轨道元素集的解析功能
+ * 
+ * 此类用于解析和处理标准的双线轨道元素集格式，与NORAD和NASA使用的格式兼容。
+ * 包含卫星名称、轨道参数等信息的提取和验证功能。
+ */
+class TLE // Two-line element set
+{
+public:
+    /// @name 数据长度常量
+    /// @{
+    static const auto TitleLength      = 24; ///< 卫星名称长度，与NORAD SATCAT一致
+    static const auto DataLength       = 69; ///< 第1行和第2行数据标准长度
+    /// @}
+
+    /// @name 第1行数据字段位置
+    /// @{
+    static const auto L1LineNumber     = 0;  ///< 行号位置
+    static const auto L1CatalogNumber  = 2;  ///< 目录编号位置
+    static const auto L1Classification = 7;  ///< 密级分类位置
+    static const auto L1COSPARIDYD     = 9;  ///< COSPAR标识年份位置
+    static const auto L1COSPARIDP      = 14; ///< COSPAR标识序号位置
+    static const auto L1EpochI         = 18; ///< 历元整数部分位置
+    static const auto L1EpochF         = 24; ///< 历元小数部分位置
+    static const auto L1D1MeanMotion   = 33; ///< 平运动一阶导数位置
+    static const auto L1D2MeanMotionM  = 44; ///< 平运动二阶导数尾数位置
+    static const auto L1D2MeanMotionE  = 50; ///< 平运动二阶导数指数位置
+    static const auto L1BSTARM         = 53; ///< B*阻力项尾数位置
+    static const auto L1BSTARE         = 59; ///< B*阻力项指数位置
+    static const auto L1EphemerisType  = 62; ///< 星历类型位置
+    static const auto L1ElementSet     = 64; ///< 根数集编号位置
+    static const auto L1Checksum       = 68; ///< 校验和位置
+    /// @}
+
+    /// @name 第2行数据字段位置  
+    /// @{
+    static const auto L2LineNumber     = 0;  ///< 行号位置
+    static const auto L2CatalogNumber  = 2;  ///< 目录编号位置
+    static const auto L2Inclination    = 8;  ///< 轨道倾角位置
+    static const auto L2AscendingNode  = 17; ///< 升交点赤经位置
+    static const auto L2Eccentricity   = 26; ///< 离心率位置
+    static const auto L2ArgOfPericen   = 34; ///< 近地点幅角位置
+    static const auto L2MeanAnomaly    = 43; ///< 平近点角位置
+    static const auto L2MeanMotionI    = 52; ///< 平运动整数部分位置
+    static const auto L2MeanMotionF    = 55; ///< 平运动小数部分位置
+    static const auto L2Revolutions    = 63; ///< 圈数位置
+    static const auto L2Checksum       = 68; ///< 校验和位置
+    /// @}
+
+    /**
+     * @enum SatelliteClassification
+     * @brief 卫星密级分类枚举
+     */
+    enum SatelliteClassification : char
+    {
+        Unclassified = 'U', ///< 未分类
+        Classified   = 'C', ///< 已分类  
+        Secret       = 'S'  ///< 秘密
+    };
+
+protected:
+    char Title[TitleLength + 1]; ///< 卫星名称（防御性编程，预留结束符）
+    char Line1[DataLength + 1];  ///< 第1行数据（防御性编程，预留结束符）
+    char Line2[DataLength + 1];  ///< 第2行数据（防御性编程，预留结束符）
+
+public:
+    /**
+     * @brief 默认构造函数
+     */
+    TLE();
+    
+    /**
+     * @brief 参数化构造函数
+     * @param Name 卫星名称
+     * @param L1 第1行数据
+     * @param L2 第2行数据
+     */
+    TLE(char const* Name, char const* L1, char const* L2);
+    
+    /**
+     * @brief 数据数组构造函数
+     * @param Data 包含名称、第1行、第2行的数据数组
+     */
+    TLE(char const* const* Data) : TLE(Data[0], Data[1], Data[2]) {}
+
+    /**
+     * @brief 验证TLE数据有效性
+     * @return true 数据有效，false 数据无效
+     */
+    bool IsValid() const;
+
+    /**
+     * @brief 获取TLE数据
+     * @param Title 输出卫星名称
+     * @param L1 输出第1行数据  
+     * @param L2 输出第2行数据
+     */
+    void Get(void* Title, void* L1, void* L2) const;
+
+    /**
+     * @brief 获取卫星名称
+     * @return 卫星名称字符串
+     */
+    ustring SatelliteName() const;
+    
+    /**
+     * @brief 获取航天器基础数据
+     * @return SpacecraftBasicData结构体
+     */
+    SpacecraftBasicData BasicData() const;
+    
+    /**
+     * @brief 获取开普勒轨道根数
+     * @return KeplerianOrbitElems轨道根数
+     */
+    KeplerianOrbitElems OrbitElems() const;
+
+    /**
+     * @brief 将TLE转换为字符串
+     * @param Delim 分隔符，默认为换行符
+     * @return 格式化后的字符串
+     */
+    std::string ToString(char Delim = '\n') const;
+    
+    /**
+     * @brief 从字符串解析TLE数据
+     * @param Data 输入字符串数据
+     * @param Delim 分隔符，默认为换行符
+     * @return 解析后的TLE对象
+     */
+    static TLE FromString(char const* Data, char Delim = '\n');
+    
+    /**
+     * @brief 验证数据行校验和
+     * @param Line 数据行
+     * @param Size 数据行长度
+     * @param Checksum 校验和位置
+     * @return 校验结果
+     */
+    static int VerifyLine(const char* Line, int Size, int Checksum);
+};
+
+/**
+ * @class OEM
+ * @brief 轨道星历消息
+ *
+ * @details 
+ * @par 功能描述
+ * 实现CCSDS 502.0-B-3标准的轨道星历消息数据结构，用于高精度轨道数据存储。
+ *
+ * @par 参考文献
+ * [1] Orbit Data Messages[S/OL]. CCSDS 502.0-B-3. 2023. https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf<br>
+ * [2] Sease B. oem[C]. Github. https://github.com/bradsease/oem<br>
+ * [3] 刘泽康. 中国空间站OEM来啦，快来和我们一起追"星"吧！[EB/OL]. (2023-09-13). https://www.cmse.gov.cn/xwzx/202309/t20230913_54312.html<br>
+ *
+ * @todo 目前只支持导入和导出，完整功能待实现
+ */
+class OEM
+{
+public:
+    /// @name 格式化字符串常量
+    /// @{
+    constexpr static const cstring KeyValueFmtString = "{} = {}";                    ///< 键值对格式化字符串
+    constexpr static const cstring SimplifiedISO8601String = 
+        "{}-{:02}-{:02}T{:02}:{:02}:{:02}.{:03}";                                   ///< 简化ISO8601时间格式
+    constexpr static const cstring EphemerisFmtString = 
+        "{} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g}";                       ///< 星历数据格式化字符串
+    constexpr static const cstring EphemerisFmtStringWithAccel = 
+        "{} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g}"; ///< 带加速度的星历数据格式化字符串
+    constexpr static const cstring CovarianceMatFmtString = "{:.8g}";               ///< 协方差矩阵格式化字符串
+    /// @}
+
+    /// @name 文件头信息
+    /// @{
+    std::string  OEMVersion;        ///< OEM文件版本号
+    std::string  Classification;    ///< 文件分类级别
+    CSEDateTime  CreationDate;      ///< 文件创建时间
+    std::string  Originator;        ///< 文件创建者
+    std::string  MessageID;         ///< 消息标识符
+    /// @}
+
+    /**
+     * @brief 数据值类型定义
+     */
+    struct ValueType
+    {
+        /**
+         * @brief 元数据类型定义
+         */
+        struct MetadataType
+        {
+            std::string  ObjectName;           ///< 目标物体名称
+            std::string  ObjectID;             ///< 目标物体标识符
+            std::string  CenterName;           ///< 中心天体名称
+            std::string  RefFrame;             ///< 参考坐标系
+            CSEDateTime  RefFrameEpoch;        ///< 参考坐标系历元
+            std::string  TimeSystem;           ///< 时间系统
+            CSEDateTime  StartTime;            ///< 数据开始时间
+            CSEDateTime  UseableStartTime;     ///< 有效开始时间
+            CSEDateTime  UseableStopTime;      ///< 有效结束时间
+            CSEDateTime  StopTime;             ///< 数据结束时间
+            std::string  Interpolation;        ///< 插值方法
+            uint64       InterpolaDegrees = 0; ///< 插值阶数
+        };
+        
+        MetadataType MetaData;  ///< 元数据实例
+
+        /**
+         * @brief 星历数据类型定义
+         */
+        struct EphemerisType
+        {
+            CSEDateTime  Epoch;        ///< 历元时间
+            vec3         Position;     ///< 位置矢量 (km)
+            vec3         Velocity;     ///< 速度矢量 (km/s)
+            vec3         Acceleration; ///< 加速度矢量 (km/s²)
+        };
+        
+        std::vector<EphemerisType> Ephemeris;  ///< 星历数据序列
+
+        /**
+         * @brief 协方差矩阵类型定义
+         */
+        struct CovarianceMatrixType
+        {
+            CSEDateTime  Epoch;        ///< 历元时间
+            std::string  RefFrame;     ///< 参考坐标系
+            matrix<6, 6> Data;         ///< 6x6协方差矩阵数据
+        };
+        
+        std::vector<CovarianceMatrixType> CovarianceMatrices;  ///< 协方差矩阵序列
+    };
+
+    using ValueSet = std::vector<ValueType>;  ///< 数据集类型定义
+    ValueSet Data;  ///< 轨道星历数据集
+
+    /**
+     * @brief 插值工具映射表
+     * @details 存储Interpolation字段对应的插值工具或函数，通过指针侧载调用
+     * @note 值类型目前未实现，暂时使用"能通过编译"的占位符
+     */
+    static const std::map<std::string, void*> InterpolationTools;
+
+protected:
+    /// @name 数据解析保护方法
+    /// @{
+    
+    /**
+     * @brief 解析注释行
+     * @param Line 输入行字符串
+     * @return 如果是注释行返回true，否则返回false
+     */
+    static bool ParseComment(std::string Line);
+    
+    /**
+     * @brief 移除字符串中的空白字符
+     * @param Line 待处理的字符串引用
+     */
+    static void RemoveWhiteSpace(std::string& Line);
+    
+    /**
+     * @brief 解析键值对
+     * @param Line 输入行字符串
+     * @return 键值对，first为键，second为值
+     */
+    static std::pair<std::string, std::string> ParseKeyValue(std::string Line);
+    
+    /**
+     * @brief 解析原始数据行
+     * @param Line 输入行字符串
+     * @return 分割后的数据字符串向量
+     */
+    static std::vector<std::string> ParseRawData(std::string Line);
+    
+    /**
+     * @brief 解析星历数据
+     * @param Line 输入行字符串
+     * @return 解析后的星历数据
+     */
+    static ValueType::EphemerisType ParseEphemeris(std::string Line);
+    
+    /**
+     * @brief 传输头信息
+     * @param Buf 缓冲区数据
+     * @param out 输出OEM对象指针
+     */
+    static void TransferHeader(std::map<std::string, std::string> Buf, OEM* out);
+    
+    /**
+     * @brief 传输元数据
+     * @param Buf 缓冲区数据
+     * @param out 输出OEM对象指针
+     */
+    static void TransferMetaData(std::map<std::string, std::string> Buf, OEM* out);
+    
+    /**
+     * @brief 传输星历数据
+     * @param Buf 缓冲区星历数据
+     * @param out 输出OEM对象指针
+     */
+    static void TransferEphemeris(std::vector<ValueType::EphemerisType> Buf, OEM* out);
+    
+    /**
+     * @brief 传输协方差矩阵数据
+     * @param Buf 缓冲区协方差矩阵数据
+     * @param out 输出OEM对象指针
+     */
+    static void TransferCovarianceMatrices(
+        std::vector<ValueType::CovarianceMatrixType> Buf, OEM* out);
+    /// @}
+
+    /// @name 数据导出保护方法
+    /// @{
+    
+    /**
+     * @brief 导出键值对
+     * @param fout 输出流
+     * @param Key 键名
+     * @param Value 键值
+     * @param Optional 是否为可选字段，默认为0
+     * @param Fmt 格式化字符串，默认为KeyValueFmtString
+     */
+    static void ExportKeyValue(std::ostream& fout, std::string Key, std::string Value,
+                              bool Optional = 0, cstring Fmt = KeyValueFmtString);
+    
+    /**
+     * @brief 导出星历数据
+     * @param fout 输出流
+     * @param Eph 星历数据向量
+     * @param Fmt 格式化字符串，默认为EphemerisFmtString
+     */
+    static void ExportEphemeris(std::ostream& fout, 
+                               std::vector<ValueType::EphemerisType> Eph,
+                               cstring Fmt = EphemerisFmtString);
+    
+    /**
+     * @brief 导出协方差矩阵
+     * @param fout 输出流
+     * @param Mat 协方差矩阵向量
+     * @param KVFmt 键值对格式化字符串，默认为KeyValueFmtString
+     * @param MatFmt 矩阵数据格式化字符串，默认为CovarianceMatFmtString
+     */
+    static void ExportCovarianceMatrix(std::ostream& fout, 
+                                      std::vector<ValueType::CovarianceMatrixType> Mat,
+                                      cstring KVFmt = KeyValueFmtString, 
+                                      cstring MatFmt = CovarianceMatFmtString);
+    /// @}
+
+public:
+    /// @name 静态构造方法
+    /// @{
+    
+    /**
+     * @brief 从输入流导入OEM数据
+     * @param fin 输入流
+     * @param out 输出OEM对象指针
+     */
+    static void Import(std::istream& fin, OEM* out);
+    
+    /**
+     * @brief 从字符串构造OEM对象
+     * @param Src 源字符串
+     * @return 构造的OEM对象
+     */
+    static OEM FromString(std::string Src);
+    
+    /**
+     * @brief 从文件构造OEM对象
+     * @param Path 文件路径
+     * @return 构造的OEM对象
+     */
+    static OEM FromFile(std::filesystem::path Path);
+    /// @}
+
+    /// @name 数据导出方法
+    /// @{
+    
+    /**
+     * @brief 导出OEM数据到输出流
+     * @param fout 输出流
+     * @param KVFmt 键值对格式化字符串，默认为KeyValueFmtString
+     * @param EphFmt 星历数据格式化字符串，默认为EphemerisFmtString
+     * @param CMFmt 协方差矩阵格式化字符串，默认为CovarianceMatFmtString
+     */
+    void Export(std::ostream& fout, 
+                cstring KVFmt = KeyValueFmtString,
+                cstring EphFmt = EphemerisFmtString, 
+                cstring CMFmt = CovarianceMatFmtString) const;
+    
+    /**
+     * @brief 将OEM对象转换为字符串
+     * @return 表示OEM数据的字符串
+     */
+    std::string ToString() const;
+    
+    /**
+     * @brief 将OEM对象保存到文件
+     * @param Path 文件路径
+     */
+    void ToFile(std::filesystem::path Path) const;
+    /// @}
+
+    /// @name 轨道状态计算运算符（待实现）
+    /// @{
+    
+    /**
+     * @brief 根据时间计算轨道状态向量
+     * @param time 日期时间
+     * @return 轨道状态向量
+     * @todo 待实现
+     */
+    OrbitStateVectors operator()(CSEDateTime time);
+    
+    /**
+     * @brief 根据时间偏移计算轨道状态向量
+     * @param timeOffset 时间偏移量
+     * @return 轨道状态向量
+     * @todo 待实现
+     */
+    OrbitStateVectors operator()(float64 timeOffset);
+    /// @}
+};
+///@}
+
+///@}
+
+/**
+ * @defgroup OrbitTheoriems 定理定律
+ * @brief 定理定律相关工具集
+ * @{
+ */
+
+/**
+ * @defgroup KeplerianEquations 开普勒方程
  * @brief 开普勒方程求解工具集
  * @{
  */
@@ -770,464 +1307,310 @@ using DefaultHyperbolicIKE = KE::__SDGH_Equacion_Inversa_de_Keplerh;
 ///@}
 
 /**
- * @defgroup TLE 两行根数
- * @brief    两行根数(Two-Line Element Set)数据解析类
+ * @defgroup LambertProblem 兰伯特问题
+ * @brief 兰伯特问题求解工具集
  * @{
  */
 
-/**
- * @struct SpacecraftBasicData
- * @brief 航天器基础数据结构体
- * @details 包含卫星编号、分类、国际标识符等基本信息
- */
-struct SpacecraftBasicData
-{
-    uint32_t     CatalogNumber;  ///< 卫星目录编号
-    char         Classification; ///< 密级分类 (U: 未分类, C: 已分类, S: 秘密)
-
-    /**
-     * @struct COSPAR_ID
-     * @brief 国际卫星标识符结构体
-     */
-    struct COSPAR_ID
-    {
-        int32_t  LaunchYear;     ///< 发射年份的后两位数字
-        uint32_t LaunchNumber;   ///< 当年发射序号
-        char     LaunchPiece[3]; ///< 发射部件标识
-    } IntDesignator;             ///< 国际卫星标识符
-
-    float64      D1MeanMotion;   ///< 平运动一阶导数；弹道系数 (转/天²) (当前存储为度/秒)
-    float64      D2MeanMotion;   ///< 平运动二阶导数 (转/天³) (当前存储为度/秒³)
-    float64      BSTAR;          ///< B*阻力项或辐射压力系数 (1/地球半径) (当前存储为1/米)
-    uint32_t     EphemerisType;  ///< 星历类型 (通常为零；仅用于未分发的TLE数据)
-    uint32_t     ElementSet;     ///< 根数集编号，生成新TLE时递增
-    uint32_t     RevolutionNum;  ///< 历元时刻的圈数 (圈数)
-};
+namespace LambertsProblem {
 
 /**
- * @class TLE
- * @brief 两行根数集解析类
- * @details 提供NORAD和NASA标准双线轨道元素集的解析功能
- * 
- * 此类用于解析和处理标准的双线轨道元素集格式，与NORAD和NASA使用的格式兼容。
- * 包含卫星名称、轨道参数等信息的提取和验证功能。
+ * @class __Lambert_Solver_Base
+ * @ingroup LambertProblem
+ * @brief Lambert问题求解器基类
+ * @details 提供Lambert问题求解的基本接口和数据结构
  */
-class TLE // Two-line element set
+class __Lambert_Solver_Base
 {
-public:
-    /// @name 数据长度常量
-    /// @{
-    static const auto TitleLength      = 24; ///< 卫星名称长度，与NORAD SATCAT一致
-    static const auto DataLength       = 69; ///< 第1行和第2行数据标准长度
-    /// @}
-
-    /// @name 第1行数据字段位置
-    /// @{
-    static const auto L1LineNumber     = 0;  ///< 行号位置
-    static const auto L1CatalogNumber  = 2;  ///< 目录编号位置
-    static const auto L1Classification = 7;  ///< 密级分类位置
-    static const auto L1COSPARIDYD     = 9;  ///< COSPAR标识年份位置
-    static const auto L1COSPARIDP      = 14; ///< COSPAR标识序号位置
-    static const auto L1EpochI         = 18; ///< 历元整数部分位置
-    static const auto L1EpochF         = 24; ///< 历元小数部分位置
-    static const auto L1D1MeanMotion   = 33; ///< 平运动一阶导数位置
-    static const auto L1D2MeanMotionM  = 44; ///< 平运动二阶导数尾数位置
-    static const auto L1D2MeanMotionE  = 50; ///< 平运动二阶导数指数位置
-    static const auto L1BSTARM         = 53; ///< B*阻力项尾数位置
-    static const auto L1BSTARE         = 59; ///< B*阻力项指数位置
-    static const auto L1EphemerisType  = 62; ///< 星历类型位置
-    static const auto L1ElementSet     = 64; ///< 根数集编号位置
-    static const auto L1Checksum       = 68; ///< 校验和位置
-    /// @}
-
-    /// @name 第2行数据字段位置  
-    /// @{
-    static const auto L2LineNumber     = 0;  ///< 行号位置
-    static const auto L2CatalogNumber  = 2;  ///< 目录编号位置
-    static const auto L2Inclination    = 8;  ///< 轨道倾角位置
-    static const auto L2AscendingNode  = 17; ///< 升交点赤经位置
-    static const auto L2Eccentricity   = 26; ///< 偏心率位置
-    static const auto L2ArgOfPericen   = 34; ///< 近地点幅角位置
-    static const auto L2MeanAnomaly    = 43; ///< 平近点角位置
-    static const auto L2MeanMotionI    = 52; ///< 平运动整数部分位置
-    static const auto L2MeanMotionF    = 55; ///< 平运动小数部分位置
-    static const auto L2Revolutions    = 63; ///< 圈数位置
-    static const auto L2Checksum       = 68; ///< 校验和位置
-    /// @}
-
-    /**
-     * @enum SatelliteClassification
-     * @brief 卫星密级分类枚举
-     */
-    enum SatelliteClassification : char
-    {
-        Unclassified = 'U', ///< 未分类
-        Classified   = 'C', ///< 已分类  
-        Secret       = 'S'  ///< 秘密
-    };
-
 protected:
-    char Title[TitleLength + 1]; ///< 卫星名称（防御性编程，预留结束符）
-    char Line1[DataLength + 1];  ///< 第1行数据（防御性编程，预留结束符）
-    char Line2[DataLength + 1];  ///< 第2行数据（防御性编程，预留结束符）
+    float64 GravParam;    ///< 中心物体引力常数(GM)
+    vec3    Departure;    ///< 始发坐标
+    vec3    Destination;  ///< 终到坐标
+    float64 TimeOfFlight; ///< 飞行持续时间
+    bool    Retrograde;   ///< 出发方向，0 = 由西向东，1 = 由东向西
+    uint64  Revolutions;  ///< 环绕中心物体的最多圈数
 
 public:
-    /**
-     * @brief 默认构造函数
-     */
-    TLE();
-    
-    /**
-     * @brief 参数化构造函数
-     * @param Name 卫星名称
-     * @param L1 第1行数据
-     * @param L2 第2行数据
-     */
-    TLE(char const* Name, char const* L1, char const* L2);
-    
-    /**
-     * @brief 数据数组构造函数
-     * @param Data 包含名称、第1行、第2行的数据数组
-     */
-    TLE(char const* const* Data) : TLE(Data[0], Data[1], Data[2]) {}
+    mat3 AxisMapper    = CSECoordToECIFrame;    ///< 坐标系映射矩阵
+    mat3 InvAxisMapper = ECIFrameToCSECoord;    ///< 坐标系逆映射矩阵
 
     /**
-     * @brief 验证TLE数据有效性
-     * @return true 数据有效，false 数据无效
+     * @brief 执行求解过程
      */
-    bool IsValid() const;
-
-    /**
-     * @brief 获取TLE数据
-     * @param Title 输出卫星名称
-     * @param L1 输出第1行数据  
-     * @param L2 输出第2行数据
-     */
-    void Get(void* Title, void* L1, void* L2) const;
-
-    /**
-     * @brief 获取卫星名称
-     * @return 卫星名称字符串
-     */
-    ustring SatelliteName() const;
+    virtual void Run() = 0;
     
     /**
-     * @brief 获取航天器基础数据
-     * @return SpacecraftBasicData结构体
+     * @brief 获取出发状态向量
+     * @return 出发轨道状态向量
      */
-    SpacecraftBasicData BasicData() const;
+    virtual OrbitStateVectors Dep()const = 0;
     
     /**
-     * @brief 获取开普勒轨道根数
-     * @return KeplerianOrbitElems轨道根数
+     * @brief 获取到达状态向量
+     * @return 到达轨道状态向量
      */
-    KeplerianOrbitElems OrbitElems() const;
-
-    /**
-     * @brief 将TLE转换为字符串
-     * @param Delim 分隔符，默认为换行符
-     * @return 格式化后的字符串
-     */
-    std::string ToString(char Delim = '\n') const;
+    virtual OrbitStateVectors Dst()const = 0;
     
     /**
-     * @brief 从字符串解析TLE数据
-     * @param Data 输入字符串数据
-     * @param Delim 分隔符，默认为换行符
-     * @return 解析后的TLE对象
+     * @brief 获取开普勒轨道要素
+     * @return 开普勒轨道要素
      */
-    static TLE FromString(char const* Data, char Delim = '\n');
-    
-    /**
-     * @brief 验证数据行校验和
-     * @param Line 数据行
-     * @param Size 数据行长度
-     * @param Checksum 校验和位置
-     * @return 校验结果
-     */
-    static int VerifyLine(const char* Line, int Size, int Checksum);
+    virtual KeplerianOrbitElems Kep()const = 0;
 };
 
 /**
- * @class OEM
- * @brief 轨道星历消息
+ * @class __ESA_PyKep_Lambert_Solver
+ * @ingroup LambertProblem
+ * @brief ESA PyKep提供的多圈兰伯特问题求解器
+ * @details 作者原话：
+ * This class represent a Lambert's problem. When instantiated it assumes a prograde orbit (unless otherwise stated)
+ * and evaluates all the solutions up to a maximum number of multiple revolutions.
+ * After the object is instantiated the solutions can be retreived using the appropriate getters. Note that the
+ * number of solutions will be N_max*2 + 1, where N_max is the maximum number of revolutions.<br>
+ * 此类表示兰伯特问题。实例化时默认采用顺行轨道（除非另有说明），并评估所有解直至达到最大多圈数。对象实例化后，可通过相应获取器检索解。需注意解的数量为 N_max*2 + 1，其中 N_max 为最大圈数。
+ * 
+ * 丹霞：兰伯特问题通常被描述为给定始发位置，到达位置，转场时间以及中心物体的质量，求解初速度和末速度。此问题没有解析解，但是它自从300年前被提出以后涌现了很多种简化的数值求解算法。这些现有主流方法基本都是通过一系列时间方程求解一个唯一未知数，然后其余的量使用这个未知数去表示的方式求解。而具体求解的方式也是五花八门，各显神通，从纯几何论证发展到基于图形处理单元的方案，甚至延伸至机器学习方案的都有，例如在1970年出现的Lancaster算法和1990年出现的Gooding算法，它们的原理以及一些其它的算法详见表1。在2015年，ESA的Dario Izzo基于Lancaster算法和Gooding算法改进出了一种混合迭代算法，其原理大致是以一个无量纲的转移角为基准变量，通过线性估计接3阶豪斯霍尔德迭代直接求解得到初末速度。所以它的结构更多的相似于同样直接求解初末速度的Gooding算法，但是Gooding算法的延迟较高，而Dario实现的这套算法经实测在绝大多数情况下都可以实现0毫秒求解，并且能够支持多圈转移的情况。
+ * 
+ * 表1：部分历年出现过的兰伯特问题求解算法[1]
+ * 
+ * <table>
+ *     <tr><th rowspan=2>年份</th><th rowspan=2>算法作者</th><th colspan=4>阶段</th></tr>
+ *     <tr><th>自变量</th><th>初始估计方法</th><th>计算方法</th><th>求解结果</th></tr>
+ *     <tr><td>1809</td><td>约翰·卡尔·弗里德里希·高斯</td><td>高斯方程自变量x</td><td>有理函数拟合</td><td>方程组</td><td>高斯方程f和g</td></tr>
+ *     <tr><td>1984</td><td>理查德·迪克·霍勒斯·巴廷</td><td>高斯方程自变量x</td><td>有理函数拟合</td><td>方程组</td><td>高斯方程f和g</td></tr>
+ *     <tr><td>1990</td><td>R. H. Gooding</td><td>高斯方程自变量x</td><td>双线性拟合</td><td>哈雷迭代</td><td>初末速度</td></tr>
+ *     <tr><td>2008</td><td>Giulio Avanzini</td><td>横向离心率</td><td>分段拟合</td><td>线性插值（试位）</td><td>轨道根数和状态向量</td></tr>
+ *     <tr><td>2013</td><td>尼廷·阿罗拉</td><td>偏近点角</td><td>有理函数拟合</td><td>哈雷迭代</td><td>高斯方程f和g</td></tr>
+ *     <tr><td>2013</td><td>戴维·A·瓦拉多</td><td>开普勒方程自变量ψ</td><td>分段拟合</td><td>二分搜索</td><td>高斯方程f和g</td></tr>
+ *     <tr><td>2015</td><td>Dario Izzo</td><td>无量纲的转移角</td><td>线性拟合</td><td>三阶豪斯霍尔德迭代</td><td>初末速度</td></tr>
+ * </table>
  *
- * @details 
- * @par 功能描述
- * 实现CCSDS 502.0-B-3标准的轨道星历消息数据结构，用于高精度轨道数据存储。
+ * @note 作者原话：
+ * The class has been tested extensively via monte carlo runs checked with numerical propagation. Compared
+ * to the previous Lambert Solver in the keplerian_toolbox it is 1.7 times faster (on average as defined
+ * by lambert_test.cpp). With respect to Gooding algorithm it is 1.3 - 1.5 times faster (zero revs - multi revs).
+ * The algorithm is described in detail in the publication below and its original with the author.<br>
+ * 此类已通过蒙特卡洛运行进行广泛测试，并经数值传播验证。相较于keplerian_toolbox中的旧版兰伯特求解器，其运行速度提升1.7倍（基于lambert_test.cpp定义的平均值）。相较于Gooding算法，其运行速度提升1.3至1.5倍（零圈-多圈场景）。该算法的详细描述见下述文献[2]。
+ * 
+ * @author Dario Izzo (dario.izzo@gmail.com)
  *
  * @par 参考文献
- * [1] Orbit Data Messages[S/OL]. CCSDS 502.0-B-3. 2023. https://ccsds.org/wp-content/uploads/gravity_forms/5-448e85c647331d9cbaf66c096458bdd5/2025/01//502x0b3e1.pdf<br>
- * [2] Sease B. oem[C]. Github. https://github.com/bradsease/oem<br>
- * [3] 刘泽康. 中国空间站OEM来啦，快来和我们一起追"星"吧！[EB/OL]. (2023-09-13). https://www.cmse.gov.cn/xwzx/202309/t20230913_54312.html<br>
- *
- * @todo 目前只支持导入和导出，完整功能待实现
+ * [1] Garrido J M. Lambert’s problem algorithms: A critical review[D]. Honor’s thesis, Universidad Carlos III de Madrid, Madrid, Spain, 2021.<br>
+ * [2] Izzo,Dario.Revisiting Lambert's Problem[J].Celestial Mechanics and Dynamical Astronomy, 2015, 121(1):1-15.DOI:10.1007/s10569-014-9587-y.<br>
+ * [3] 冯浩阳,汪雪川,岳晓奎,等.航天器轨道递推及Lambert问题计算方法综述[J].航空学报, 2023, 44(13):1-21.DOI:10.7527/S1000-6893.2022.28027.<br>
+ * [4] 童科伟,周建平,何麟书,等.广义多圈Lambert算法求解多脉冲最优交会问题[J].北京航空航天大学学报, 2009(11):5.DOI:CNKI:SUN:BJHK.0.2009-11-027.<br>
+ * [5] tyttttttttttt.Revisiting Lambert’s problem笔记[EB/OL].知乎, (2024-08-13), https://zhuanlan.zhihu.com/p/713935464<br>
+ * [6] 兰伯特问题 - 卫星百科, https://sat.huijiwiki.com/wiki/%E5%85%B0%E4%BC%AF%E7%89%B9%E9%97%AE%E9%A2%98<br>
+ * [7] 兰伯特定理 - 卫星百科, https://sat.huijiwiki.com/wiki/%E5%85%B0%E4%BC%AF%E7%89%B9%E5%AE%9A%E7%90%86<br>
  */
-class OEM
+class __ESA_PyKep_Lambert_Solver : public __Lambert_Solver_Base
 {
 public:
-    /// @name 格式化字符串常量
-    /// @{
-    constexpr static const cstring KeyValueFmtString = "{} = {}";                    ///< 键值对格式化字符串
-    constexpr static const cstring SimplifiedISO8601String = 
-        "{}-{:02}-{:02}T{:02}:{:02}:{:02}.{:03}";                                   ///< 简化ISO8601时间格式
-    constexpr static const cstring EphemerisFmtString = 
-        "{} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g}";                       ///< 星历数据格式化字符串
-    constexpr static const cstring EphemerisFmtStringWithAccel = 
-        "{} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g} {:.13g}"; ///< 带加速度的星历数据格式化字符串
-    constexpr static const cstring CovarianceMatFmtString = "{:.8g}";               ///< 协方差矩阵格式化字符串
-    /// @}
-
-    /// @name 文件头信息
-    /// @{
-    std::string  OEMVersion;        ///< OEM文件版本号
-    std::string  Classification;    ///< 文件分类级别
-    CSEDateTime  CreationDate;      ///< 文件创建时间
-    std::string  Originator;        ///< 文件创建者
-    std::string  MessageID;         ///< 消息标识符
-    /// @}
+    using Mybase = __Lambert_Solver_Base; ///< 基类类型定义
 
     /**
-     * @brief 数据值类型定义
+     * @struct StateBlock
+     * @brief 状态数据块结构体
      */
-    struct ValueType
+    struct StateBlock
     {
-        /**
-         * @brief 元数据类型定义
-         */
-        struct MetadataType
-        {
-            std::string  ObjectName;           ///< 目标物体名称
-            std::string  ObjectID;             ///< 目标物体标识符
-            std::string  CenterName;           ///< 中心天体名称
-            std::string  RefFrame;             ///< 参考坐标系
-            CSEDateTime  RefFrameEpoch;        ///< 参考坐标系历元
-            std::string  TimeSystem;           ///< 时间系统
-            CSEDateTime  StartTime;            ///< 数据开始时间
-            CSEDateTime  UseableStartTime;     ///< 有效开始时间
-            CSEDateTime  UseableStopTime;      ///< 有效结束时间
-            CSEDateTime  StopTime;             ///< 数据结束时间
-            std::string  Interpolation;        ///< 插值方法
-            uint64       InterpolaDegrees = 0; ///< 插值阶数
-        };
-        
-        MetadataType MetaData;  ///< 元数据实例
-
-        /**
-         * @brief 星历数据类型定义
-         */
-        struct EphemerisType
-        {
-            CSEDateTime  Epoch;        ///< 历元时间
-            vec3         Position;     ///< 位置矢量 (km)
-            vec3         Velocity;     ///< 速度矢量 (km/s)
-            vec3         Acceleration; ///< 加速度矢量 (km/s²)
-        };
-        
-        std::vector<EphemerisType> Ephemeris;  ///< 星历数据序列
-
-        /**
-         * @brief 协方差矩阵类型定义
-         */
-        struct CovarianceMatrixType
-        {
-            CSEDateTime  Epoch;        ///< 历元时间
-            std::string  RefFrame;     ///< 参考坐标系
-            matrix<6, 6> Data;         ///< 6x6协方差矩阵数据
-        };
-        
-        std::vector<CovarianceMatrixType> CovarianceMatrices;  ///< 协方差矩阵序列
+        uint64  Iteration;    ///< 迭代次数
+        vec3    DepVelocity;  ///< 出发速度
+        vec3    DstVelocity;  ///< 到达速度
+        float64 XResult;      ///< X轴结果
     };
 
-    using ValueSet = std::vector<ValueType>;  ///< 数据集类型定义
-    ValueSet Data;  ///< 轨道星历数据集
-
-    /**
-     * @brief 插值工具映射表
-     * @details 存储Interpolation字段对应的插值工具或函数，通过指针侧载调用
-     * @note 值类型目前未实现，暂时使用"能通过编译"的占位符
-     */
-    static const std::map<std::string, void*> InterpolationTools;
-
 protected:
-    /// @name 数据解析保护方法
-    /// @{
-    
-    /**
-     * @brief 解析注释行
-     * @param Line 输入行字符串
-     * @return 如果是注释行返回true，否则返回false
-     */
-    static bool ParseComment(std::string Line);
-    
-    /**
-     * @brief 移除字符串中的空白字符
-     * @param Line 待处理的字符串引用
-     */
-    static void RemoveWhiteSpace(std::string& Line);
-    
-    /**
-     * @brief 解析键值对
-     * @param Line 输入行字符串
-     * @return 键值对，first为键，second为值
-     */
-    static std::pair<std::string, std::string> ParseKeyValue(std::string Line);
-    
-    /**
-     * @brief 解析原始数据行
-     * @param Line 输入行字符串
-     * @return 分割后的数据字符串向量
-     */
-    static std::vector<std::string> ParseRawData(std::string Line);
-    
-    /**
-     * @brief 解析星历数据
-     * @param Line 输入行字符串
-     * @return 解析后的星历数据
-     */
-    static ValueType::EphemerisType ParseEphemeris(std::string Line);
-    
-    /**
-     * @brief 传输头信息
-     * @param Buf 缓冲区数据
-     * @param out 输出OEM对象指针
-     */
-    static void TransferHeader(std::map<std::string, std::string> Buf, OEM* out);
-    
-    /**
-     * @brief 传输元数据
-     * @param Buf 缓冲区数据
-     * @param out 输出OEM对象指针
-     */
-    static void TransferMetaData(std::map<std::string, std::string> Buf, OEM* out);
-    
-    /**
-     * @brief 传输星历数据
-     * @param Buf 缓冲区星历数据
-     * @param out 输出OEM对象指针
-     */
-    static void TransferEphemeris(std::vector<ValueType::EphemerisType> Buf, OEM* out);
-    
-    /**
-     * @brief 传输协方差矩阵数据
-     * @param Buf 缓冲区协方差矩阵数据
-     * @param out 输出OEM对象指针
-     */
-    static void TransferCovarianceMatrices(
-        std::vector<ValueType::CovarianceMatrixType> Buf, OEM* out);
-    /// @}
+    std::vector<StateBlock> StateBuffer; ///< 状态缓冲区
 
-    /// @name 数据导出保护方法
-    /// @{
+    float64 Chord;          ///< 弦长
+    float64 SemiPerimeter;  ///< 半周长
+    float64 TransferAngle;  ///< 转移角度
+
+    // 算法参数
+    float64 MaxRevoDetectTolerence    = 13;   ///< 最大圈数检测容差
+    uint64  MaxRevoDetectIterCount    = 12;   ///< 最大圈数检测迭代次数
+    float64 BattinBreakpoint          = 0.01; ///< Battin算法断点
+    float64 LancasterBreakPoint       = 0.2;  ///< Lancaster算法断点
+    float64 BattinHypGeomTolerence    = 11;   ///< Battin超几何容差
+    uint64  ProbMaxRevolutions;               ///< 预估最大圈数
+
+    // Householder方法参数
+    float64 HouseholderPivotTolerence = 5;    ///< Householder主值容差
+    uint64  HouseholderPivotMaxIter   = 15;   ///< Householder主值最大迭代次数
+    float64 HouseholderLeftTolerence  = 8;    ///< Householder左值容差
+    uint64  HouseholderLeftMaxIter    = 15;   ///< Householder左值最大迭代次数
+    float64 HouseholderRightTolerence = 8;    ///< Householder右值容差
+    uint64  HouseholderRightMaxIter   = 15;   ///< Householder右值最大迭代次数
+
+    /**
+     * @brief 向量化时间方程导数计算
+     * @param x 输入参数
+     * @param T 时间参数
+     * @return 导数向量
+     */
+    vec3 VectorizedTimeEquationDerivatives(float64 x, float64 T);
     
     /**
-     * @brief 导出键值对
-     * @param fout 输出流
-     * @param Key 键名
-     * @param Value 键值
-     * @param Optional 是否为可选字段，默认为0
-     * @param Fmt 格式化字符串，默认为KeyValueFmtString
+     * @brief 转移时间方程
+     * @param x 输入参数
+     * @param N 圈数
+     * @return 转移时间
      */
-    static void ExportKeyValue(std::ostream& fout, std::string Key, std::string Value,
-                              bool Optional = 0, cstring Fmt = KeyValueFmtString);
+    float64 TransferTimeEquation(float64 x, uint64 N);
     
     /**
-     * @brief 导出星历数据
-     * @param fout 输出流
-     * @param Eph 星历数据向量
-     * @param Fmt 格式化字符串，默认为EphemerisFmtString
+     * @brief Lagrange方法计算
+     * @param x 输入参数
+     * @param N 圈数
+     * @return 计算结果
      */
-    static void ExportEphemeris(std::ostream& fout, 
-                               std::vector<ValueType::EphemerisType> Eph,
-                               cstring Fmt = EphemerisFmtString);
+    float64 Lagrange(float64 x, uint64 N);
     
     /**
-     * @brief 导出协方差矩阵
-     * @param fout 输出流
-     * @param Mat 协方差矩阵向量
-     * @param KVFmt 键值对格式化字符串，默认为KeyValueFmtString
-     * @param MatFmt 矩阵数据格式化字符串，默认为CovarianceMatFmtString
+     * @brief Battin级数方法
+     * @param x 输入参数
+     * @param N 圈数
+     * @return 计算结果
      */
-    static void ExportCovarianceMatrix(std::ostream& fout, 
-                                      std::vector<ValueType::CovarianceMatrixType> Mat,
-                                      cstring KVFmt = KeyValueFmtString, 
-                                      cstring MatFmt = CovarianceMatFmtString);
-    /// @}
+    float64 BattinSeries(float64 x, uint64 N);
+    
+    /**
+     * @brief Lancaster方法
+     * @param x 输入参数
+     * @param N 圈数
+     * @return 计算结果
+     */
+    float64 Lancaster(float64 x, uint64 N);
+
+    /**
+     * @brief 快速Householder迭代
+     * @param T 时间参数
+     * @param x0 初始值
+     * @param N 圈数
+     * @param Tolerence 容差
+     * @param MaxIter 最大迭代次数
+     * @param Iter 迭代次数输出
+     * @return 迭代结果
+     */
+    float64 FastHouseholderIterate(float64 T, float64 x0, uint64 N,
+        float64 Tolerence, uint64 MaxIter, uint64* Iter);
+
+    /**
+     * @brief 零值检查
+     */
+    void ZeroCheck();
+    
+    /**
+     * @brief 准备中间变量
+     * @return 包含多个中间变量的元组
+     */
+    std::tuple<float64, float64, float64, float64,
+        float64, vec3, vec3, vec3, vec3> PrepareIntermediateVariables();
+        
+    /**
+     * @brief 检测最大圈数
+     * @param T 时间参数
+     * @param Lambda2 Lambda2参数
+     * @param Lambda3 Lambda3参数
+     * @return 包含最小和最大时间的元组
+     */
+    std::tuple<float64, float64> DetectMaxRevolutions
+        (float64 T, float64 Lambda2, float64 Lambda3);
+        
+    /**
+     * @brief Householder方法求解
+     * @param T 时间参数
+     * @param T00 初始时间
+     * @param T1 时间参数1
+     * @param Lambda2 Lambda2参数
+     * @param Lambda3 Lambda3参数
+     */
+    void HouseholderSolve(float64 T, float64 T00, float64 T1,
+        float64 Lambda2, float64 Lambda3);
+        
+    /**
+     * @brief 计算终端速度
+     * @param R1 半径1
+     * @param R2 半径2
+     * @param Lambda2 Lambda2参数
+     * @param ir1 单位向量1
+     * @param ir2 单位向量2
+     * @param it1 切向单位向量1
+     * @param it2 切向单位向量2
+     */
+    void ComputeTerminalVelocities(float64 R1, float64 R2, float64 Lambda2,
+        vec3 ir1, vec3 ir2, vec3 it1, vec3 it2);
 
 public:
-    /// @name 静态构造方法
-    /// @{
-    
     /**
-     * @brief 从输入流导入OEM数据
-     * @param fin 输入流
-     * @param out 输出OEM对象指针
+     * @brief 构造函数
+     * @param Dep 出发坐标
+     * @param Dst 到达坐标
+     * @param TOF 飞行时间
+     * @param GP 引力参数
+     * @param Dir 方向，0=顺行，1=逆行
+     * @param Rev 最大圈数
      */
-    static void Import(std::istream& fin, OEM* out);
-    
-    /**
-     * @brief 从字符串构造OEM对象
-     * @param Src 源字符串
-     * @return 构造的OEM对象
-     */
-    static OEM FromString(std::string Src);
-    
-    /**
-     * @brief 从文件构造OEM对象
-     * @param Path 文件路径
-     * @return 构造的OEM对象
-     */
-    static OEM FromFile(std::filesystem::path Path);
-    /// @}
+    __ESA_PyKep_Lambert_Solver(const vec3& Dep, const vec3& Dst,
+        const float64& TOF, const float64& GP,
+        const bool& Dir = 0, const uint64& Rev = 5);
 
-    /// @name 数据导出方法
-    /// @{
-    
     /**
-     * @brief 导出OEM数据到输出流
-     * @param fout 输出流
-     * @param KVFmt 键值对格式化字符串，默认为KeyValueFmtString
-     * @param EphFmt 星历数据格式化字符串，默认为EphemerisFmtString
-     * @param CMFmt 协方差矩阵格式化字符串，默认为CovarianceMatFmtString
+     * @brief 执行求解过程
      */
-    void Export(std::ostream& fout, 
-                cstring KVFmt = KeyValueFmtString,
-                cstring EphFmt = EphemerisFmtString, 
-                cstring CMFmt = CovarianceMatFmtString) const;
-    
-    /**
-     * @brief 将OEM对象转换为字符串
-     * @return 表示OEM数据的字符串
-     */
-    std::string ToString() const;
-    
-    /**
-     * @brief 将OEM对象保存到文件
-     * @param Path 文件路径
-     */
-    void ToFile(std::filesystem::path Path) const;
-    /// @}
+    void Run()override;
 
-    /// @name 轨道状态计算运算符（待实现）
-    /// @{
+    /**
+     * @brief 获取出发状态向量
+     * @return 出发轨道状态向量
+     */
+    OrbitStateVectors Dep()const override;
     
     /**
-     * @brief 根据时间计算轨道状态向量
-     * @param time 日期时间
-     * @return 轨道状态向量
-     * @todo 待实现
+     * @brief 获取到达状态向量
+     * @return 到达轨道状态向量
      */
-    OrbitStateVectors operator()(CSEDateTime time);
+    OrbitStateVectors Dst()const override;
     
     /**
-     * @brief 根据时间偏移计算轨道状态向量
-     * @param timeOffset 时间偏移量
-     * @return 轨道状态向量
-     * @todo 待实现
+     * @brief 获取开普勒轨道要素
+     * @return 开普勒轨道要素
      */
-    OrbitStateVectors operator()(float64 timeOffset);
-    /// @}
+    KeplerianOrbitElems Kep()const override;
+
+    /**
+     * @brief 获取解的数量
+     * @return 解的数量
+     */
+    size_t SolutionCount()const;
+    
+    /**
+     * @brief 导出状态向量
+     * @param Index 索引
+     * @param Pos 位置标志
+     * @return 轨道状态向量
+     */
+    OrbitStateVectors ExportState(uint64 Index, bool Pos)const;
+    
+    /**
+     * @brief 获取指定索引的开普勒轨道要素
+     * @param Index 索引
+     * @return 开普勒轨道要素
+     */
+    KeplerianOrbitElems Kep(uint64 Index)const;
+
+    /**
+     * @brief 转换为字符串表示
+     * @return 字符串表示
+     */
+    ustring ToString()const;
 };
+
+}
+
+///@}
+
 ///@}
 
 ///@}
