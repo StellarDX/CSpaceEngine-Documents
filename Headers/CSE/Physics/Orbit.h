@@ -1304,6 +1304,29 @@ using DefaultHyperbolicIKE = KE::__SDGH_Equacion_Inversa_de_Keplerh;
 
 }
 
+/**
+ * @brief 补全近日点，周期和引力常数
+ * @param[in,out] InitElems 开普勒轨道根数
+ * @return 计算是否成功
+ */
+bool KeplerCompute(KeplerianOrbitElems& InitElems);
+
+/**
+ * @brief 开普勒方程计算
+ * @param Eccentricity 离心率
+ * @param EccentricAnomaly 偏近点角
+ * @return 计算得到的角度值
+ */
+Angle KeplerianEquation(float64 Eccentricity, Angle EccentricAnomaly);
+
+/**
+ * @brief 反开普勒方程计算
+ * @param Eccentricity 离心率
+ * @param MeanAnomaly 平近点角
+ * @return 计算得到的角度值
+ */
+Angle InverseKeplerianEquation(float64 Eccentricity, Angle MeanAnomaly);
+
 ///@}
 
 /**
@@ -1605,6 +1628,118 @@ public:
      * @return 字符串表示
      */
     ustring ToString()const;
+};
+
+using DefaultLambertSolver = __ESA_PyKep_Lambert_Solver;  ///< 默认兰伯特求解器类型定义
+
+}
+
+///@}
+
+///@}
+
+/**
+ * @defgroup MultiBodyPorblem 多体问题
+ * @brief 多体问题求解工具集
+ * @{
+ */
+
+/**
+ * @defgroup PlanSimulation 行星推演
+ * @brief 一些行星推演引擎
+ * @{
+ */
+
+namespace PlanSim {
+
+/**
+ * @class __Planetary_Simulator
+ * @ingroup PlanSimulation
+ * @brief 行星模拟器基类，预留待实现。
+ *
+ * @section PlanetarySimulation 行星推演功能概述
+ * 
+ * 丹霞：这里原本想搞一个行星推演的功能的，大概就是封装一堆物体的质量和初始状态，这个状态可以是状态向量或轨道根数，然后以时间为自变量可以获取到此时间点时这个系统中的物体的轨道根数。简单来说就是创建了一个连续的，系统中各个物体的状态与时间的函数。这个功能的实现可能可以从高斯摄动方程和拉格朗日行星运动方程去下手，当然网上也有一些用初等方式简单模拟的，但那种方法在短期模拟的表现可能好一些，但如果把时间线拉长可能会出现较多的精度丢失。
+ *
+ * @todo 实现具体功能
+ */
+class __Planetary_Simulator
+{
+    // TODO: 实现具体功能
+};
+
+/**
+ * @class __Gauss_Perturbation_Planetary_Simulator
+ * @ingroup PlanSimulation
+ * @brief 基于高斯摄动方程的行星模拟器。
+ *
+ * @subsection GaussPerturbation 高斯摄动方程
+ * 
+ * 高斯摄动方程一般是用于非保守力导致的永久性摄动模拟，例如计算一个物体在已知摄动源的情况下状态随时间的变化的情况。
+ * 也就是说这种方法在二体问题或一个主物体主导少数物体的系统表现较好。
+ *
+ * 高斯摄动方程涉及三个参数：径向力f_r、切向力f_u和法向力f_h。其中：
+ * - 径向力的方向恒为物体的速度方向，也就是物体的加速度
+ * - 法向力垂直于轨道平面
+ * - 切向力的方向则根据径向力和法向力的叉积决定
+ *
+ * 通过求解高斯摄动方程，可以获得当前时间点对应的轨道根数。方程定义如下：
+ *
+ * \f[a'(t) = \frac{2a^2}{h}(e\sin\varphi \cdot f_r + \frac{p}{r} \cdot f_u)\f]
+ * \f[e'(t) = \frac{1}{h}(\sin\varphi \cdot f_r + (e+\cos\varphi)\cos\varphi \cdot f_u - \frac{r}{a}\cos i \cdot f_h)\f]
+ * \f[i'(t) = \frac{r\cos(\omega+\varphi)}{h} \cdot f_h\f]
+ * \f[\Omega'(t) = \frac{r\sin(\omega+\varphi)}{h\sin i} \cdot f_h\f]
+ * \f[\omega'(t) = \frac{1}{eh}(-\cos\varphi \cdot f_r + (1+\frac{r}{p})\sin\varphi \cdot f_u) - \frac{r\sin(\omega+\varphi)\cos i}{h\sin i} \cdot f_h\f]
+ * \f[M'(t) = n + \frac{1}{eh}((p\cos\varphi-2er) \cdot f_r - (p+r)\sin\varphi \cdot f_u)\f]
+ *
+ * 其中：
+ * - \f$p=a(1-e^2)\f$ 为半通径
+ * - \f$h=\sqrt{\mu p}\f$ 为角动量
+ * - \f$\varphi\f$ 为真近点角
+ * - \f$r\f$ 为物体到中心物体的距离
+ *
+ * 高斯摄动方程提供了摄动力如何影响各轨道要素的直观理解。这六个方程的右半部分均不含t，因此需要建立f_r, f_u, f_h与t之间的关系，
+ * 并将其代入方程后，可以使用通用的微分方程求解器（如龙格库塔算法）进行求解。此外，从方程可以看出：
+ * - 纯径向摄动力不会改变轨道倾角；
+ * - 纯法向摄动力不会直接改变轨道能量（半长轴）。
+ *
+ * @todo 实现高斯摄动方程相关功能
+ */
+class __Gauss_Perturbation_Planetary_Simulator : public __Planetary_Simulator
+{
+    // TODO: 实现高斯摄动方程相关功能
+};
+
+/**
+ * @class __Lagrange_Planetary_Simulator
+ * @ingroup PlanSimulation
+ * @brief 基于拉格朗日行星运动方程的行星模拟器。
+ *
+ * @subsection LagrangeEquations 拉格朗日行星运动方程
+ * 
+ * 拉格朗日行星运动方程同样是通过将行星轨道根数作为变量，建立微分方程组，揭示行星在摄动下的长期演化规律，这意味着这种方法在较复杂的多物体系统中表现更好。
+ * 因此，这种方法在较复杂的多物体系统中表现更佳。此方程使用一个统一的摄动势R作为参数，因此它也在模拟一些保守力的摄动（如各类引力摄动）时表现更好。
+ *
+ * 拉格朗日行星运动方程的定义如下：
+ *
+ * \f[a'(t) = \frac{2}{na\sqrt{1-e^2}}(R'_M(t) \cdot e\sin\varphi + R'_\omega(t) \cdot \frac{r}{a})\f]
+ * \f[e'(t) = \frac{1-e^2}{na^2e\sqrt{1-e^2}}(R'_M(t) \cdot (\frac{p}{r}\sin\varphi) - R'_\omega(t) \cdot (\frac{r}{a}\cos\nu))\f]
+ * \f[i'(t) = \frac{1}{na^2\sqrt{1-e^2}\sin i}(R'_\Omega(t) \cdot \cos i - R'_\omega(t) \cdot \frac{r}{a}\sin(\omega+\varphi))\f]
+ * \f[\Omega'(t) = \frac{R'_i(t)}{na^2\sqrt{1-e^2}\sin i}\f]
+ * \f[\omega'(t) = \frac{\sqrt{1-e^2}}{na^2e}(R'_M(t) \cdot (\frac{p}{r}\cos\varphi) + R'_\omega(t) \cdot (\frac{r}{a}\sin\varphi)) - \cos i \cdot \Omega'(t)\f]
+ * \f[M'(t) = n - \frac{1-e^2}{na^2e\sqrt{1-e^2}}(R'_e(t) \cdot e + R'_a(t) \cdot a + R'_i(t) \cdot \frac{\sin(\omega+\varphi)}{\sin i})\f]
+ *
+ * 其中：
+ * - \f$n = \sqrt{\mu/a^3}\f$ 为平均角速度
+ *
+ * 从以上定义可以看出，方程的右边也是没有直接含t的，这同样意味着需要用各轨道根数与摄动势和时间建立函数关系，带入上述定义后才能用微分方程求解器（如龙格库塔算法）求解。
+ *
+ * @note 「拉格朗日方程是轨道摄动分析的瑰宝，它将复杂的摄动效应凝练为优雅的数学形式，使我们能够透过纷繁的表象，洞察摄动的本质。」
+ * @todo 实现拉格朗日行星运动方程相关功能
+ */
+class __Lagrange_Planetary_Simulator : public __Planetary_Simulator
+{
+    // TODO: 实现拉格朗日行星运动方程相关功能
 };
 
 }
