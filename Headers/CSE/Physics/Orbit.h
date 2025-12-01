@@ -36,6 +36,14 @@ namespace Orbit {
 /// @brief 基本元素
 /// @{
 
+/// @brief 地心惯性系映射CSE直角坐标用的矩阵
+/// @details 一般，x轴为天体赤道与黄道交线，指向春分点；z轴由中心天体中心指向北极；y轴根据右手定则确定。
+static const mat3 ECIFrameToCSECoord = {{1, 0, 0}, {0, 0, -1}, {0, 1, 0}};
+
+/// @brief CSE直角坐标映射地心惯性系用的矩阵
+/// @details CSE直角坐标的X轴为春分线，Y轴指向北极，Z轴按右手定则确定。
+static const mat3 CSECoordToECIFrame = {{1, 0, 0}, {0, 0, 1}, {0, -1, 0}};
+
 /**
  * @defgroup OrbitData 数据结构
  * @brief 三种用于存储物体空间状态的结构体
@@ -302,8 +310,7 @@ public:
      * @param[in] AxisMapper 坐标轴映射矩阵，默认为标准映射
      * @return 轨道状态向量
      */
-    OrbitStateVectors StateVectors(mat3 AxisMapper
-        = {1, 0, 0, 0, 0, -1, 0, 1, 0})const override;
+    OrbitStateVectors StateVectors(mat3 AxisMapper = ECIFrameToCSECoord)const override;
 
     /**
      * @brief 将状态向量转换为开普勒轨道要素
@@ -312,8 +319,7 @@ public:
      * @return 开普勒轨道要素
      */
     static KeplerianOrbitElems StateVectorstoKeplerianElements
-        (OrbitStateVectors State, mat3 AxisMapper
-        = {1, 0, 0, 0, 0, 1, 0, -1, 0});
+        (OrbitStateVectors State, mat3 AxisMapper = CSECoordToECIFrame);
 };
 
 /**
@@ -1740,6 +1746,33 @@ class __Gauss_Perturbation_Planetary_Simulator : public __Planetary_Simulator
 class __Lagrange_Planetary_Simulator : public __Planetary_Simulator
 {
     // TODO: 实现拉格朗日行星运动方程相关功能
+};
+
+/**
+ * @brief 基于状态向量和辛算法的行星轨道推演器
+ * @ingroup PlanSimulation
+ * @details
+ * @par 后续的一些研究记录
+ * <b>丹灵</b>：冯康老师在1991年中国物理学会年会上曾说过：“在遥远的未来，太阳系呈现什么景象？地球会与其他星球相撞吗？也许有人认为，只要利用牛顿定律，按现有的计算方法编个程序，用超级计算机进行计算，花费足够的时间，总能得到结果。但结果可信吗？实际上，对这样复杂的计算，计算机或者根本得不出结果，或者得出一个错误的结果。这是计算方法问题，机器性能再好也无济于事，编程技巧再高也是无能为力的。”也就是说，自那个年代以前，几乎所有的微分方程求解算法都是“不辛”的，使用这些算法在长线求解时，会产生“能量漂移”的现象从而使得最终结果与事实“分道扬镳”。当然这里已经有的这两种龙格库塔算法也不例外。
+ *
+ * 那么这个“辛”是如何定义的？我也弄不明白。只知道它解决了传统算法因长期对时间积分不能保持系统的能量守恒的问题。例如在求解谐振子、非线性振子、惠更斯振子、卡西尼振子、2维多晶格与准晶格定常流、利萨如图形、椭球面测地流线和开普勒运动这8种问题时，一切传统不辛算法，无论精度高低，都无一例外地全然失效，而一切辛算法，无论精度高低，则无一例外地拥有长期稳健的跟踪能力。
+ *
+ * 因此，要实现这个功能，就必须引入一种“辛”的微分方程求解算法。然而，辛几何的研究在20世纪80年代后才出现，而辛数值研究到90年代才陆续出现，也就是说这门学科目前而言依旧处于理论研究状态。而且，“辛”算法也不是微分方程求解中的“银弹”，或者说微分方程求解领域至今从未出现，也不可能出现“银弹”，因为“鱼”和“熊掌”总是不可兼得的。“辛”算法相比以往的普通微分方程求解算法而言，最大的特点在于“长期稳定”，而非“短期高精度”。另外，绝大多数“辛”算法的延迟都是偏高的，这也就意味着它几乎只能用在电力系统动力学、量子力学、地学和天体力学等这类有长期仿真的领域，所以通用的“辛”算法在网上仍是“凤毛麟角”的存在，例如辛欧拉，辛龙格库塔等。其中辛欧拉是最简单的“辛”算法之一，鉴于大多数辛龙格库塔算法都未开源，所以本文在未来可能会引入辛欧拉算法，以牺牲部分精度换取长期的稳定性。
+ *
+ * @par 参考文献
+ * [1] 冯康, 秦孟兆. 哈密尔顿系统的辛几何算法[M]. 浙江科学技术出版社, 2003.<br>
+ * [2] 模型总线. 模型总线使用小帮手（十四）：保辛算法的理论与实践[EB/OL]. 知乎, 2023<br>
+ * [3] 刘晓梅, 周钢, 朱帅. Hamilton系统下基于相位误差的精细辛算法[J]. 应用数学和力学, 2019<br>
+ * [4] 孙浪, 刘福窑, 王颖, 等. 辛算法的分类与发展[J]. 天文学进展, 2021<br>
+ * [5] 庞龙刚. 冯康与哈密顿系统的辛几何算法[EB/OL]. 华中师范大学<br>
+ * [6] hahakity. 用 python 学哈密顿力学（1）[EB/OL]. 知乎, 2020<br>
+ * [7] hahakity. 用 python 学哈密顿力学（2）[EB/OL]. 知乎, 2020<br>
+ *
+ * @todo 实现基于状态向量和辛算法的行星轨道推演器
+ */
+class __State_Vector_Planetary_Simulator : public __Planetary_Simulator
+{
+    // TODO
 };
 
 }
