@@ -1574,6 +1574,14 @@ public:
     virtual ValueArray operator()(float64 x)const = 0;
 };
 
+/// @ref symplectic_geom
+class __Symplectic_Ordinary_Differential_Equation : public OrdinaryDifferentialEquation
+{
+public:
+    /// @brief 辛积分的阶数
+    virtual int SymplecticOrder()const = 0;
+};
+
 /// @brief RK23方法C系数表 \f$c_i\f$
 extern const uint64  __RK23_C_Table[3];   
 /// @brief RK23方法A系数表 \f$a_{ij}\f$

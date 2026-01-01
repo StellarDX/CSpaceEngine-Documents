@@ -587,6 +587,15 @@ int64 isinf(float64 _X) throw();
  */
 int64 isnan(float64 _X) throw();
 
+/**
+ * @brief 检查浮点数是否为有限数值
+ * @tparam N 向量维度
+ * @param[in] _X 待检测的浮点数
+ * @return 如果是有限数值返回非零值，否则返回0
+ * @throw 无异常抛出
+ */
+int64 isfinite(float64 _X) throw();
+
 /// @see isinf
 template<std::size_t N>
 ivec<N> __cdecl isinf(fvec<N> _X)
@@ -599,6 +608,43 @@ template<std::size_t N>
 ivec<N> __cdecl isnan(fvec<N> _X)
 {
     __stelcxx_array_math_function_body(i, i, _CSE isnan(_X[i]))
+}
+
+/// @see isfinite
+template<std::size_t N>
+ivec<N> __cdecl isfinite(fvec<N> _X)
+{
+    __stelcxx_array_math_function_body(i, i, _CSE isfinite(_X[i]))
+}
+
+/**
+ * @brief 浮点数类型枚举
+ * 
+ * @note FPClassify函数在不同平台上返回值不同，此处统一行为
+ */
+enum FPTypes
+{
+    Nan = 0,        ///< 非数值
+    Inf = 1,        ///< 无穷大
+    Zero = 2,       ///< 零值
+    SubNormal = 3,  ///< 次正规数
+    Normal = 4      ///< 正规数
+};
+
+/**
+ * @brief 对浮点数进行分类
+ * @tparam N 向量维度
+ * @param[in] x 输入的浮点数
+ * @return 返回对应的FPTypes枚举值
+ * @throw 无异常抛出
+ */
+int64 FPClassify(float64 x) throw();
+
+/// @see FPClassify
+template<std::size_t N>
+ivec<N> __cdecl FPClassify(fvec<N> _X)
+{
+    __stelcxx_array_math_function_body(i, i, _CSE FPClassify(_X[i]))
 }
 
 /**@}*/

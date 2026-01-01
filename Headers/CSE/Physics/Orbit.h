@@ -1749,25 +1749,30 @@ class __Lagrange_Planetary_Simulator : public __Planetary_Simulator
 };
 
 /**
+ * @page symplectic_geom 后续的一些研究记录
+ * @ingroup PlanSimulation
+ * 
+ * @details
+ * <b>丹灵</b>：冯康老师在1991年中国物理学会年会上曾说过：“在遥远的未来，太阳系呈现什么景象？地球会与其他星球相撞吗？也许有人认为，只要利用牛顿定律，按现有的计算方法编个程序，用超级计算机进行计算，花费足够的时间，总能得到结果。但结果可信吗？实际上，对这样复杂的计算，计算机或者根本得不出结果，或者得出一个错误的结果。这是计算方法问题，机器性能再好也无济于事，编程技巧再高也是无能为力的。”也就是说，自那个年代以前，几乎所有的微分方程求解算法都是“不辛”的，使用这些算法在长线求解时，会产生“能量漂移”的现象从而使得最终结果与事实“分道扬镳”。当然这里已经有的这两种龙格库塔算法也不例外。<br>
+ * 那么这个“辛”是如何定义的？我也弄不明白。只知道它解决了传统算法因长期对时间积分不能保持系统的能量守恒的问题。例如在求解谐振子、非线性振子、惠更斯振子、卡西尼振子、2维多晶格与准晶格定常流、利萨如图形、椭球面测地流线和<b>开普勒运动</b>这8种问题时，一切传统不辛算法，无论精度高低，都无一例外地全然失效，而一切辛算法，无论精度高低，则无一例外地拥有长期稳健的跟踪能力。<br>
+ * 因此，要实现这个功能，就必须引入一种“辛”的微分方程求解算法。然而，辛几何的研究在20世纪80年代后才出现，而辛数值研究到90年代才陆续出现，也就是说这门学科目前而言依旧处于理论研究状态。而且，“辛”算法也不是微分方程求解中的“银弹”，或者说微分方程求解领域至今从未出现，也不可能出现“银弹”，因为“鱼”和“熊掌”总是不可兼得的。“辛”算法相比以往的普通微分方程求解算法而言，最大的特点在于“长期稳定”，而非“短期高精度”。另外，绝大多数“辛”算法的延迟都是偏高的，这也就意味着它几乎只能用在电力系统动力学、量子力学、地学和天体力学等这类有长期仿真的领域，所以通用的“辛”算法在网上仍是“凤毛麟角”的存在，例如辛欧拉，辛龙格库塔等。其中辛欧拉是最简单的“辛”算法之一，鉴于大多数辛龙格库塔算法都未开源，所以本文在未来可能会引入辛欧拉算法，以牺牲部分精度换取长期的稳定性。
+ *
+ * @subsubsection 参考文献
+ * [1] 冯康, 秦孟兆. 哈密尔顿系统的辛几何算法[M]. 浙江科学技术出版社, 2003.<br>
+ * [2] 模型总线. 模型总线使用小帮手（十四）：保辛算法的理论与实践[EB/OL]. 知乎, 2023 https://zhuanlan.zhihu.com/p/659385470<br>
+ * [3] 刘晓梅, 周钢, 朱帅. Hamilton系统下基于相位误差的精细辛算法[J]. 应用数学和力学, 2019<br>
+ * [4] 孙浪, 刘福窑, 王颖, 等. 辛算法的分类与发展[J]. 天文学进展, 2021<br>
+ * [5] 庞龙刚. 冯康与哈密顿系统的辛几何算法[EB/OL]. 华中师范大学 http://www.ai4physics.cn/htmls/fengkang_and_his_symplectic_algorithm.html<br>
+ * [6] hahakity. 用 python 学哈密顿力学（1）[EB/OL]. 知乎, 2020 https://zhuanlan.zhihu.com/p/266218742<br>
+ * [7] hahakity. 用 python 学哈密顿力学（2）[EB/OL]. 知乎, 2020 https://zhuanlan.zhihu.com/p/265946306<br>
+ */
+
+/**
+ * @class __State_Vector_Planetary_Simulator
  * @brief 基于状态向量和辛算法的行星轨道推演器
  * @ingroup PlanSimulation
  * @details
- * @par 后续的一些研究记录
- * <b>丹灵</b>：冯康老师在1991年中国物理学会年会上曾说过：“在遥远的未来，太阳系呈现什么景象？地球会与其他星球相撞吗？也许有人认为，只要利用牛顿定律，按现有的计算方法编个程序，用超级计算机进行计算，花费足够的时间，总能得到结果。但结果可信吗？实际上，对这样复杂的计算，计算机或者根本得不出结果，或者得出一个错误的结果。这是计算方法问题，机器性能再好也无济于事，编程技巧再高也是无能为力的。”也就是说，自那个年代以前，几乎所有的微分方程求解算法都是“不辛”的，使用这些算法在长线求解时，会产生“能量漂移”的现象从而使得最终结果与事实“分道扬镳”。当然这里已经有的这两种龙格库塔算法也不例外。
- *
- * 那么这个“辛”是如何定义的？我也弄不明白。只知道它解决了传统算法因长期对时间积分不能保持系统的能量守恒的问题。例如在求解谐振子、非线性振子、惠更斯振子、卡西尼振子、2维多晶格与准晶格定常流、利萨如图形、椭球面测地流线和开普勒运动这8种问题时，一切传统不辛算法，无论精度高低，都无一例外地全然失效，而一切辛算法，无论精度高低，则无一例外地拥有长期稳健的跟踪能力。
- *
- * 因此，要实现这个功能，就必须引入一种“辛”的微分方程求解算法。然而，辛几何的研究在20世纪80年代后才出现，而辛数值研究到90年代才陆续出现，也就是说这门学科目前而言依旧处于理论研究状态。而且，“辛”算法也不是微分方程求解中的“银弹”，或者说微分方程求解领域至今从未出现，也不可能出现“银弹”，因为“鱼”和“熊掌”总是不可兼得的。“辛”算法相比以往的普通微分方程求解算法而言，最大的特点在于“长期稳定”，而非“短期高精度”。另外，绝大多数“辛”算法的延迟都是偏高的，这也就意味着它几乎只能用在电力系统动力学、量子力学、地学和天体力学等这类有长期仿真的领域，所以通用的“辛”算法在网上仍是“凤毛麟角”的存在，例如辛欧拉，辛龙格库塔等。其中辛欧拉是最简单的“辛”算法之一，鉴于大多数辛龙格库塔算法都未开源，所以本文在未来可能会引入辛欧拉算法，以牺牲部分精度换取长期的稳定性。
- *
- * @par 参考文献
- * [1] 冯康, 秦孟兆. 哈密尔顿系统的辛几何算法[M]. 浙江科学技术出版社, 2003.<br>
- * [2] 模型总线. 模型总线使用小帮手（十四）：保辛算法的理论与实践[EB/OL]. 知乎, 2023<br>
- * [3] 刘晓梅, 周钢, 朱帅. Hamilton系统下基于相位误差的精细辛算法[J]. 应用数学和力学, 2019<br>
- * [4] 孙浪, 刘福窑, 王颖, 等. 辛算法的分类与发展[J]. 天文学进展, 2021<br>
- * [5] 庞龙刚. 冯康与哈密顿系统的辛几何算法[EB/OL]. 华中师范大学<br>
- * [6] hahakity. 用 python 学哈密顿力学（1）[EB/OL]. 知乎, 2020<br>
- * [7] hahakity. 用 python 学哈密顿力学（2）[EB/OL]. 知乎, 2020<br>
- *
+ * @ref symplectic_geom
  * @todo 实现基于状态向量和辛算法的行星轨道推演器
  */
 class __State_Vector_Planetary_Simulator : public __Planetary_Simulator
@@ -1776,6 +1781,369 @@ class __State_Vector_Planetary_Simulator : public __Planetary_Simulator
 };
 
 }
+
+///@}
+
+/**
+ * @defgroup RestrictedThreeBodyProblem 平面圆型限制性三体问题
+ * @brief 平面圆型限制性三体问题相关计算
+ * @{
+ */
+
+/**
+ * @brief 洛希瓣计算类
+ * 
+ * 用于计算限制性三体问题中的洛希瓣几何参数，包括拉格朗日点、等势面尺寸等。
+ * 采用归一化单位制，距离以两星体间距为单位，质量以总质量为单位。
+ */
+class RocheLobe
+{
+public:
+    float64 PrimaryMass;   ///< 主星质量 @details 位于坐标原点 (0,0,0)
+    float64 CompanionMass; ///< 伴星质量 @details 位于 (Separation, 0, 0)
+    float64 Separation;    ///< 两星体之间的距离
+
+    mat3    AxisMapper    = Orbit::CSECoordToECIFrame;    ///< 坐标系转换矩阵：CSE坐标 -> ECI框架
+    mat3    InvAxisMapper = Orbit::ECIFrameToCSECoord;    ///< 坐标系逆转换矩阵：ECI框架 -> CSE坐标
+
+protected:
+    /**
+     * @brief 计算归一化势函数值
+     * @param Pos 归一化位置坐标（以Separation为单位）
+     * @return float64 归一化势函数值
+     * 
+     * 归一化势函数公式：
+     * \f[
+     * \Phi(\mathbf{p}) = \frac{2}{(1+q)r_1} + \frac{2q}{(1+q)r_2} + \left(p_x - \frac{q}{1+q}\right)^2 + p_y^2
+     * \f]
+     * 其中：
+     * - \f$ q = M_2/M_1 \f$
+     * - \f$ r_1 = \sqrt{p_x^2 + p_y^2 + p_z^2} \f$
+     * - \f$ r_2 = \sqrt{(p_x-1)^2 + p_y^2 + p_z^2} \f$
+     */
+    float64 __Dimensionless_Potential_Impl(vec3 Pos)const;
+    
+    /**
+     * @brief Eggelton (1983) 有效瓣半径公式
+     * @param MassRatio 质量比 \f$ q = M_2/M_1 \f$
+     * @return float64 有效瓣半径（以Separation为单位）
+     * 
+     * 近似公式：
+     * \f[
+     * R_L \approx \frac{0.49q^{2/3}}{0.6q^{2/3} + \ln(1+q^{1/3})}
+     * \f]
+     */
+    float64 __Eggelton_1983_Effective_Lobe_Radius(float64 MassRatio)const;
+    
+    /**
+     * @brief 计算归一化势函数X方向偏导数
+     * @param Pos 归一化位置坐标
+     * @return float64 X方向偏导数值
+     * 
+     * 导数公式：
+     * \f[
+     * \Phi'_x(\mathbf{p}) = -\frac{2x}{(1+q)r_1^3} - \frac{2q(x-1)}{(1+q)r_2^3} + 2\left(x - \frac{q}{1+q}\right)
+     * \f]
+     */
+    float64 __Dimensionless_Potential_X_Derivative_Impl(vec3 Pos)const;
+    
+    /**
+     * @brief 计算归一化势函数Y方向偏导数
+     * @param Pos 归一化位置坐标
+     * @return float64 Y方向偏导数值
+     * 
+     * 导数公式：
+     * \f[
+     * \Phi'_y(\mathbf{p}) = -\frac{2y}{(1+q)r_1^3} - \frac{2qy}{(1+q)r_2^3} + 2y
+     * \f]
+     */
+    float64 __Dimensionless_Potential_Y_Derivative_Impl(vec3 Pos)const;
+    
+    /**
+     * @brief 计算归一化势函数Z方向偏导数
+     * @param Pos 归一化位置坐标
+     * @return float64 Z方向偏导数值
+     * 
+     * 导数公式：
+     * \f[
+     * \Phi'_z(\mathbf{p}) = -\frac{2z}{(1+q)r_1^3} - \frac{2qz}{(1+q)r_2^3}
+     * \f]
+     */
+    float64 __Dimensionless_Potential_Z_Derivative_Impl(vec3 Pos)const;
+    
+    /**
+     * @brief 计算五个拉格朗日点位置
+     * @param Routine 多项式求解器例程
+     * @return std::array<vec3, 5> 拉格朗日点L1-L5的位置数组
+     * 
+     * 拉格朗日点满足的方程：
+     * \f[
+     * \nabla\Phi(\mathbf{r}) = 0
+     * \f]
+     * 
+     * 对于L1点，需解方程：
+     * \f[
+     * x^5 + (\mu-3)x^4 + (3-2\mu)x^3 - \mu x^2 + 2\mu x - \mu = 0
+     * \f]
+     * 其中 \f$ \mu = \frac{M_2}{M_1+M_2} \f$
+     * 
+     * L2点方程：
+     * \f[
+     * x^5 + (3-\mu)x^4 + (3-2\mu)x^3 - \mu x^2 - 2\mu x - \mu = 0
+     * \f]
+     * 
+     * L3点方程由于没有归一化的形式，原始方程为：
+     * \f[
+     * \frac{M_1}{(R-x)^2} + \frac{M_2}{(2R-x)^2} = \left(\frac{M_2}{M_1+M_2}R + R - x\right)\frac{M_1+M_2}{R^3}
+     * \f]
+     * 展开，化简后得：
+     * \f[
+     * (M_1+M_2)x^5 - (7M_1+8M_2)R x^4 + (19M_1+25M_2)R^2 x^3 - (24M_1+37M_2)R^3 x^2 + (12M_1+26M_2)R^4 x - 7M_2 R^5 = 0
+     * \f]
+     * 
+     * L4、L5点位于等边三角形顶点：
+     * \f[
+     * \mathbf{r}_{L4} = R\left(\frac{1}{2}, \frac{\sqrt{3}}{2}, 0\right)
+     * \f]
+     * \f[
+     * \mathbf{r}_{L5} = R\left(\frac{1}{2}, -\frac{\sqrt{3}}{2}, 0\right)
+     * \f]
+     */
+    std::array<vec3, 5> __Lagrange_Point_Impl(const SolvePolyRoutine& Routine)const;
+
+    /**
+     * @brief 计算等势面关键尺寸
+     * @param PotentialOffset 势函数偏移量（相对于L1点势值）
+     * @param SPRoutine 多项式求解器例程
+     * @return std::array<vec3, 20> 等势面关键点坐标数组
+     * 
+     * 计算给定势值等势面在三个坐标轴方向上的交点。
+     * 返回数组结构：
+     * - [0]: 主星等势面尺寸（X,Y,Z方向半径）
+     * - [1]: 伴星等势面尺寸（X,Y,Z方向半径）
+     * - [2-19]: 等势面关键点坐标
+     * 
+     * 关键点布局示意图：
+     * \verbatim
+     X-Y平面：
+                   U13           U9
+                          L4
+                   U12           U8
+         U6 L3 U7  A   U4 L1 U5  B   U2 L2 U3
+                   U14           U10
+                          L5
+                   U15           U11
+     
+     X-Z平面：
+                   U18           U16
+         U6 L3 U7  A   U4 L1 U5  B   U2 L2 U3
+                   U19           U17
+     \endverbatim
+     * 
+     * 求解原理：
+     * 1. X方向：分别求解x>1、0<x<1、x<0三个区间的四次方程
+     * 2. Y方向：牛顿迭代求解代数-根式混合方程
+     * 3. Z方向：牛顿迭代求解简化方程
+     */
+    std::array<vec3, 20> __Equipotential_Dimensions_Impl(float64 PotentialOffset,
+        const SolvePolyRoutine& SPRoutine)const;
+
+public:
+    /**
+     * @brief 计算质心位置
+     * @return vec3 质心坐标
+     * 
+     * 计算公式：
+     * \f[
+     * \mathbf{r}_{\text{cm}} = \frac{M_2}{M_1+M_2}(R, 0, 0)
+     * \f]
+     */
+    vec3 BarycenterPos()const;
+    
+    /**
+     * @brief 计算归一化势函数
+     * @param Pos 物理位置坐标
+     * @return float64 归一化势函数值
+     * 
+     * @see __Dimensionless_Potential_Impl
+     */
+    float64 DimensionlessPotential(vec3 Pos)const;
+    
+    /**
+     * @brief 计算物理势函数
+     * @param Pos 物理位置坐标
+     * @return float64 物理势函数值
+     * 
+     * 计算公式：
+     * \f[
+     * U(\mathbf{r}) = -\frac{GM_1}{|\mathbf{r}|} - \frac{GM_2}{|\mathbf{r}-\mathbf{R}|} - \frac{1}{2}(\mathbf{\omega}\times\mathbf{r})^2
+     * \f]
+     */
+    float64 Potential(vec3 Pos)const;
+    
+    /**
+     * @brief 计算归一化势函数X方向导数
+     * @param Pos 物理位置坐标
+     * @return float64 X方向导数值
+     * 
+     * @see __Dimensionless_Potential_X_Derivative_Impl
+     */
+    float64 DimensionlessPotentialXDerivative(vec3 Pos)const;
+    
+    /**
+     * @brief 计算归一化势函数Y方向导数
+     * @param Pos 物理位置坐标
+     * @return float64 Y方向导数值
+     * 
+     * @see __Dimensionless_Potential_Y_Derivative_Impl
+     */
+    float64 DimensionlessPotentialYDerivative(vec3 Pos)const;
+    
+    /**
+     * @brief 计算归一化势函数Z方向导数
+     * @param Pos 物理位置坐标
+     * @return float64 Z方向导数值
+     * 
+     * @see __Dimensionless_Potential_Z_Derivative_Impl
+     */
+    float64 DimensionlessPotentialZDerivative(vec3 Pos)const;
+    
+    /**
+     * @brief 计算主星有效洛希瓣半径
+     * @return float64 主星有效洛希瓣半径（以Separation为单位）
+     * 
+     * 使用Eggelton (1983) 近似公式：
+     * \f[
+     * R_{L1} \approx \frac{0.49q^{-2/3}}{0.6q^{-2/3} + \ln(1+q^{-1/3})}
+     * \f]
+     * 其中 \f$ q = M_2/M_1 \f$
+     */
+    float64 PrimaryEffectiveLobeRadius()const;
+    
+    /**
+     * @brief 计算伴星有效洛希瓣半径
+     * @return float64 伴星有效洛希瓣半径（以Separation为单位）
+     * 
+     * 使用Eggelton (1983) 近似公式：
+     * \f[
+     * R_{L2} \approx \frac{0.49q^{2/3}}{0.6q^{2/3} + \ln(1+q^{1/3})}
+     * \f]
+     * 其中 \f$ q = M_2/M_1 \f$
+     */
+    float64 CompanionEffectiveLobeRadius()const;
+    
+    /**
+     * @brief 计算拉格朗日点位置
+     * @param Routine 多项式求解器例程（默认使用Durand-Kerner方法）
+     * @return std::array<vec3, 5> 拉格朗日点L1-L5的位置数组
+     * 
+     * @see __Lagrange_Point_Impl
+     */
+    std::array<vec3, 5> LagrangePoints(
+        const SolvePolyRoutine& Routine = DurandKernerSolvePoly())const;
+    
+    /**
+     * @brief 计算等势面尺寸
+     * @param PotentialOffset 势函数偏移量（相对于L1点势值）
+     * @param SPRoutine 多项式求解器例程（默认使用Durand-Kerner方法）
+     * @return std::array<vec3, 20> 等势面关键点坐标数组
+     * 
+     * @see __Equipotential_Dimensions_Impl
+     */
+    std::array<vec3, 20> EquipotentialDimensions(float64 PotentialOffset = 0,
+        const SolvePolyRoutine& SPRoutine = DurandKernerSolvePoly())const;
+    
+    /**
+     * @brief 计算物体物理尺寸对应的等势面
+     * @param PrimaryEffectiveRadius 主星有效半径
+     * @param CompanionEffectiveRadius 伴星有效半径
+     * @param SPRoutine 多项式求解器例程（默认使用Durand-Kerner方法）
+     * @return std::array<vec3, 2> 主星和伴星的等势面尺寸
+     * 
+     * 通过求解超越方程，找到包含给定有效半径的等势面对应的势值，
+     * 然后计算该等势面的完整尺寸。
+     * 
+     * 求解方程：
+     * \f[
+     * f(\Phi) = r_y(\Phi) r_z(\Phi) - R_{\text{eff}}^2 = 0
+     * \f]
+     * 其中 \f$ r_y(\Phi), r_z(\Phi) \f$ 是等势面在Y、Z方向的半径。
+     */
+    std::array<vec3, 2> PhysicalDimensions(
+        float64 PrimaryEffectiveRadius, float64 CompanionEffectiveRadius,
+        const SolvePolyRoutine& SPRoutine = DurandKernerSolvePoly())const;
+};
+
+/**
+ * @brief 计算刚体洛希极限
+ * @param PrimaryRadius 主星半径
+ * @param PrimaryDensity 主星密度
+ * @param CompanionDensity 伴星密度
+ * @return float64 洛希极限距离
+ * 
+ * 计算公式：
+ * \f[
+ * d_{\text{Roche}} = R_1 \sqrt[3]{\frac{2\rho_1}{\rho_2}}
+ * \f]
+ */
+float64 RigidRocheLimit(float64 PrimaryRadius, float64 PrimaryDensity, float64 CompanionDensity);
+
+/**
+ * @brief 计算流体洛希极限
+ * @param PrimaryMass 主星质量
+ * @param PrimaryRadius 主星半径
+ * @param PrimaryFlattening 主星扁率
+ * @param CompanionMass 伴星质量
+ * @param CompanionDensity 伴星密度
+ * @return float64 流体洛希极限距离
+ * 
+ * 计算公式：
+ * \f[
+ * d_{\text{Roche}} = 2.423 R_1 \sqrt[3]{\frac{\rho_1}{\rho_2}} 
+ * \sqrt[3]{\frac{1+\frac{M_2}{3M_1} + \frac{f}{3}\left(1+\frac{M_2}{M_1}\right)}{1-f}}
+ * \f]
+ * 其中 \f$ f \f$ 为扁率。
+ */
+float64 FluidRocheLimit(float64 PrimaryMass, float64 PrimaryRadius, float64 PrimaryFlattening, 
+                        float64 CompanionMass, float64 CompanionDensity);
+
+/**
+ * @brief 近似计算希尔球半径
+ * @param PrimaryMass 主星质量
+ * @param CompanionMass 伴星质量
+ * @param Separation 两星体间距
+ * @return float64 希尔球半径
+ * 
+ * 近似公式：
+ * \f[
+ * r_{\text{Hill}} \approx a \sqrt[3]{\frac{m}{3M}}
+ * \f]
+ * 其中 \f$ M = M_1 + M_2, m = M_2 \f$
+ */
+float64 ApproxHillSphere(float64 PrimaryMass, float64 CompanionMass, float64 Separation);
+
+/**
+ * @brief 精确计算希尔球半径
+ * @param PrimaryMass 主星质量
+ * @param CompanionMass 伴星质量
+ * @param Separation 两星体间距
+ * @param SPRoutine 多项式求解器例程
+ * @return float64 希尔球半径
+ * 
+ * 通过解以下方程得到希尔球半径：
+ * \f[
+ * \frac{GM_2}{x^2} - \frac{GM_1}{(R-x)^2} + \Omega^2(R-x) = 0
+ * \f]
+ * 其中 \f$ \Omega = \sqrt{\frac{G(M_1+M_2)}{R^3}} \f$
+ * 
+ * 化简为五次方程：
+ * \f[
+ * -\Omega^2 x^5 + 3R\Omega^2 x^4 - 3R^2\Omega^2 x^3 + 
+ * (GM_2 - GM_1 + R^3\Omega^2)x^2 - 2GM_2R x + GM_2R^2 = 0
+ * \f]
+ */
+float64 HillSphere(float64 PrimaryMass, float64 CompanionMass, float64 Separation, 
+                   const SolvePolyRoutine& SPRoutine);
 
 ///@}
 
