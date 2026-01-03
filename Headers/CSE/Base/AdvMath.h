@@ -1768,6 +1768,7 @@ public:
      * @param[in] xBoundary x的积分边界
      * @param[in] otherBounds 其他维度的边界
      * @param[in] logSamples 样本数量的对数（默认10^6个样本）
+     * @param[in] seed 随机数种子
      * @return float64 积分结果
      * @details 使用蒙特卡洛方法避免维度爆炸问题，适合高维积分
      * @todo 实现蒙特卡洛积分
@@ -1775,7 +1776,8 @@ public:
     static float64 MonteCarlo(FuncType func,
                            vec2 xBoundary,
                            std::vector<BoundPairType> otherBounds,
-                           float64 logSamples = 6.0);
+                           float64 logSamples = 6.0,
+                           uint64 seed = std::random_device{}());
 };
 
 /**@}*/
