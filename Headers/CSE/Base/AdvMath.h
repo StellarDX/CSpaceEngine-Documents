@@ -852,6 +852,9 @@ protected:
     virtual float64 Run(std::vector<vec2> Samples)const = 0;
 
 public:
+    /** @brief 默认采样数对数基准值（lb(DefSampleCount) - 1），用于连续函数兼容，例如设为n就是2^n+1个点 */
+    float64 LBDefaultSampleCountM1 = 5;
+
     /**
      * @brief 对一元函数进行固定步长采样
      * @param f 被采样函数
