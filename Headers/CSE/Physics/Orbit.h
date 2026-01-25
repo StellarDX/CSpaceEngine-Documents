@@ -28,7 +28,7 @@ namespace cse {
 namespace Orbit {
 
 /// @defgroup Orbit 轨道工具
-/// @brief SpaceEngine 轨道工具系列
+/// @brief CSpaceEngine 轨道工具系列
 /// @ingroup Physics
 /// @{
 
@@ -2144,6 +2144,55 @@ float64 ApproxHillSphere(float64 PrimaryMass, float64 CompanionMass, float64 Sep
  */
 float64 HillSphere(float64 PrimaryMass, float64 CompanionMass, float64 Separation, 
                    const SolvePolyRoutine& SPRoutine);
+
+/**
+ * @brief 为伴星对象创建围绕主星的轨道。
+ *
+ * 此函数将 `Primary` 的父体设置为主星的名称，并为其分配一个轨道元素结构。
+ * 如果提供了 `Separation`，则会基于该分离距离和给定的偏心率（若未提供则默认为0）
+ * 计算近日点距离来更新轨道元素。`Args` 中的其他轨道参数将被保留。
+ *
+ * @param [in] Primary 指向主星对象的指针。该对象必须有有效的 `.Name`。
+ *                        函数会尝试访问 `.Name.at(0)`。
+ * @param [in] Companion 指向伴星对象的指针。此对象的 `.ParentBody` 和 `.Orbit` 将被修改。
+ * @param [in] Separation 可选的标量分离距离 (半长轴)。如果未提供，
+ *                       则 `Args.PericenterDist` 必须有效。
+ * @param [in] Args 包含初始轨道元素的结构体。如果 `separation` 提供，
+ *                 `.PericenterDist` 可能会被重新计算并覆盖。
+ *
+ * @throws std::logic_error 如果 `Separation` 未提供且 `Args.PericenterDist` 无效，
+ *                          或者 `Primary` 没有可用的名称（`.Name.at(0)` 抛出异常）。
+ */
+void __cdecl MakeOrbit(Object* Primary, Object* Companion, 
+                       const std::optional<float64>& Separation, 
+                       KeplerianOrbitElems Args);
+
+/**
+ * @brief 创建一个双星系统，返回其共同质心对象。
+ *
+ * 此函数创建一个由 `Primary` 和 `Companion` 组成的双星系统。
+ * 它会创建一个新的质心对象 (`Barycenter`)，并将两个天体的父体都设置为这个质心。
+ * 根据提供的 `Separation` 或 `Args.PericenterDist`，结合两者的质量，
+ * 计算出质心的位置，并据此确定主星和伴星相对于质心的轨道参数。
+ * 质心对象继承了 `Primary` 的父体和轨道信息。
+ *
+ * @param [in] Primary 指向主星对象的指针。其 `.Mass`、`.ParentBody`、`.Orbit` 必须有效。
+ *                        其 `.ParentBody` 和 `.Orbit` 将被修改。
+ * @param [in] Companion 指向伴星对象的指针。其 `.Mass` 必须有效。
+ *                         其 `.ParentBody` 和 `.Orbit` 将被修改。
+ * @param [in] Separation 可选的标量分离距离 (两星之间的半长轴)。如果未提供，
+ *                       则 `Args.PericenterDist` 必须有效以推导出分离距离。
+ * @param [in] Args 包含初始轨道元素的结构体。`.PericenterDist` 和 `.ArgOfPericenter`
+ *                 将被重新计算并覆盖，以适应各自相对于质心的轨道。
+ *
+ * @return std::shared_ptr<Object> 指向新创建的质心对象的智能指针。
+ *
+ * @throws std::logic_error 如果 `Separation` 未提供且 `Args.PericenterDist` 无效，
+ *                          或者 `Primary` 或 `Companion` 的质量无效。
+ */
+std::shared_ptr<Object> __cdecl MakeBinary(Object* Primary, Object* Companion,
+                                           const std::optional<float64>& Separation,
+                                           KeplerianOrbitElems Args);
 
 ///@}
 
