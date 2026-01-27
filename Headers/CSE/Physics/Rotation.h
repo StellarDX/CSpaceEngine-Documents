@@ -191,6 +191,12 @@ public:
     virtual void Reset() = 0;
 
     /**
+     * @brief 获取当前计算出的旋转状态。
+     * @return 当前的旋转元素状态。
+     */
+    BaseType GetCurrentState() const;
+
+    /**
      * @brief 获取物体自转轴北极在当前时刻的赤道坐标
      * @param[out] RA 指向接收赤经的Sexagesimal对象指针
      * @param[out] Dec 指向接收赤纬的Sexagesimal对象指针
