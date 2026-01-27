@@ -249,6 +249,39 @@ public:
 };
 
 /**
+ * @file CoordinateNormalization.h
+ * @brief 坐标归一化功能模块
+ */
+
+/**
+ * @brief 归一化赤经赤纬坐标（浮点角度制）
+ * @param[in,out] RA 赤经，单位：角度（360度制），输入输出参数
+ * @param[in,out] Dec 赤纬，单位：角度（360度制），输入输出参数
+ * @note 此函数会将RA归一化到[0, 360)范围，Dec归一化到[-90, 90]范围
+ *       超出范围的Dec值会被折返处理
+ */
+void NormalizeCoord(float64& RA, float64& Dec);
+
+/**
+ * @brief 归一化赤经赤纬坐标（Angle对象）
+ * @param[in,out] RA 赤经，Angle类型对象（360度制），输入输出参数
+ * @param[in,out] Dec 赤纬，Angle类型对象（360度制），输入输出参数
+ * @note 此函数会将RA归一化到[0, 360)范围，Dec归一化到[-90, 90]范围
+ *       使用Angle类的内置归一化方法
+ */
+void NormalizeCoord(Angle& RA, Angle& Dec);
+
+/**
+ * @brief 归一化赤经赤纬坐标（六十进制）
+ * @param[in,out] RA 赤经，Sexagesimal类型对象（360度制），输入输出参数
+ * @param[in,out] Dec 赤纬，Sexagesimal类型对象（360度制），输入输出参数
+ * @note 此函数会将RA归一化到[0, 360)范围，Dec归一化到[-90, 90]范围
+ *       处理六十进制表示的坐标值
+ * @attention 丹灵：加上Sexagesimal这里就已经有3种方式表示角度了，我觉得这到了后期会是个问题。
+ */
+void NormalizeCoord(Sexagesimal& RA, Sexagesimal& Dec);
+
+/**
  * @brief 从键值对获取位置信息
  * @ingroup Locations
  * @param[in] KeyValue 键值对数据
