@@ -57,7 +57,7 @@ std::wostream& operator<<(std::wostream& os, const Sexagesimal& Ang);
  * @param[in] TS 总秒数
  * @return 六十进制角度结构体
  */
-Sexagesimal __Create_Sexagesimal_From_Seconds(float64 TS);
+Sexagesimal CreateSexagesimalFromSeconds(float64 TS);
 
 /**
  * @brief 24小时制转360度制
@@ -68,7 +68,7 @@ Sexagesimal __Create_Sexagesimal_From_Seconds(float64 TS);
  * @param[in] s 秒数
  * @return 转换后的六十进制角度
  */
-Sexagesimal __Convert_24_to_360(bool n, float64 d, float64 m, float64 s);
+Sexagesimal Convert24To360(bool n, float64 d, float64 m, float64 s);
 
 /**
  * @brief 360度制转24小时制
@@ -76,7 +76,7 @@ Sexagesimal __Convert_24_to_360(bool n, float64 d, float64 m, float64 s);
  * @param[in] Ang 六十进制角度
  * @return 转换后的二十四小时制角度
  */
-Sexagesimal __Convert_360_to_24(Sexagesimal Ang);
+Sexagesimal Convert360To24(Sexagesimal Ang);
 
 /**
  * @class  Location
