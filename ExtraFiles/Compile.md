@@ -2,9 +2,10 @@
 <p>此版本已经<b>放弃VS2022并迁移到CMake平台</b>，编译就正常使用CMake即可。</p>
 <table>
     <tr><th>MSC</th><th>GPP</th><th>Clang</th></tr>
-    <tr><td>停止支持</td><td>建议13.1.0以上，如果启用fmt备用功能可降低至11.2.0</td><td>建议17.0.6以上</td></tr>
+    <tr><td>停止支持</td><td>建议15.2.0以上</td><td>建议22.1.5以上</td></tr>
 </table>
-<p>注：由于此版本的一些功能会大量使用format函数，而一些编译器在开启了C++20之下仍未支持此功能，所以这里给出了一个备用解决方案，此方案需安装<a href="https://github.com/fmtlib/fmt">fmtlib</a>。</p>
+<p>由于此版本的一些功能会大量使用format函数，而一些编译器在开启了C++20之下仍未支持此功能，所以这里给出了一个备用解决方案，此方案需安装<a href="https://github.com/fmtlib/fmt">fmtlib</a>。</p>
+<p>2026.05更新标准要求：部分组件现已引入C++23的部分功能，启用这些组件将需要编译器支持C++23及以上标准</p>
 
 <h2>编译选项</h2>
 <table>
